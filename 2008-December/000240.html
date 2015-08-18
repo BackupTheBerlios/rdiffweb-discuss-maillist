@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote	problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2008-December/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiffWeb%200.6.3%20and%20rdiff%202.1.1%20chars_to_quote%0A%09problem&In-Reply-To=%3Cop.ul9t5xh3ea9agm%40unknown%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000239.html">
+   <LINK REL="Next"  HREF="000241.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote	problem</H1>
+    <B>S-Abf</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiffWeb%200.6.3%20and%20rdiff%202.1.1%20chars_to_quote%0A%09problem&In-Reply-To=%3Cop.ul9t5xh3ea9agm%40unknown%3E"
+       TITLE="[Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote	problem">S-Abf at gmx.net
+       </A><BR>
+    <I>Tue Dec 16 21:06:59 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000239.html">[Rdiffweb-discuss] autoUpdateRepos doesn't run in rdiffWeb 0.6.3 (2)
+</A></li>
+        <LI>Next message: <A HREF="000241.html">[Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#240">[ date ]</a>
+              <a href="thread.html#240">[ thread ]</a>
+              <a href="subject.html#240">[ subject ]</a>
+              <a href="author.html#240">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello
+
+I have multiple rdiff backup 'locations', created with rdiff-backup  
+1.1.5-4 (Debian Etch), and rdiffWeb 0.6.3 was working perfectly.
+
+The backups are on a NAS box, mounted via smbfs (case-insensitive).
+
+Because of smb compatibility I upgraded rdiff-backup to 1.2.1-1  
+(Etch-Backport). On the next backup over the existing folders,  
+rdiff-backup upgraded to the new quoting style.
+
+ From then on, the upgraded backup locations show up with a size of 0 Byte  
+(Last Backup Size), and only the root folder of that backup is accessible  
+over the browser. If I try to go deeper, rdiffWeb says &quot;The backup  
+location does not exist.&quot;.
+
+This occurs even with completely new created backup locations on that  
+drive.
+
+However, I can fix it if I revert the &quot;chars_to_quote&quot; file in  
+rdiff-backup data folder to the previous version (from 'A-Z-&quot;*/:&lt;&gt;?\\|;'  
+to '^A-Za-z0-9_ -.'). If I do so, the backup can be browsed again, but I  
+believe any further backups/restores will fail - so I need anonther  
+solution for this or I have to go back to rdiff-backup 1.1.5.
+
+Thanks in advance for any hints on this issue ..
+
+Nils
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000239.html">[Rdiffweb-discuss] autoUpdateRepos doesn't run in rdiffWeb 0.6.3 (2)
+</A></li>
+	<LI>Next message: <A HREF="000241.html">[Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#240">[ date ]</a>
+              <a href="thread.html#240">[ thread ]</a>
+              <a href="subject.html#240">[ subject ]</a>
+              <a href="author.html#240">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

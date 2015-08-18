@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-June/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Undefined%20Symbol%20%3A%20sqlite3_set_authorizer&In-Reply-To=%3Ce98d4f8c0906261436h7d7c7788vfc9472a088193ae%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000270.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer</H1>
+    <B>Gabriel Hahmann</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Undefined%20Symbol%20%3A%20sqlite3_set_authorizer&In-Reply-To=%3Ce98d4f8c0906261436h7d7c7788vfc9472a088193ae%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer">gabriel.hahmann at gmail.com
+       </A><BR>
+    <I>Fri Jun 26 23:36:32 CEST 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000270.html">[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#269">[ date ]</a>
+              <a href="thread.html#269">[ thread ]</a>
+              <a href="subject.html#269">[ subject ]</a>
+              <a href="author.html#269">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all,
+
+I'm trying to use the rdiffWeb application on a NAS I just bought (ReadyNAS
+Duo). I've downloaded all packages, compiled rdiff-backup and it's working
+ok.
+
+Then I've downloaded everything for rdiffWeb. The problem cames when I try
+to run rdiffWeb it gave me the following error:
+
+Traceback (most recent call last):
+  File &quot;/usr/bin/rdiff-web-config&quot;, line 144, in ?
+    doMainSetup()
+  File &quot;/usr/bin/rdiff-web-config&quot;, line 94, in doMainSetup
+    sqlSetup()
+  File &quot;/usr/bin/rdiff-web-config&quot;, line 49, in sqlSetup
+    from pysqlite2 import dbapi2 as sqlite3
+  File &quot;/usr/lib/python2.4/site-packages/pysqlite2/dbapi2.py&quot;, line 27, in ?
+    from pysqlite2._sqlite import *
+ImportError: /usr/lib/python2.4/site-packages/pysqlite2/_sqlite.so:
+undefined symbol: sqlite3_set_authorizer
+
+And if I create the configuration and try to start rdiffWeb directly I have
+almost the same error:
+
+nas-server:~# rdiff-web
+Traceback (most recent call last):
+  File &quot;/usr/bin/rdiff-web&quot;, line 123, in ?
+    cherrypy.engine.on_stop_engine_list.append(lambda: killEvent.set())
+AttributeError: 'Bus' object has no attribute 'on_stop_engine_list'
+Exception in thread Thread-2:
+Traceback (most recent call last):
+  File &quot;/usr/lib/python2.4/threading.py&quot;, line 442, in __bootstrap
+    self.run()
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/email_notification.py&quot;,
+line 23, in run
+    self.notifier = emailNotifier()
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/email_notification.py&quot;,
+line 42, in __init__
+    self.userDB = db.userDB().getUserDBModule()
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/db.py&quot;, line 8, in
+getUserDBModule
+    return db_sqlite.sqliteUserDB(rdw_config.getDatabasePath())
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/db_sqlite.py&quot;, line 13, in
+__init__
+    self._connect()
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/db_sqlite.py&quot;, line 168,
+in _connect
+    from pysqlite2 import dbapi2 as sqlite3
+  File &quot;/usr/lib/python2.4/site-packages/pysqlite2/dbapi2.py&quot;, line 27, in ?
+    from pysqlite2._sqlite import *
+ImportError: /usr/lib/python2.4/site-packages/pysqlite2/_sqlite.so:
+undefined symbol: sqlite3_set_authorizer
+
+I've downloaded and compiled pysqlite2 with no problem, the distribution on
+ReadyNAS is based on debian sarge, but the libraries is an updated version
+from netgear.
+
+The version of the libraries are:
+
+libsqlite3-0   3.5.9-6.netgea SQLite 3 shared library
+libsqlite3-dev 3.5.9-6.netgea SQLite 3 development files
+
+pysqlite-2.5.5
+
+python2.4
+
+CherryPy 3.1.2
+
+Any help would be appreciatted, as right now I dont know where to look.
+
+Best regards,
+Gabriel.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20090626/7646beda/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20090626/7646beda/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000270.html">[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#269">[ date ]</a>
+              <a href="thread.html#269">[ thread ]</a>
+              <a href="subject.html#269">[ subject ]</a>
+              <a href="author.html#269">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Suggestions/changes
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Suggestions/changes&In-Reply-To=%3C46128218.2030608%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000111.html">
+   <LINK REL="Next"  HREF="000113.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Suggestions/changes</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Suggestions/changes&In-Reply-To=%3C46128218.2030608%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] Suggestions/changes">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Tue Apr  3 18:34:32 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000111.html">[Rdiffweb-discuss] Suggestions/changes
+</A></li>
+        <LI>Next message: <A HREF="000113.html">[Rdiffweb-discuss] Suggestions/changes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#112">[ date ]</a>
+              <a href="thread.html#112">[ thread ]</a>
+              <a href="subject.html#112">[ subject ]</a>
+              <a href="author.html#112">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks for your suggestions! A lot of these are things that I've wanted 
+to do, but haven't had time. I've interspersed comments below.
+
+Jesus Roncero wrote:
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> As I said last week, here is a list of what I would like to do on rdiff-web, 
+</I>&gt;<i> or at least what we would like to use it. The idea we have in the office is 
+</I>&gt;<i> to have some kind of automated backup system for workstations where the admin 
+</I>&gt;<i> user creates an entry for each of the users and a nightly backup script will 
+</I>&gt;<i> retrieve the data from the workstations, possibly by having some remote 
+</I>&gt;<i> directories mounted or something. This doesn't necessarily need to be part of 
+</I>&gt;<i> rdiff-web but might be interesting to have it.
+</I>&gt;<i>
+</I>&gt;<i> So, here there is a list of things I've been thinking:
+</I>&gt;<i>
+</I>&gt;<i> - Add more logging, depending on whether you are running it in debug mode or 
+</I>&gt;<i> not. It is useful to have more information when you are debugging or you are 
+</I>&gt;<i> reading the source code to understand how it works.
+</I>&gt;<i>   
+</I>Not sure about logging at the source code level, but we need logging of 
+page accesses, etc. CherryPy supports Apache-style logging, but we need 
+a way to specify a log file and have accesses/errors go there. The most 
+comment complaints are installation issues, and this would help with that.
+&gt;<i> - The admin user manages the users. So, I'd like to extend the user admin 
+</I>&gt;<i> capabilities. For example, to add more parameters or others that might be 
+</I>&gt;<i> included in the future.
+</I>&gt;<i>   
+</I>Here is an architecture that I've been considering: all each user to be 
+an &quot;administrator&quot;, but only manage users within their root directory. 
+That is, they could add/delete users, etc, but only within their directory.
+
+We also need a way to generically store information about users, such as 
+preferences. (Sort order, for example.) Is this what you are referring 
+to here?
+&gt;<i> - Separate users authentication from the &quot;users&quot; database, or have it as 
+</I>&gt;<i> something optional. So, we can have the users database where all the 
+</I>&gt;<i> information is stored, but use other backends for authentication, such as 
+</I>&gt;<i> other mysql dbs, or LDAP. This could help integration with existing 
+</I>&gt;<i> environments.
+</I>&gt;<i>   
+</I>I had initially wanted to support native linux user authentication, but 
+couldn't find a clean, widely distributed python module that integrates 
+with pam. The biggest goal for me with rdiff-web is keeping it easy to 
+install and set up. If a user can't install and set up rdiff-web in 5-10 
+minutes, then something is wrong, IMHO.
+
+I'm all for separating the authentication and users list, though. I'll 
+try to come up with a proposal for this sometime.
+&gt;<i> - It would be possible that the user could choose their backup directories. 
+</I>&gt;<i> This would work with the backup script I just talked about, so they can 
+</I>&gt;<i> choose the directories (Need to think more about this)
+</I>&gt;<i>   
+</I>What I suggest is running &quot;rdiff-web-config spiderrepos&quot; via cron every 
+15 minutes or so. (That's what I do.) That way all the user's repos show 
+up. Is that what you're talking about?
+&gt;<i> - Improvements to the browsing interface (nothing specific, just anything that 
+</I>&gt;<i> could be improved)
+</I>&gt;<i> - Improve the installation script.
+</I>&gt;<i> - Improve the status page (it fails when accessing it without credentials)
+</I>&gt;<i> - anything?
+</I>&gt;<i>   
+</I>I'd welcome suggestions on any of these.
+&gt;<i> Well, those are the ideas floating in my mind. They don't necessarily need to 
+</I>&gt;<i> be included into trunk, but it would be nice to have them and, also, not have 
+</I>&gt;<i> something that is very different from trunk (a specific fork). So, that's 
+</I>&gt;<i> probably what I am going to start working on to have something similar to 
+</I>&gt;<i> what we want to have here :). Please, comments/objections/suggestions are 
+</I>&gt;<i> very welcome.
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>I'd like to avoid a fork, if possible, as well. Right now, the time I 
+have available to work on rdiff-web is pretty limited, but I'll see what 
+I can do.
+
+Thanks again,
+JoshN
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000111.html">[Rdiffweb-discuss] Suggestions/changes
+</A></li>
+	<LI>Next message: <A HREF="000113.html">[Rdiffweb-discuss] Suggestions/changes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#112">[ date ]</a>
+              <a href="thread.html#112">[ thread ]</a>
+              <a href="subject.html#112">[ subject ]</a>
+              <a href="author.html#112">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,94 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Version 0.63 weirdities
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2008-October/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Version%200.63%20weirdities&In-Reply-To=%3C5c258a710810160157n46a44094p7b8dabd0f8986a79%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000234.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Version 0.63 weirdities</H1>
+    <B>Markku Niskanen</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Version%200.63%20weirdities&In-Reply-To=%3C5c258a710810160157n46a44094p7b8dabd0f8986a79%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] Version 0.63 weirdities">markku.niskanen at gmail.com
+       </A><BR>
+    <I>Thu Oct 16 10:57:45 CEST 2008</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000234.html">[Rdiffweb-discuss] Version 0.63 weirdities
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#233">[ date ]</a>
+              <a href="thread.html#233">[ thread ]</a>
+              <a href="subject.html#233">[ subject ]</a>
+              <a href="author.html#233">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>First of all: I can read some Python but have never written anything.
+However, I think that the current code base has true bugs.
+
+I installed version 0.63 but could not make the service start. There
+are several problems:
+
+1)  The init.d script creates  /var/run/rdiff-web and in case the
+engine dies prematurely no cleanup occurs.
+
+2) In the config file we have &quot;ServerName&quot; whereas in the code we have
+&quot;ServerHost&quot;:
+
+       'server.socket_host' :
+rdiffWeb.rdw_config.getConfigSetting(&quot;ServerHost&quot;),
+
+After adding &quot;ServerHost&quot; to the config file I can get one step
+further. Still the service dies immediately but, anyhow, creates the
+/var/run pidfile
+
+After the &quot;ServerHost&quot; change I can start the service by hand like this:
+
+   /usr/bin/rdiff-web --debug --pid-file=&quot;/var/run/rdiff-web&quot;
+
+but without the --debug I get this
+
+Traceback (most recent call last):
+  File &quot;/usr/bin/rdiff-web&quot;, line 123, in &lt;module&gt;
+    cherrypy.engine.on_stop_engine_list.append(lambda: killEvent.set())
+AttributeError: 'Bus' object has no attribute 'on_stop_engine_list'
+
+Is this a version problem? With --debug I can see that the service
+really DOES work but cannot be sure whether everything is at it
+should.
+
+Markku
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000234.html">[Rdiffweb-discuss] Version 0.63 weirdities
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#233">[ date ]</a>
+              <a href="thread.html#233">[ thread ]</a>
+              <a href="subject.html#233">[ subject ]</a>
+              <a href="author.html#233">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

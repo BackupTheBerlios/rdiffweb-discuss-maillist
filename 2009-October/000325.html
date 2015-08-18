@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Some aditions; PAM and improved init
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Some%20aditions%3B%20PAM%20and%20improved%20init&In-Reply-To=%3CBAY118-DS6CAAE5174B225E39492E2B1C20%40phx.gbl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000323.html">
+   <LINK REL="Next"  HREF="000326.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Some aditions; PAM and improved init</H1>
+    <B>David Flink</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Some%20aditions%3B%20PAM%20and%20improved%20init&In-Reply-To=%3CBAY118-DS6CAAE5174B225E39492E2B1C20%40phx.gbl%3E"
+       TITLE="[Rdiffweb-discuss] Some aditions; PAM and improved init">unixrulez at hotmail.com
+       </A><BR>
+    <I>Sun Oct 18 18:28:06 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000323.html">[Rdiffweb-discuss] How do i submit code?
+</A></li>
+        <LI>Next message: <A HREF="000326.html">[Rdiffweb-discuss] Some aditions; PAM and improved init
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#325">[ date ]</a>
+              <a href="thread.html#325">[ thread ]</a>
+              <a href="subject.html#325">[ subject ]</a>
+              <a href="author.html#325">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Greetings, all.
+
+ 
+
+I see in the TODO list at 
+
+<A HREF="http://www.rdiffweb.org/wiki/index.php?title=Roadmap">http://www.rdiffweb.org/wiki/index.php?title=Roadmap</A> 
+
+that init script improvements , shadow passwords (PAM) and logging are High
+priority improvements.
+
+ 
+
+I have improved teh init script and added PAM support.
+
+ 
+
+I have not done Logging because I'd like to find out what people want logged
+before I do anything about it. I'll watch this list.
+
+ 
+
+I can't/don't know how/won't commit to svn so to get my changes, do this:
+
+Check out the latest version from &quot;trunk&quot; in svn.
+
+Then extract the attached archive over the top of that _before_ installing
+it.
+
+(or if you already have it installed and know what you are doing, copy the
+init script  from the archive to /etc/init.d and the others to
+/usr/local/lib/python2.6/dist-packages/rdiffWeb as appropriate)
+
+ 
+
+PAM adds the requirement for python-pam 0.4.2 (sudo apt-get install
+python-pam)
+
+ 
+
+Changes:
+
+when using the init script (or service rdiff-web &lt;command&gt;), 
+
+&quot;start&quot; - confirms that the start worked, and reports the PID
+
+&quot;stop&quot; - confirms the stop succeeds.
+
+&quot;status&quot; - returns the pid if running.
+
+ 
+
+Admin page:
+
+Creating or editing users offers a &quot;Authenticate with PAM?&quot; checkbox.
+
+ 
+
+Preferences page:
+
+If current user is set to use PAM, a message notes that changing the
+password on this page has no effect 
+
+In fact, it changes the user's password in rdiff-web's DB, but since the
+shadow password is used, this won't have any effect until an administrator
+switches the user to non-PAM.
+
+ 
+
+If you have an rdiff-web user who does not have a unix system account,
+setting them to use PM effectively locks the account.
+
+ 
+
+I hope the attachment makes it to the mailing list.
+
+ 
+
+Wish me luck!
+
+ 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20091018/214b7555/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20091018/214b7555/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rdiffweb-PAM-init.tgz
+Type: application/x-compressed
+Size: 11542 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20091018/214b7555/attachment.bin">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20091018/214b7555/attachment.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000323.html">[Rdiffweb-discuss] How do i submit code?
+</A></li>
+	<LI>Next message: <A HREF="000326.html">[Rdiffweb-discuss] Some aditions; PAM and improved init
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#325">[ date ]</a>
+              <a href="thread.html#325">[ thread ]</a>
+              <a href="subject.html#325">[ subject ]</a>
+              <a href="author.html#325">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

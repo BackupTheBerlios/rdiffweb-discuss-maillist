@@ -1,0 +1,92 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] entryTime not defined
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-December/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20entryTime%20not%20defined&In-Reply-To=%3C47528CB8.8060008%40b4mad.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000180.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] entryTime not defined</H1>
+    <B>Marcel Hild</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20entryTime%20not%20defined&In-Reply-To=%3C47528CB8.8060008%40b4mad.net%3E"
+       TITLE="[Rdiffweb-discuss] entryTime not defined">hild at b4mad.net
+       </A><BR>
+    <I>Sun Dec  2 11:45:12 CET 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000180.html">[Rdiffweb-discuss] entryTime not defined
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#179">[ date ]</a>
+              <a href="thread.html#179">[ thread ]</a>
+              <a href="subject.html#179">[ subject ]</a>
+              <a href="author.html#179">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+I just installed the latest rpm (0.4)
+when browsing to a backup status (e.g. <A HREF="http://smeik:8080/status/entry?repo=&amp;date=2007-12-02T01%3A00%3A06%2B01%3A00">http://smeik:8080/status/entry?repo=&amp;date=2007-12-02T01%3A00%3A06%2B01%3A00</A>)
+I get the following error:
+
+02/Dec/2007:11:40:47 HTTP INFO Page handler: &lt;bound method rdiffStatusPage.entry of &lt;rdiffWeb.page_status.rdiffStatusPage instance at 0xb797b64c&gt;&gt;
+Traceback (most recent call last):
+  File &quot;/var/lib/python-support/python2.5/cherrypy/_cphttptools.py&quot;, line 105, in _run
+    self.main()
+  File &quot;/var/lib/python-support/python2.5/cherrypy/_cphttptools.py&quot;, line 254, in main
+    body = page_handler(*virtual_path, **self.params)
+  File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_status.py&quot;, line 23, in entry
+    userMessages = self._getUserMessagesForDay(date)
+  File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_status.py&quot;, line 84, in _getUserMessagesForDay
+    startTime.timeInSeconds = entryTime.timeInSeconds
+NameError: global name 'entryTime' is not defined
+
+
+
+earlier in this python file entryTime is protected by a try/except block. Maybe we need this here too?
+
+cheers
+marcel
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.6 (GNU/Linux)
+Comment: Using GnuPG with Mozilla - <A HREF="http://enigmail.mozdev.org">http://enigmail.mozdev.org</A>
+
+iD8DBQFHUoy4EhnfFAtpDHURAhDTAJ9cLGgDu8oB420atL9jqa/a2cCXlgCfe8Nn
+fkWS9UY/rAiLR0hza+P9Kgc=
+=x3aM
+-----END PGP SIGNATURE-----
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000180.html">[Rdiffweb-discuss] entryTime not defined
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#179">[ date ]</a>
+              <a href="thread.html#179">[ thread ]</a>
+              <a href="subject.html#179">[ subject ]</a>
+              <a href="author.html#179">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

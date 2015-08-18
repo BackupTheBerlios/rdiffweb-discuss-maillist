@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] New features and changes to rdiffweb
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20New%20features%20and%20changes%20to%20rdiffweb&In-Reply-To=%3C200703291938.29197.jesus%40mxtelecom.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000103.html">
+   <LINK REL="Next"  HREF="000106.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] New features and changes to rdiffweb</H1>
+    <B>Jesus Roncero</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20New%20features%20and%20changes%20to%20rdiffweb&In-Reply-To=%3C200703291938.29197.jesus%40mxtelecom.com%3E"
+       TITLE="[Rdiffweb-discuss] New features and changes to rdiffweb">jesus at mxtelecom.com
+       </A><BR>
+    <I>Thu Mar 29 20:38:28 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000103.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+        <LI>Next message: <A HREF="000106.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#104">[ date ]</a>
+              <a href="thread.html#104">[ thread ]</a>
+              <a href="subject.html#104">[ subject ]</a>
+              <a href="author.html#104">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Thursday 29 March 2007 16:45, Josh Nisly wrote:
+&gt;<i> Thanks for all your work on this! Comments are interspersed below.
+</I>&gt;<i>
+</I>&gt;<i> Jesus Roncero wrote:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; To start with it, attached there is a patch that fixes a small problem
+</I>&gt;<i> &gt; with rdiffweb as it is now. Rdiffweb lets you enter a non validated path
+</I>&gt;<i> &gt; that lets you walk down the file system hierachy as
+</I>&gt;<i> &gt; <A HREF="http://localhost:8080/browse/?repo=b&amp;path=..%2F..%2F..%2Fetc">http://localhost:8080/browse/?repo=b&amp;path=..%2F..%2F..%2Fetc</A>
+</I>&gt;<i>
+</I>&gt;<i> Wow, if that is really the case, then that is a huge hole. I can't
+</I>&gt;<i> reproduce this, however -- I get an &quot;Access Denied&quot; page, as expected.
+</I>&gt;<i> (The ensurePathValid function is supposed to protect against this.) Can
+</I>&gt;<i> you give me an example of when it happens? What server OS are you running?
+</I>
+Well, the ensurePathValid function does this:
+
+   normalizedPath = os.path.normpath(path)
+   if normalizedPath != path:
+      raise accessDeniedError
+
+in a case where path is ../ it would raise the exception, whereas when it 
+is ../.. it would not.
+see:
+&gt;&gt;&gt;<i> path=&quot;../&quot;
+</I>&gt;&gt;&gt;<i> import os
+</I>&gt;&gt;&gt;<i> npath = os.path.normpath(path)
+</I>&gt;&gt;&gt;<i> npath
+</I>'..'
+&gt;&gt;&gt;<i> path
+</I>'../'
+&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> path=&quot;../..&quot;
+</I>&gt;&gt;&gt;<i> npath = os.path.normpath(path)
+</I>&gt;&gt;&gt;<i> npath
+</I>'../..'
+
+Try accessing an url like <A HREF="http://host/browse/?repo=rep&amp;path=..%2F..">http://host/browse/?repo=rep&amp;path=..%2F..</A> 
+
+BTW, I use ubuntu linux with an standard installation.
+
+
+&gt;<i> &gt; source code, for the sake of clarity and understanding (still reading
+</I>&gt;<i> &gt; source code) :-) Also added a primary key to the repos table, so it is
+</I>&gt;<i> &gt; easier to handle it (for example, to delete any given row)
+</I>&gt;<i>
+</I>&gt;<i> I'd prefer not to add this, unless we have migration code. I don't want
+</I>&gt;<i> users to have to run the install over again. (It's enough of a pain to
+</I>&gt;<i> run it once! :-) ) One thing I've been thinking of adding is a framework
+</I>&gt;<i> for detecting version, and being able to change the db appropriately.
+</I>
+Well, as far as I am concerned, it doesn't change anything. It only adds a 
+column as a primary key with auto increment, so adding any row with a null 
+value will work. In any case, I believe it would be good to have the tables a 
+bit normalized :-)
+
+&gt;<i>
+</I>&gt;<i> &gt; Lastly, I've noticed that all the files are indented using 3 spaces. I
+</I>&gt;<i> &gt; was wondering if it could be changed to 4 spaces as that is what most
+</I>&gt;<i> &gt; python applications are written with and definitely would make things
+</I>&gt;<i> &gt; easier for other developers :-)
+</I>&gt;<i>
+</I>&gt;<i> I don't mind switching, but I'd like a more conclusive case that most
+</I>&gt;<i> python apps are written using 4 spaces. Examples?
+</I>
+Well, trac, moin-moin and mailman to name a few. And not only that, it's a 
+python standard for the python standard library. See: 
+<A HREF="http://www.python.org/dev/peps/pep-0008/">http://www.python.org/dev/peps/pep-0008/</A>
+Indeed, it &quot;enforces&quot; 4 spaces and not using tabs.
+
+
+&gt;<i> I'm still reading through your changes, and will probably comment more
+</I>&gt;<i> later. Thanks again!
+</I>
+Cool, I'll have a look at it again tomorrow morning when I get back to the 
+office. Now time to rest. 
+Cheers.
+
+-- 
+Jes&#250;s Roncero &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">jesus at mxtelecom.com</A>&gt;
+System Developer
+Tel: +44 (0) 845 666 7778
+<A HREF="http://www.mxtelecom.com">http://www.mxtelecom.com</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000103.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+	<LI>Next message: <A HREF="000106.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#104">[ date ]</a>
+              <a href="thread.html#104">[ thread ]</a>
+              <a href="subject.html#104">[ subject ]</a>
+              <a href="author.html#104">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

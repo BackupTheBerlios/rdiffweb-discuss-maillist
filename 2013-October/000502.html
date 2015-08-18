@@ -1,0 +1,76 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Why error to recover with rdiff-web ?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2013-October/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Why%20error%20to%20recover%20with%20rdiff-web%20%3F&In-Reply-To=%3C1758349506.82166016.1382553360627.JavaMail.root%40zimbra33-e6.priv.proxad.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000501.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Why error to recover with rdiff-web ?</H1>
+    <B>sechanbask at free.fr</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Why%20error%20to%20recover%20with%20rdiff-web%20%3F&In-Reply-To=%3C1758349506.82166016.1382553360627.JavaMail.root%40zimbra33-e6.priv.proxad.net%3E"
+       TITLE="[Rdiffweb-discuss] Why error to recover with rdiff-web ?">sechanbask at free.fr
+       </A><BR>
+    <I>Wed Oct 23 20:36:00 CEST 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000501.html">[Rdiffweb-discuss] Restore fails with &quot;Invalid date parameter.&quot;
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#502">[ date ]</a>
+              <a href="thread.html#502">[ thread ]</a>
+              <a href="subject.html#502">[ subject ]</a>
+              <a href="author.html#502">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi, On my backup server, I change OS debian 6 to 7 without upgrade (I re-install OS because I have very few services). There is no problem to recover my file in command line, but with my web interface (rdiff-web), I have got an error to recover file I start to backup before changing OS : &quot;Invalid date parameter.&quot; I find the page witch send me the error, it seems to check date, but I can't find that I have to change to get it work again. <A HREF="https://indefero.systea.fr/p/rdiffwe...page_status.py">https://indefero.systea.fr/p/rdiffwe...page_status.py</A> &lt; <A HREF="https://indefero.systea.fr/p/rdiffweb/source/tree/master/rdiffWeb/page_status.py">https://indefero.systea.fr/p/rdiffweb/source/tree/master/rdiffWeb/page_status.py</A> &gt; Please, help me.
+
+Sorry about my poor english..
+
+C&#233;dric Barribaud
+
+___________________
+in french
+
+Bonjour, Je suis pass&#233; de debian 6 &#224; debian 7 sur mon serveur de sauvegarde, comme je n'avais que tr&#232;s peu de services, je n'ai pas fait d'upgrade mais une r&#233;installation compl&#232;te. Pour faire mes sauvegardes pro, j'utilise rdiff-backup. Pour faire mes r&#233;cup&#233;rations, j'utilise rdiff-web bas&#233; sur python mais je rencontre un probl&#232;me. Malgr&#233; le fait que les r&#233;cup&#233;rations en ligne de commande fonctionne sans erreur, les fichiers copi&#233;s avant ma migration ne sont pas r&#233;cup&#233;rables avec l'interface graphique qui m'indique : &quot;Invalid date parameter.&quot;
+
+J'ai trouv&#233; le fichier qui produit c'est page web suivante : <A HREF="https://indefero.systea.fr/p/rdiffwe...page_status.py">https://indefero.systea.fr/p/rdiffwe...page_status.py</A> &lt; <A HREF="https://indefero.systea.fr/p/rdiffweb/source/tree/master/rdiffWeb/page_status.py">https://indefero.systea.fr/p/rdiffweb/source/tree/master/rdiffWeb/page_status.py</A> &gt; J'aimerais savoir qu'elle sont les param&#232;tres qui font que cette page m'est envoy&#233;e, je pense qu'il fait une v&#233;rification de date entre la cr&#233;ation de la premi&#232;re archive et la date actuelle. Merci de jeter un oeil, et de tenter de me mettre sur la voie.
+
+
+C&#233;dric Barribaud
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20131023/34b216bf/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20131023/34b216bf/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000501.html">[Rdiffweb-discuss] Restore fails with &quot;Invalid date parameter.&quot;
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#502">[ date ]</a>
+              <a href="thread.html#502">[ thread ]</a>
+              <a href="subject.html#502">[ subject ]</a>
+              <a href="author.html#502">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-June/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Undefined%20Symbol%20%3A%20sqlite3_set_authorizer&In-Reply-To=%3C4A466A4D.4080805%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000271.html">
+   <LINK REL="Next"  HREF="000273.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Undefined%20Symbol%20%3A%20sqlite3_set_authorizer&In-Reply-To=%3C4A466A4D.4080805%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Sat Jun 27 20:51:57 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000271.html">[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer
+</A></li>
+        <LI>Next message: <A HREF="000273.html">[Rdiffweb-discuss] 406 Not Acceptable
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#272">[ date ]</a>
+              <a href="thread.html#272">[ thread ]</a>
+              <a href="subject.html#272">[ subject ]</a>
+              <a href="author.html#272">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Switching to cherrypy 3.0 should fix the problem.
+
+JoshN
+
+Gabriel Hahmann wrote:
+&gt;<i> Thank you very much Josh.
+</I>&gt;<i>
+</I>&gt;<i> I've tried searching around last night a little bit more and I 
+</I>&gt;<i> discovered that the problem is with the libsqlite3.so.0.8.6. The 
+</I>&gt;<i> sqlite3_set_authorizer was undefined in the library provided by netgear.
+</I>&gt;<i>
+</I>&gt;<i> The only problem is that this library is used for apache and a lot of 
+</I>&gt;<i> other applications and when I try to change the version it denies me. 
+</I>&gt;<i> I'm a little bit scaried of bricking my NAS but I want this to work.
+</I>&gt;<i>
+</I>&gt;<i> So what I've done is download the last version of this library to the 
+</I>&gt;<i> sarge distribution unpack it and substitute the file (making a backup 
+</I>&gt;<i> copy) on my NAS. It worked perfectly, but I want to play around to see 
+</I>&gt;<i> if I didnt break anything.
+</I>&gt;<i>
+</I>&gt;<i> The only problem that I have is a bug alredy mentioned in oct/2008, 
+</I>&gt;<i> that I only can run rdiffWeb if I started it in debug mode (-d). I'm 
+</I>&gt;<i> using the last version, so I dont know how to fix it.
+</I>&gt;<i>
+</I>&gt;<i> I'm getting the following error if run without -d :
+</I>&gt;<i>
+</I>&gt;<i> nas-server:~/usr/lib# rdiff-web
+</I>&gt;<i> Traceback (most recent call last):
+</I>&gt;<i>   File &quot;/usr/bin/rdiff-web&quot;, line 123, in ?
+</I>&gt;<i>     cherrypy.engine.on_stop_engine_list.append(lambda: killEvent.set())
+</I>&gt;<i> AttributeError: 'Bus' object has no attribute 'on_stop_engine_list'
+</I>&gt;<i>
+</I>&gt;<i> Are there anything else that I can do?
+</I>&gt;<i>
+</I>&gt;<i> Thanks in advance.
+</I>&gt;<i> Best regards,
+</I>&gt;<i> Gabriel.
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000271.html">[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer
+</A></li>
+	<LI>Next message: <A HREF="000273.html">[Rdiffweb-discuss] 406 Not Acceptable
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#272">[ date ]</a>
+              <a href="thread.html#272">[ thread ]</a>
+              <a href="subject.html#272">[ subject ]</a>
+              <a href="author.html#272">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

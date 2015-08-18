@@ -1,0 +1,93 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] emailing the status page to myself every day	using Lynx instead of wget
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-September/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20emailing%20the%20status%20page%20to%20myself%20every%20day%0A%09using%20Lynx%20instead%20of%20wget&In-Reply-To=%3Cbf7d8e5f0609171832j40ac22eetd6453234f835eedf%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000043.html">
+   <LINK REL="Next"  HREF="000045.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] emailing the status page to myself every day	using Lynx instead of wget</H1>
+    <B>Victor Moran</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20emailing%20the%20status%20page%20to%20myself%20every%20day%0A%09using%20Lynx%20instead%20of%20wget&In-Reply-To=%3Cbf7d8e5f0609171832j40ac22eetd6453234f835eedf%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] emailing the status page to myself every day	using Lynx instead of wget">diadian at gmail.com
+       </A><BR>
+    <I>Mon Sep 18 03:32:18 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000043.html">[Rdiffweb-discuss] disabling login
+</A></li>
+        <LI>Next message: <A HREF="000045.html">[Rdiffweb-discuss] emailing the status page to myself every day	using Lynx instead of wget
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#44">[ date ]</a>
+              <a href="thread.html#44">[ thread ]</a>
+              <a href="subject.html#44">[ subject ]</a>
+              <a href="author.html#44">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi List &amp; Josh,
+
+I've carried on trying to figure out how to get a copy of the status page
+emailed to me every day.
+This is the script that I'm using right now.
+
+[<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">root at backup-server</A> log]# lynx -accept_all_cookies -source -post_data
+<A HREF="http://localhost:8080/status/">http://localhost:8080/status/</A> &lt;&lt; EOF
+
+Once I hit enter it sits and waits for input... I give it this:
+&gt;<i> login=admin&amp;password=foobar&amp;redirect=/status/&amp;submit=submit
+</I>&gt;<i> ---
+</I>&gt;<i> EOF
+</I>
+and it then gives me this:
+&lt;html&gt;&lt;body&gt;
+   Message:
+   &lt;form method=&quot;post&quot; action=&quot;/doLogin&quot;&gt;
+     Login: &lt;input type=&quot;text&quot; name=&quot;login&quot; value=&quot;&quot; size=&quot;10&quot;/&gt;&lt;br/&gt;
+     Password: &lt;input type=&quot;password&quot; name=&quot;password&quot; size=&quot;10&quot;/&gt;&lt;br/&gt;
+     &lt;input type=&quot;hidden&quot; name=&quot;redirect&quot; value=&quot;/status/?&quot;/&gt;&lt;br/&gt;
+     &lt;input type=&quot;submit&quot; name=submit/&gt;
+     &lt;/form&gt;
+&lt;/body&gt;&lt;/html&gt;
+
+It seems that I'm not passing it the proper post data.  Can you please look
+at my post data and see if I am missing something?
+
+Thanks again,
+Victor.
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20060917/3270e942/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20060917/3270e942/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000043.html">[Rdiffweb-discuss] disabling login
+</A></li>
+	<LI>Next message: <A HREF="000045.html">[Rdiffweb-discuss] emailing the status page to myself every day	using Lynx instead of wget
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#44">[ date ]</a>
+              <a href="thread.html#44">[ thread ]</a>
+              <a href="subject.html#44">[ subject ]</a>
+              <a href="author.html#44">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

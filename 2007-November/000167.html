@@ -1,0 +1,152 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] installing rdiffweb-0.4.0 on cygwin
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-November/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20installing%20rdiffweb-0.4.0%20on%20cygwin&In-Reply-To=%3Cef36245c0711010909n48b924a4j778298f77701292f%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000168.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] installing rdiffweb-0.4.0 on cygwin</H1>
+    <B>Scott Degenhardt</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20installing%20rdiffweb-0.4.0%20on%20cygwin&In-Reply-To=%3Cef36245c0711010909n48b924a4j778298f77701292f%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] installing rdiffweb-0.4.0 on cygwin">ratm355 at gmail.com
+       </A><BR>
+    <I>Thu Nov  1 17:09:26 CET 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000168.html">[Rdiffweb-discuss] Little problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#167">[ date ]</a>
+              <a href="thread.html#167">[ thread ]</a>
+              <a href="subject.html#167">[ subject ]</a>
+              <a href="author.html#167">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi. I just had knee surgery, so it might be a while before I get to test
+this out. I'll let you know how it goes though. Thanks again.
+
+On 10/21/07, Josh Nisly &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt; wrote:
+&gt;<i>
+</I>&gt;<i> I've committed a fix that should prevent this problem. There may be
+</I>&gt;<i> plenty of other issues that come up - let us know!
+</I>&gt;<i>
+</I>&gt;<i> JoshN
+</I>&gt;<i>
+</I>&gt;<i> Scott Degenhardt wrote:
+</I>&gt;<i> &gt; No problem and thanks for helping. If you are able to change that,
+</I>&gt;<i> please
+</I>&gt;<i> &gt; let me know....I'm very interested in getting this up and running. So is
+</I>&gt;<i> my
+</I>&gt;<i> &gt; boss :). Thanks again.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; On 10/19/07, Josh Nisly &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt; wrote:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; Hmm. I'll see what I can do to fix that. We need checks right up front
+</I>&gt;<i> &gt;&gt; to see whether we can write to the configuration directory, so we
+</I>&gt;<i> should
+</I>&gt;<i> &gt;&gt; just do it in a more generic way.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Thanks for the bug report!
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; JoshN
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Scott Degenhardt wrote:
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; Hi. I'm trying to install rdiffweb on cygwin. My only snag seems to be
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt; that
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; when running the setup script it requires that the user &quot;root&quot; must
+</I>&gt;<i> run
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt; it.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; Cygwin doesn't have a root user. It just gives the administrator
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt; accounts on
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; Windows full access to everything, but when logged in it has the $
+</I>&gt;<i> sign
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt; on
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; the console instead of a #. I tried creating a user called &quot;root&quot; on
+</I>&gt;<i> the
+</I>&gt;<i> &gt;&gt;&gt; Windows server, but it didn't help when I tried installing with that
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt; &quot;root&quot;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; user. It still had the $ on the console and not the #. rdiff-backup
+</I>&gt;<i> and
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt; and
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; CherryPy installed fine so I'm pretty confident rdiffweb would work
+</I>&gt;<i> too
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt; if I
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; could get past this restriction. Any suggestions or help would be
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt; greatly
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; appreciated. Thanks.
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt; _______________________________________________
+</I>&gt;<i> &gt;&gt; Rdiffweb-discuss mailing list
+</I>&gt;<i> &gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> &gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; ------------------------------------------------------------------------
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; Rdiffweb-discuss mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20071101/5b3b00f0/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20071101/5b3b00f0/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000168.html">[Rdiffweb-discuss] Little problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#167">[ date ]</a>
+              <a href="thread.html#167">[ thread ]</a>
+              <a href="subject.html#167">[ subject ]</a>
+              <a href="author.html#167">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

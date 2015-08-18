@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Re: rdiffweb problems
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-May/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Re%3A%20rdiffweb%20problems&In-Reply-To=%3C44715FE4.9040407%40rdiffweb.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000009.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Re: rdiffweb problems</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Re%3A%20rdiffweb%20problems&In-Reply-To=%3C44715FE4.9040407%40rdiffweb.org%3E"
+       TITLE="[Rdiffweb-discuss] Re: rdiffweb problems">rdiffweb at rdiffweb.org
+       </A><BR>
+    <I>Mon May 22 08:53:24 CEST 2006</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000009.html">[Rdiffweb-discuss] Re: rdiffweb problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8">[ date ]</a>
+              <a href="thread.html#8">[ thread ]</a>
+              <a href="subject.html#8">[ subject ]</a>
+              <a href="author.html#8">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I would guess that this is caused by running a different version of 
+cherrypy (the only supported version is 2.1).  What version are you 
+running?  If you're not running 2.1, could you please try installing 
+that to see if that fixes the problem?  If it does, we can look at ways 
+of making rdiffweb work with both versions.
+
+Thanks,
+Josh Nisly
+
+roland wrote:
+&gt;<i> hello !
+</I>&gt;<i> 
+</I>&gt;<i> I`m having problems with running rdiffweb.
+</I>&gt;<i> i tried 0.3 and also the latest svn, but i get &gt;KeyError: 'username'&lt; and even the very first browser-request fails.
+</I>&gt;<i> 
+</I>&gt;<i> i really like to use a web-based frontend to rdiff-backup and rdiffweb looks promising and i would like to try it out
+</I>&gt;<i> 
+</I>&gt;<i> can you probably help ?
+</I>&gt;<i> 
+</I>&gt;<i> regards
+</I>&gt;<i> roland
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> # rdiff-web
+</I>&gt;<i> /usr/lib/python2.3/site-packages/rdiffWeb/filter_https.py:2: DeprecationWarning:
+</I>&gt;<i>  cherrypy.lib.filter has been superseded by cherrypy.filters and will be removed
+</I>&gt;<i>  in CP 2.3
+</I>&gt;<i>   from cherrypy.lib.filter.basefilter import BaseFilter
+</I>&gt;<i> 21/May/2006:02:44:33 CONFIG INFO Server parameters:
+</I>&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.environment: production
+</I>&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.log_to_screen: True
+</I>&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.log_file:
+</I>&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.log_tracebacks: True
+</I>&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.log_request_headers: False
+</I>&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.protocol_version: HTTP/1.0
+</I>&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.socket_host:
+</I>&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.socket_port: 8080
+</I>&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.socket_file:
+</I>&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.reverse_dns: False
+</I>&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.socket_queue_size: 5
+</I>&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.thread_pool: 10
+</I>&gt;<i> 21/May/2006:02:44:33 HTTP INFO Serving HTTP on <A HREF="http://localhost:8080/">http://localhost:8080/</A>
+</I>&gt;<i> 21/May/2006:02:44:38 HTTP INFO Page handler: &lt;bound method rdiffLocationsPage.in
+</I>&gt;<i> dex of &lt;rdiffWeb.page_locations.rdiffLocationsPage instance at 0x4074cdec&gt;&gt;
+</I>&gt;<i> Traceback (most recent call last):
+</I>&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;, line 105, in
+</I>&gt;<i>  _run
+</I>&gt;<i>     self.main()
+</I>&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;, line 254, in
+</I>&gt;<i>  main
+</I>&gt;<i>     body = page_handler(*virtual_path, **self.params)
+</I>&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_locations.py&quot;, line 9, in
+</I>&gt;<i>  index
+</I>&gt;<i>     page = page + self.writeTopLinks()
+</I>&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_main.py&quot;, line 65, in wri
+</I>&gt;<i> teTopLinks
+</I>&gt;<i>     if self.userDB.userIsAdmin(self.getUsername()):
+</I>&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_main.py&quot;, line 96, in get
+</I>&gt;<i> Username
+</I>&gt;<i>     username = cherrypy.session['username']
+</I>&gt;<i> KeyError: 'username'
+</I>&gt;<i> 
+</I>&gt;<i> 123.222.212.12 - - [21/May/2006:02:44:38] &quot;GET / HTTP/1.1&quot; 500 791 &quot;&quot; &quot;Mozilla/4.
+</I>&gt;<i> 0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3705)&quot;
+</I>&gt;<i> 21/May/2006:02:45:14 HTTP INFO Page handler: &lt;bound method rdiffLocationsPage.index of &lt;rdiffWeb.page_locations.rdiffLocationsPage instance at 0x4074cdec&gt;&gt;
+</I>&gt;<i> Traceback (most recent call last):
+</I>&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;, line 105, in _run
+</I>&gt;<i>     self.main()
+</I>&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;, line 254, in main
+</I>&gt;<i>     body = page_handler(*virtual_path, **self.params)
+</I>&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_locations.py&quot;, line 9, in index
+</I>&gt;<i>     page = page + self.writeTopLinks()
+</I>&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_main.py&quot;, line 65, in writeTopLinks
+</I>&gt;<i>     if self.userDB.userIsAdmin(self.getUsername()):
+</I>&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_main.py&quot;, line 96, in getUsername
+</I>&gt;<i>     username = cherrypy.session['username']
+</I>&gt;<i> KeyError: 'username'
+</I>&gt;<i> 
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000009.html">[Rdiffweb-discuss] Re: rdiffweb problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#8">[ date ]</a>
+              <a href="thread.html#8">[ thread ]</a>
+              <a href="subject.html#8">[ subject ]</a>
+              <a href="author.html#8">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

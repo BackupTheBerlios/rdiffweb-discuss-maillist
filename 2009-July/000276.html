@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-July/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Undefined%20Symbol%20%3A%20sqlite3_set_authorizer&In-Reply-To=%3Ce98d4f8c0907010835m196d7367o453332f619935d19%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000275.html">
+   <LINK REL="Next"  HREF="000277.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer</H1>
+    <B>Gabriel Hahmann</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Undefined%20Symbol%20%3A%20sqlite3_set_authorizer&In-Reply-To=%3Ce98d4f8c0907010835m196d7367o453332f619935d19%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer">gabriel.hahmann at gmail.com
+       </A><BR>
+    <I>Wed Jul  1 17:35:19 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000275.html">[Rdiffweb-discuss] 406 Not Acceptable
+</A></li>
+        <LI>Next message: <A HREF="000277.html">[Rdiffweb-discuss] permissions problem?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#276">[ date ]</a>
+              <a href="thread.html#276">[ thread ]</a>
+              <a href="subject.html#276">[ subject ]</a>
+              <a href="author.html#276">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Josh,
+
+Changing to CherryPy v 3.0 worked, but is there a way to fix this?
+
+Another issue, when I try to download a very big file, the web interface
+hangs and doesnt respond anymore, I've had to kill and start over rdiffweb
+to get it working again.
+
+Thanks in advance.
+
+Best regards,
+Gabriel.
+
+On Sat, Jun 27, 2009 at 8:51 PM, Josh Nisly &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt; wrote:
+
+&gt;<i> Switching to cherrypy 3.0 should fix the problem.
+</I>&gt;<i>
+</I>&gt;<i> JoshN
+</I>&gt;<i>
+</I>&gt;<i> Gabriel Hahmann wrote:
+</I>&gt;<i> &gt; Thank you very much Josh.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I've tried searching around last night a little bit more and I
+</I>&gt;<i> &gt; discovered that the problem is with the libsqlite3.so.0.8.6. The
+</I>&gt;<i> &gt; sqlite3_set_authorizer was undefined in the library provided by netgear.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; The only problem is that this library is used for apache and a lot of
+</I>&gt;<i> &gt; other applications and when I try to change the version it denies me.
+</I>&gt;<i> &gt; I'm a little bit scaried of bricking my NAS but I want this to work.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; So what I've done is download the last version of this library to the
+</I>&gt;<i> &gt; sarge distribution unpack it and substitute the file (making a backup
+</I>&gt;<i> &gt; copy) on my NAS. It worked perfectly, but I want to play around to see
+</I>&gt;<i> &gt; if I didnt break anything.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; The only problem that I have is a bug alredy mentioned in oct/2008,
+</I>&gt;<i> &gt; that I only can run rdiffWeb if I started it in debug mode (-d). I'm
+</I>&gt;<i> &gt; using the last version, so I dont know how to fix it.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I'm getting the following error if run without -d :
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; nas-server:~/usr/lib# rdiff-web
+</I>&gt;<i> &gt; Traceback (most recent call last):
+</I>&gt;<i> &gt;   File &quot;/usr/bin/rdiff-web&quot;, line 123, in ?
+</I>&gt;<i> &gt;     cherrypy.engine.on_stop_engine_list.append(lambda: killEvent.set())
+</I>&gt;<i> &gt; AttributeError: 'Bus' object has no attribute 'on_stop_engine_list'
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Are there anything else that I can do?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Thanks in advance.
+</I>&gt;<i> &gt; Best regards,
+</I>&gt;<i> &gt; Gabriel.
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20090701/d9dc52a4/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20090701/d9dc52a4/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000275.html">[Rdiffweb-discuss] 406 Not Acceptable
+</A></li>
+	<LI>Next message: <A HREF="000277.html">[Rdiffweb-discuss] permissions problem?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#276">[ date ]</a>
+              <a href="thread.html#276">[ thread ]</a>
+              <a href="subject.html#276">[ subject ]</a>
+              <a href="author.html#276">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

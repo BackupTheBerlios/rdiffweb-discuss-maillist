@@ -1,0 +1,109 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Noob problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Noob%20problem&In-Reply-To=%3CBAY118-DS2018B7669F53F415F5CF6EB13B0%40phx.gbl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000372.html">
+   <LINK REL="Next"  HREF="000373.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Noob problem</H1>
+    <B>David Flink</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Noob%20problem&In-Reply-To=%3CBAY118-DS2018B7669F53F415F5CF6EB13B0%40phx.gbl%3E"
+       TITLE="[Rdiffweb-discuss] Noob problem">unixrulez at hotmail.com
+       </A><BR>
+    <I>Tue Mar  2 17:47:26 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000372.html">[Rdiffweb-discuss] Problem with rdiff-web and repositories on a USBdisk
+</A></li>
+        <LI>Next message: <A HREF="000373.html">[Rdiffweb-discuss] Error is showed at repos list
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#360">[ date ]</a>
+              <a href="thread.html#360">[ thread ]</a>
+              <a href="subject.html#360">[ subject ]</a>
+              <a href="author.html#360">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Try pointing your users to the directory *above* the backup locaiton.
+so
+serverx &lt;password&gt; /home/rdiffbackup/backups
+
+Initially, that will give user &quot;serverx&quot; access to both backups if it works, but will at least show the solution with minimal effort.
+
+Change your paths to
+/home/rdiffbackup/server1/backup
+/home/rdiffbackup/server2/backup
+and adjust the users accordingly to get back your original setup.
+
+
+
+
+From: calguy1000 
+Sent: Sunday, February 21, 2010 2:28 AM
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A> 
+Subject: [Rdiffweb-discuss] Noob problem
+
+
+I have built a script that does rdiff-backups to a directory on my server, this is working great for me so far (it's backing up web servers so it needs to do things like clear logs and do a mysqldump before doing the rdiff-backup).    
+
+I've installed rdiffweb because it looks like a convenient and simple client to the rdiff-backup data to easily parse through and restore some files, and get statuses of backups... and I can monitor them from any location.... this sounds great.  The only problem is that rdiffweb is not finding my rdiff-backup directrories.  I'm using rdiffweb 0.6.3
+
+I've got backups stored in:
+/home/rdiffbackup/backups/server1 and
+/home/rdiffbackup/backups/server2
+and rdiff-backup can deal with these nicely.
+
+I added users into rdiffbackup as follows:
+server1  &lt;password&gt;  /home/rdiffbackup/backups/server1
+server2  &lt;password&gt;  /home/rdiffbackup/backups/server2
+
+when I click on the button to 'Find and Update backup locations'  or I restart the server,  and then go back to the main web page... I see no backups.
+
+So guys, what am I doing wrong?  Thanks.
+
+
+
+--------------------------------------------------------------------------------
+
+
+_______________________________________________
+Rdiffweb-discuss mailing list
+<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20100303/047562da/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20100303/047562da/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000372.html">[Rdiffweb-discuss] Problem with rdiff-web and repositories on a USBdisk
+</A></li>
+	<LI>Next message: <A HREF="000373.html">[Rdiffweb-discuss] Error is showed at repos list
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#360">[ date ]</a>
+              <a href="thread.html#360">[ thread ]</a>
+              <a href="subject.html#360">[ subject ]</a>
+              <a href="author.html#360">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

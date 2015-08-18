@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2008-December/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiffWeb%200.6.3%20and%20rdiff%202.1.1%0A%20chars_to_quote%20problem&In-Reply-To=%3Cop.umbvy6osea9agm%40unknown%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000241.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote problem</H1>
+    <B>S-Abf</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiffWeb%200.6.3%20and%20rdiff%202.1.1%0A%20chars_to_quote%20problem&In-Reply-To=%3Cop.umbvy6osea9agm%40unknown%3E"
+       TITLE="[Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote problem">S-Abf at gmx.net
+       </A><BR>
+    <I>Wed Dec 17 23:41:20 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000241.html">[Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote problem
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#242">[ date ]</a>
+              <a href="thread.html#242">[ thread ]</a>
+              <a href="subject.html#242">[ subject ]</a>
+              <a href="author.html#242">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+this problem is hard to reproduce, because there are many ways how to  
+mount a share.
+
+Depending on the configuration, rdiff-backup decides the quoting schema.  
+In my case it's:
+
+      &gt; Fatal Error: New quoting requirements!
+      &gt;
+      &gt; The quoting chars this session needs  
+'A-Z\x00-\x1f&quot;*/:&lt;&gt;?\\\\|\x7f;' do not match
+      &gt; the repository settings '^a-z0-9_ -.' listed in
+
+Since there are escaped characters in the chars_to_quote file, you can  
+grab it from here:
+<A HREF="http://88.198.44.165/chars_to_quote.gz">http://88.198.44.165/chars_to_quote.gz</A>
+
+If this chars_to_quote file is in the rdiff-backup-data folder, rdiffweb  
+will break as described earlier. If it's replaced with the old quoting  
+style ('^a-z0-9_ -.') everything is browsable again.
+
+The quoting schema 'A-Z\x00-\x1f&quot;*/:&lt;&gt;?\\\\|\x7f;' looks very strange to  
+me - so might be there's something wrong with my configuration .. however,  
+I would appreciate it very much if you would have a look a it.
+
+Nils
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000241.html">[Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote problem
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#242">[ date ]</a>
+              <a href="thread.html#242">[ thread ]</a>
+              <a href="subject.html#242">[ subject ]</a>
+              <a href="author.html#242">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

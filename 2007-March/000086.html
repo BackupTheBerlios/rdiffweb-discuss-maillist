@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] apache VirtualHost Pb with rdiffweb	/doLog{out|in}
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20apache%20VirtualHost%20Pb%20with%20rdiffweb%0A%09/doLog%7Bout%7Cin%7D&In-Reply-To=%3C45EEFCA4.2070902%40itaapy.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000085.html">
+   <LINK REL="Next"  HREF="000087.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] apache VirtualHost Pb with rdiffweb	/doLog{out|in}</H1>
+    <B>luis</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20apache%20VirtualHost%20Pb%20with%20rdiffweb%0A%09/doLog%7Bout%7Cin%7D&In-Reply-To=%3C45EEFCA4.2070902%40itaapy.com%3E"
+       TITLE="[Rdiffweb-discuss] apache VirtualHost Pb with rdiffweb	/doLog{out|in}">luis at itaapy.com
+       </A><BR>
+    <I>Wed Mar  7 18:55:48 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000085.html">[Rdiffweb-discuss] Hello
+</A></li>
+        <LI>Next message: <A HREF="000087.html">[Rdiffweb-discuss] apache VirtualHost Pb with	rdiffweb	/doLog{out|in}
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#86">[ date ]</a>
+              <a href="thread.html#86">[ thread ]</a>
+              <a href="subject.html#86">[ subject ]</a>
+              <a href="author.html#86">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello
+
+I try to setup rdiffweb behind this URL:
+   <A HREF="https://rdiff.foo.com/">https://rdiff.foo.com/</A>
+
+This &quot;almost&quot; work I can navigate my full rdiff-backups but the
+links:
+- /doLogout
+- and the login_form action /doLogin
+
+redirect me on <A HREF="http://localhost:3080/">http://localhost:3080/</A> !
+
+
+
+
+
+
+Here is my Apache2/0 VirtualHost
+
+&lt;IfDefine SSL&gt;
+   &lt;IfModule mod_ssl.c&gt;
+     &lt;VirtualHost *:443&gt;
+       ServerName rdiff.foo.com:443
+       ServerAdmin <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">luis at localhost</A>
+       SSLEngine on
+       SSLCertificateFile conf/ssl/server.crt
+       SSLCertificateKeyFile conf/ssl/server.key
+       &lt;Location /&gt;
+         AuthType Basic
+         AuthName &quot;PrivateArea&quot;
+         AuthUserFile  /etc/apache2/auth/foo.com/htaccess
+         AuthAuthoritative on
+         Require valid-user
+       &lt;/Location&gt;
+       &lt;IfModule mod_rewrite.c&gt;
+         RewriteEngine On
+         RewriteRule ^/(.*) <A HREF="http://localhost:3080/$1">http://localhost:3080/$1</A> [P]
+       &lt;/IfModule&gt;
+     &lt;/VirtualHost&gt;
+   &lt;/IfModule&gt;
+&lt;/IfDefine&gt;
+
+
+And here my rdiffweb config file.
+
+$ cat /etc/rdiffweb/rdw.conf
+ServerPort=3080
+UserDB=File
+Username=foo
+Password=xxx
+UserRoot=/
+UserRepoPaths=/var/backup/etc|/var/backup/zope29
+#UseHttps=True
+
+
+
+-- 
+Luis Belmar-Letelier
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000085.html">[Rdiffweb-discuss] Hello
+</A></li>
+	<LI>Next message: <A HREF="000087.html">[Rdiffweb-discuss] apache VirtualHost Pb with	rdiffweb	/doLog{out|in}
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#86">[ date ]</a>
+              <a href="thread.html#86">[ thread ]</a>
+              <a href="subject.html#86">[ subject ]</a>
+              <a href="author.html#86">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

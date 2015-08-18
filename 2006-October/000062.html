@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Unable to subscribe to RSS feed in thunderbird
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-October/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Unable%20to%20subscribe%20to%20RSS%20feed%20in%20thunderbird&In-Reply-To=%3C4537238E.6090009%40cs.aaue.dk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000068.html">
+   <LINK REL="Next"  HREF="000063.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Unable to subscribe to RSS feed in thunderbird</H1>
+    <B>Kristian Pedersen</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Unable%20to%20subscribe%20to%20RSS%20feed%20in%20thunderbird&In-Reply-To=%3C4537238E.6090009%40cs.aaue.dk%3E"
+       TITLE="[Rdiffweb-discuss] Unable to subscribe to RSS feed in thunderbird">kp at cs.aaue.dk
+       </A><BR>
+    <I>Thu Oct 19 09:04:46 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000068.html">[Rdiffweb-discuss] A small Patch to have file/folder	images... (rdiff: message 6 of 20)
+</A></li>
+        <LI>Next message: <A HREF="000063.html">[Rdiffweb-discuss] Unable to subscribe to RSS feed in	thunderbird
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#62">[ date ]</a>
+              <a href="thread.html#62">[ thread ]</a>
+              <a href="subject.html#62">[ subject ]</a>
+              <a href="author.html#62">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+
+I am trying to set up rdiffWeb and it seems to be running, however, I am 
+having some difficulty adding the rss-feed to my thunderbird rss client. 
+When I enter the URL in Thunderbird it immediately tells me the RSS feed 
+is invalid.
+
+When running the rdiffWeb-server in foreground it spit out the following 
+error:
+
+19/Oct/2006:09:00:10 HTTP INFO Page handler: &lt;bound method 
+rdiffStatusPage.feed of &lt;rdiffWeb.page_status.rdiffStatusPage instance 
+at 0xa79a402c&gt;&gt;
+Traceback (most recent call last):
+   File &quot;/usr/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;, 
+line 105, in _run
+     self.main()
+   File &quot;/usr/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;, 
+line 254, in main
+     body = page_handler(*virtual_path, **self.params)
+   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_status.py&quot;, line 
+61, in feed
+     userMessages = self._getRecentUserMessages()
+   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_status.py&quot;, line 
+76, in _getRecentUserMessages
+     userRepos = self.userDB.getUserRepoPaths(self.getUsername())
+   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_main.py&quot;, line 
+96, in getUsername
+     username = cherrypy.session['username']
+KeyError: 'username'
+
+130.225.197.34 - - [19/Oct/2006:09:00:10] &quot;GET /status/feed HTTP/1.1&quot; 
+500 791 &quot;&quot; &quot;Mozilla/5.0 (Windows; U; Windows NT 5.1; da; rv:1.8.0.7) 
+Gecko/20060909 Thunderbird/1.5.0.7&quot;
+
+I am guessing there is a small bug somewhere that makes the webserver 
+fail, and it returns http code 500 instead of whatever code is needed, 
+to make Thunderbird realize it need to auth over http.
+
+My server is running rdiffWeb SVN from 17th Oct., CherryPy-2.2.1 on 
+Debian stable (python 2.3).
+
+Hope you are able to assist :)
+
+Cheers,
+-- 
+Kristian Pedersen
+
+System administration
+Department of Software and Media Technology
+Aalborg University Esbjerg
+
+Office: AUE, room A215
+E-mail: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">kp at cs.aaue.dk</A>
+Phone: +45 7912 7665
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000068.html">[Rdiffweb-discuss] A small Patch to have file/folder	images... (rdiff: message 6 of 20)
+</A></li>
+	<LI>Next message: <A HREF="000063.html">[Rdiffweb-discuss] Unable to subscribe to RSS feed in	thunderbird
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#62">[ date ]</a>
+              <a href="thread.html#62">[ thread ]</a>
+              <a href="subject.html#62">[ subject ]</a>
+              <a href="author.html#62">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

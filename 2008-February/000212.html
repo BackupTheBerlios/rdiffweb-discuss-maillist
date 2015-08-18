@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] rdw Spider
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2008-February/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdw%20Spider&In-Reply-To=%3C47AC52B5.5030102%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000211.html">
+   <LINK REL="Next"  HREF="000213.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] rdw Spider</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdw%20Spider&In-Reply-To=%3C47AC52B5.5030102%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] rdw Spider">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Fri Feb  8 14:01:41 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000211.html">[Rdiffweb-discuss] rdw Spider
+</A></li>
+        <LI>Next message: <A HREF="000213.html">[Rdiffweb-discuss] rdw Spider
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#212">[ date ]</a>
+              <a href="thread.html#212">[ thread ]</a>
+              <a href="subject.html#212">[ subject ]</a>
+              <a href="author.html#212">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Right now, rdiffWeb can only update repositories at intervals, not at a 
+given time. I could add this, though. As far as when it is done, it is 
+done when the daemon is started, and then every interval after that.
+
+One thing - the spider stops traversing a directory as soon as it sees 
+that it is a repository, so the size of your repository shouldn't 
+matter, only how many files/directories you have that are inside the 
+root but not in a repository. Does this make sense?
+
+Thanks,
+JoshN
+
+Jan Hugo Prins wrote:
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> I just installed 0.6.2 on a testsystem to see if I could easilly upgrade 
+</I>&gt;<i> my old 0.3.5.1 install to 0.6.2 and everything seems to work ok, but 
+</I>&gt;<i> there is one little thing.
+</I>&gt;<i> In the past I had a cronjob that did the update of my repositories. I 
+</I>&gt;<i> know that rdiff-Web can do that internally now, but I don't want it to 
+</I>&gt;<i> do that every 1 hour, but only at 7.30 in the morning, when all the 
+</I>&gt;<i> backups are finished. Is there a way to config this? When I say, do it 
+</I>&gt;<i> every 24 hours, how do I know what time it gets done?
+</I>&gt;<i> I tried to do it from within the website when I was logged in, but that 
+</I>&gt;<i> resulted in a timeout. My repository is just to big :-)
+</I>&gt;<i>
+</I>&gt;<i> Unrecoverable error in the server.
+</I>&gt;<i> Traceback (most recent call last):
+</I>&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cpwsgi.py&quot;, line 39, in setapp
+</I>&gt;<i>     s, h, b = self.get_response()
+</I>&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cpwsgi.py&quot;, line 175, in get_response
+</I>&gt;<i>     response = self.request.run(meth, path, qs, rproto, headers, rfile)
+</I>&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cprequest.py&quot;, line 511, in run
+</I>&gt;<i>     raise cherrypy.TimeoutError()
+</I>&gt;<i> TimeoutError
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Jan Hugo Prins
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000211.html">[Rdiffweb-discuss] rdw Spider
+</A></li>
+	<LI>Next message: <A HREF="000213.html">[Rdiffweb-discuss] rdw Spider
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#212">[ date ]</a>
+              <a href="thread.html#212">[ thread ]</a>
+              <a href="subject.html#212">[ subject ]</a>
+              <a href="author.html#212">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

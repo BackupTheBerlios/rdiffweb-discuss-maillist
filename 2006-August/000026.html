@@ -1,0 +1,98 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] templating system
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-August/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20templating%20system&In-Reply-To=%3C44E34110.5020103%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000025.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] templating system</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20templating%20system&In-Reply-To=%3C44E34110.5020103%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] templating system">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Wed Aug 16 18:00:16 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000025.html">[Rdiffweb-discuss] templating system
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#26">[ date ]</a>
+              <a href="thread.html#26">[ thread ]</a>
+              <a href="subject.html#26">[ subject ]</a>
+              <a href="author.html#26">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Apologies for the slow response.
+
+The basics are as follows:
+
+^variable$ : is replaced by the contents of variable. Variable must be a 
+string.
+
+&lt;--StartDelete--&gt; &lt;--EndDelete--&gt; : deletes everything in between, 
+including markers
+
+ &lt;!--StartIncludeIf:expression--&gt;  &lt;!--EndIncludeIf:expression--&gt; : 
+deletes text in between markers if expression is false.  Always deletes 
+markers
+
+&lt;!--StartRepeat:listName--&gt;&lt;!--StartRepeat:listName--&gt; : repeats text 
+between markers for each item in listName. Items in listName should be a 
+dictionary of names to values.
+
+
+See rdiffWeb/templates/dir_listing.html and the corresponding python src 
+file, rdiffWeb/page_browse.py for an example implementation of the above.
+
+Thanks for your interest!
+Josh Nisly
+
+Daniel Tellez Saban wrote:
+&gt;<i> Hello!
+</I>&gt;<i> What's the templating system used in rdiffweb ?
+</I>&gt;<i> I want to use some features, as control sentences or others, but i don't 
+</I>&gt;<i> know the syntax ...
+</I>&gt;<i> help in advance.
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="http://bat.berlios.de/mailman/listinfo/rdiffweb-discuss">http://bat.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000025.html">[Rdiffweb-discuss] templating system
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#26">[ date ]</a>
+              <a href="thread.html#26">[ thread ]</a>
+              <a href="subject.html#26">[ subject ]</a>
+              <a href="author.html#26">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

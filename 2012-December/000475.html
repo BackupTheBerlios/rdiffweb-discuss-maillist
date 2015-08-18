@@ -1,0 +1,249 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Add column sorting
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2012-December/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Add%20column%20sorting&In-Reply-To=%3CCAJ%3Dkj5y%2BEAgXmZTMNYOR-rUWMN1cN%2BMiZqfRw3LeAivg2qojNg%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000474.html">
+   <LINK REL="Next"  HREF="000476.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Add column sorting</H1>
+    <B>Patrik Dufresne</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Add%20column%20sorting&In-Reply-To=%3CCAJ%3Dkj5y%2BEAgXmZTMNYOR-rUWMN1cN%2BMiZqfRw3LeAivg2qojNg%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] Add column sorting">ikus060 at gmail.com
+       </A><BR>
+    <I>Sun Dec  2 00:12:51 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000474.html">[Rdiffweb-discuss] Add column sorting
+</A></li>
+        <LI>Next message: <A HREF="000476.html">[Rdiffweb-discuss] Add column sorting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#475">[ date ]</a>
+              <a href="thread.html#475">[ thread ]</a>
+              <a href="subject.html#475">[ subject ]</a>
+              <a href="author.html#475">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Dominic,
+
+As I understand, their is two problems:
+1. A page with many items (over 8000) take too long to load.
+2. The sorting with many items (over 8000) take too long.
+
+Problem #1 is server related. I need to investigate the python code and
+figure where I may optimize to code to generate the page faster.
+
+Problem #2 is client related. To sort the elements, I used a jquery plugin
+using the javascript native sort function. I've benchmark it against a
+simple merge sort of my own. Their is a huge difference. i.e.: to sort
+11000 items by name, javascript sort take 12.8sec compare to 5.9sec with my
+merge sort. I will push it further by implementing a TimSort (a bit more
+complicated to implement but even faster then merge sort in many cases).
+
+So far, I'm sorting 11000items in 5sec and there are rooms for improvement.
+
+Patrik Dufresne
+
+
+On Sat, Dec 1, 2012 at 3:09 AM, Dominic Raferd &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">dominic at timedicer.co.uk</A>&gt;wrote:
+
+&gt;<i>  Hi Patrik
+</I>&gt;<i>
+</I>&gt;<i> My comments below yours
+</I>&gt;<i>
+</I>&gt;<i> Thanks and regards, Dominic
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> *TimeDicer - Windows Backup and File Recovery from Whenever&lt;<A HREF="http://www.timedicer.co.uk/">http://www.timedicer.co.uk/</A>&gt;
+</I>&gt;<i> *
+</I>&gt;<i>
+</I>&gt;<i> On 29/11/12 19:49, Patrik Dufresne wrote:
+</I>&gt;<i>
+</I>&gt;<i> Hi Dominic,
+</I>&gt;<i>
+</I>&gt;<i>  See my comment below
+</I>&gt;<i>
+</I>&gt;<i> Patrik Dufresne
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Thu, Nov 29, 2012 at 2:12 PM, Dominic Raferd &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">dominic at timedicer.co.uk</A>&gt;wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i>  Thanks Patrik I tried it now and the column sorting works well with
+</I>&gt;&gt;<i> small directory listings. But with a big listing it takes a really long
+</I>&gt;&gt;<i> time and Firefox issues several warnings about an unresponsive script
+</I>&gt;&gt;<i> (jquery.sortelements.js). In the end it finishes okay, but the first click
+</I>&gt;&gt;<i> of the 'Last Revision' column has put them into ascending date order so I
+</I>&gt;&gt;<i> then have to click again to get the more useful descending date order.
+</I>&gt;&gt;<i> Which takes a very long time again.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   I understand your point about the sorting being slow. I didn't
+</I>&gt;<i> implement the sorting function my self, and so it's possible a bubble
+</I>&gt;<i> sorting is used instead of a bipartite sort, which is faster. Still, the
+</I>&gt;<i> worst sorting implementation should be fast enough to sort 1000 items, so
+</I>&gt;<i> i'm wondering how many items do you have when the sorting take too long ?
+</I>&gt;<i> Just give me an average and I will try to reproduce it.
+</I>&gt;<i>
+</I>&gt;<i> I have 8900 items and quite a lot of history (4 years daily backups)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>  Also, I know older Firefox are slow to run JavaScript. Did you try with
+</I>&gt;<i> a recent browser: Chrome or IE7 ?
+</I>&gt;<i>
+</I>&gt;<i> I am using current Firefox with latest Sun Java, but this test was on
+</I>&gt;<i> quite a slow client machine. I've now tried some tests with Chromium too
+</I>&gt;<i> (see below).
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>   Apart from this issue I have a perception that this version is slower
+</I>&gt;&gt;<i> than regular 0.6.3 - but this may not be correct. In general rdiffweb
+</I>&gt;&gt;<i> (whichever version) gets very slow if it has to load a large directory
+</I>&gt;&gt;<i> listing. This is understandable but it would be better if it was faster, I
+</I>&gt;&gt;<i> think many users who aren't used to it would give up long before the page
+</I>&gt;&gt;<i> had loaded (it can take more than 5 minutes in my experience).
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   You are telling me a page take 5min to load?! Wow It might be a
+</I>&gt;<i> regression, even if I didn't touch the core functions. Can you give me an
+</I>&gt;<i> approximate number or metric about your repository when the page take 5min.
+</I>&gt;<i> i.e: Number of folder/file, Number of increment, repository size, Number
+</I>&gt;<i> of repositories, etc.
+</I>&gt;<i>
+</I>&gt;<i> I exaggerated a bit: on this same repository, using your 0.6.4, (8900
+</I>&gt;<i> files), the original load takes 160s/120s (Firefox/Chromium) to load and
+</I>&gt;<i> 50s/195s (Firefox/Chromium) for each column sort operation. Which makes it
+</I>&gt;<i> clear that the Java in my Firefox is much faster than the Java in my
+</I>&gt;<i> Chromium!
+</I>&gt;<i>
+</I>&gt;<i> I can't do a direct comparison with 0.6.3 because it is running on
+</I>&gt;<i> different hardware (my primary TimeDicer server whereas your updated
+</I>&gt;<i> version runs on my mirror server). Loading the same original directory from
+</I>&gt;<i> rdiffweb 0.6.3 from/to this different hardware took only 75s under Firefox,
+</I>&gt;<i> but the comparison may be meaningless.
+</I>&gt;<i>
+</I>&gt;<i> Would it be possible to arrange that the first sort on the 'Last Revision'
+</I>&gt;<i> column is in descending order, which is usually much more useful (putting
+</I>&gt;<i> the most recently-changed files at the top)? Or to give a per-user option
+</I>&gt;<i> in Preferences for the initially-presented sort order (e.g. alphabetical
+</I>&gt;<i> ascending/descending, last revision ascending/descending) - if this initial
+</I>&gt;<i> sort could be handled by the server rather than in html maybe it would be
+</I>&gt;<i> faster?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>  Give me more info and I will try to reproduce and make the loading
+</I>&gt;<i> faster.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i>  One further idea: I would prefer smaller default text with rdiffweb.
+</I>&gt;&gt;<i> The large text means that sometimes the most important stuff (version
+</I>&gt;&gt;<i> details) gets squashed over to the right-hand side of the screen (or even
+</I>&gt;&gt;<i> off it). See the attached screenshot. This is not a new problem but I think
+</I>&gt;&gt;<i> a smaller default text would help.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   The font size used is 12pt (it's the default value in most browser).
+</I>&gt;<i> Make sure you are not using a zooming function of the browser. Have a look
+</I>&gt;<i> at <A HREF="http://blog.patrikdufresne.com/2012/10/face-lift-for-rdiffweb.html">http://blog.patrikdufresne.com/2012/10/face-lift-for-rdiffweb.html</A>
+</I>&gt;<i>
+</I>&gt;<i> Yes I find this too big. If I change one line in
+</I>&gt;<i> /usr/local/lib/python2.7/dist-packages/rdiffWeb/static/main.css to alter
+</I>&gt;<i> 'font-size: 12pt;' to 'font-size: 12px;' it helps considerably.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;&gt;<i>  Thanks for your great work, it's really good to see some improvements
+</I>&gt;&gt;<i> coming to rdiffweb!
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Dominic
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On 25/11/12 02:55, Patrik Dufresne wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> @Dominic
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  Did you manage to test the new functionality? Is it working as expected?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>  Patrik Dufresne
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> On Fri, Nov 16, 2012 at 5:11 PM, Patrik Dufresne &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">ikus060 at gmail.com</A>&gt;wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> You may follow the instruction present on this page :
+</I>&gt;&gt;&gt;<i> <A HREF="https://github.com/ikus060/rdiffweb/blob/master/README.md">https://github.com/ikus060/rdiffweb/blob/master/README.md</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>  Replace the wget URL by this one :
+</I>&gt;&gt;&gt;<i> <A HREF="https://github.com/ikus060/rdiffweb/tarball/ikus060/columns-sorting.">https://github.com/ikus060/rdiffweb/tarball/ikus060/columns-sorting.</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>  I don't know if it's possible to test without install... I didn't yet
+</I>&gt;&gt;&gt;<i> have a deep look into the init script.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>   Patrik Dufresne
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> On Thu, Nov 15, 2012 at 11:15 AM, Dominic Raferd &lt;
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">dominic at timedicer.co.uk</A>&gt; wrote:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>  Hi Patrik
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> This sounds great, but I am not familiar with github. How can I try
+</I>&gt;&gt;&gt;&gt;<i> this branch version (with the column sorting), and especially how can I
+</I>&gt;&gt;&gt;&gt;<i> build it without installing it so that I can test on a production backup
+</I>&gt;&gt;&gt;&gt;<i> machine without breaking an existing rdiff-backup installation?
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Thanks for all your work
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Dominic
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> On 12/11/2012 01:34, Patrik Dufresne wrote:
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>  Hello,
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>  I've implement the column sorting using JavaScript/Jquery. The
+</I>&gt;&gt;&gt;&gt;<i> sorting column and direction is stored using html5 localStorage. The
+</I>&gt;&gt;&gt;&gt;<i> implementation is available in this branch :
+</I>&gt;&gt;&gt;&gt;<i> <A HREF="https://github.com/ikus060/rdiffweb/tree/ikus060/columns-sorting">https://github.com/ikus060/rdiffweb/tree/ikus060/columns-sorting</A>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i> Patrik Dufresne
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20121201/fba552a0/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20121201/fba552a0/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000474.html">[Rdiffweb-discuss] Add column sorting
+</A></li>
+	<LI>Next message: <A HREF="000476.html">[Rdiffweb-discuss] Add column sorting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#475">[ date ]</a>
+              <a href="thread.html#475">[ thread ]</a>
+              <a href="subject.html#475">[ subject ]</a>
+              <a href="author.html#475">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

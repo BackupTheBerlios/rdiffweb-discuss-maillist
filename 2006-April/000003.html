@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] traceback when browsing repository during first backup
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-April/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20traceback%20when%20browsing%20repository%20during%20first%20backup&In-Reply-To=%3C444095C4.3080205%40outofhanwell.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000005.html">
+   <LINK REL="Next"  HREF="000004.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] traceback when browsing repository during first backup</H1>
+    <B>Matthias Miller</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20traceback%20when%20browsing%20repository%20during%20first%20backup&In-Reply-To=%3C444095C4.3080205%40outofhanwell.com%3E"
+       TITLE="[Rdiffweb-discuss] traceback when browsing repository during first backup">rdiffweb at outofhanwell.com
+       </A><BR>
+    <I>Sat Apr 15 08:42:12 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000005.html">[Rdiffweb-discuss] publicize mailing lists
+</A></li>
+        <LI>Next message: <A HREF="000004.html">[Rdiffweb-discuss] RSS feeds for multiple accounts
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3">[ date ]</a>
+              <a href="thread.html#3">[ thread ]</a>
+              <a href="subject.html#3">[ subject ]</a>
+              <a href="author.html#3">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>When I try to browse a repository while it's being backed up for the 
+first time, I receive the following traceback:
+
+    Traceback (most recent call last):
+      File
+    &quot;/System/Library/Frameworks/Python.framework/Versions/2.3/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;,
+    line 271, in run
+        main()
+      File
+    &quot;/System/Library/Frameworks/Python.framework/Versions/2.3/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;,
+    line 502, in main
+        body = page_handler(*args, **cherrypy.request.paramMap)
+      File
+    &quot;/Users/matthiasmiller/src/rdw/trunk/rdiffWeb/page_browse.py&quot;, line
+    34, in index
+        if
+    librdiff.backupIsInProgress(joinPaths(self.userDB.getUserRoot(self.getUsername()),
+    repo)):
+      File &quot;/Users/matthiasmiller/src/rdw/trunk/rdiffWeb/librdiff.py&quot;,
+    line 349, in backupIsInProgress
+        assert mirrorMarkers
+    AssertionError
+
+Especially when I'm running large backup jobs, it would be nice to be 
+able to browse the repository to monitor its progress.
+
+-Matthias Miller
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20060415/a30679be/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20060415/a30679be/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000005.html">[Rdiffweb-discuss] publicize mailing lists
+</A></li>
+	<LI>Next message: <A HREF="000004.html">[Rdiffweb-discuss] RSS feeds for multiple accounts
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#3">[ date ]</a>
+              <a href="thread.html#3">[ thread ]</a>
+              <a href="subject.html#3">[ subject ]</a>
+              <a href="author.html#3">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Help a newb with rdiffweb
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Help%20a%20newb%20with%20rdiffweb&In-Reply-To=%3C470647C5.8080903%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000150.html">
+   <LINK REL="Next"  HREF="000152.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Help a newb with rdiffweb</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Help%20a%20newb%20with%20rdiffweb&In-Reply-To=%3C470647C5.8080903%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] Help a newb with rdiffweb">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Fri Oct  5 16:18:45 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000150.html">[Rdiffweb-discuss] Help a newb with rdiffweb
+</A></li>
+        <LI>Next message: <A HREF="000152.html">[Rdiffweb-discuss] Help a newb with rdiffweb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#151">[ date ]</a>
+              <a href="thread.html#151">[ thread ]</a>
+              <a href="subject.html#151">[ subject ]</a>
+              <a href="author.html#151">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is a bug in rdiffWeb. rdiff-backup automatically sees that NTFS 
+cannot handle filenames with colons (':'), so it escapes those, but 
+rdiffWeb is not that smart yet. I'll try to fix this ASAP, but I may not 
+have time to do it this weekend. I'll let you know as soon as I have it 
+working.
+
+JoshN
+
+Matt Thompson wrote:
+&gt;<i> Folks, I hope you can help me with this problem.  I recently got into 
+</I>&gt;<i> rdiff-backup and happened upon your app.  Since the box I'm running 
+</I>&gt;<i> rdiff-backup on is rather locked down (no mail or anything), I figured 
+</I>&gt;<i> rdiffweb would be a good way to monitor the backup locally.
+</I>&gt;<i>
+</I>&gt;<i> However, I can't seem to get it to work (I tried both the stable and 
+</I>&gt;<i> devel versions, this involves 0.4).  My configuration is as such:
+</I>&gt;<i>
+</I>&gt;<i> # cat rdw.conf
+</I>&gt;<i> UserDB=File
+</I>&gt;<i> Username=rdiffweb
+</I>&gt;<i> Password=backup
+</I>&gt;<i> UserRoot=/
+</I>&gt;<i> UserRepoPaths=/media/LaCie/LinuxBack/oxygen-home-rdiff-backup
+</I>&gt;<i>
+</I>&gt;<i> where the backup is on an external drive (NTFS-formatted, if that 
+</I>&gt;<i> matters).  I then run rdiff-web -d and go to localhost:8080.  If I try 
+</I>&gt;<i> to login with anything but the above, no go.  When I use the above 
+</I>&gt;<i> user-pass, I see:
+</I>&gt;<i>
+</I>&gt;<i> 500 Internal error
+</I>&gt;<i>
+</I>&gt;<i> The server encountered an unexpected condition which prevented it from 
+</I>&gt;<i> fulfilling the request.
+</I>&gt;<i>
+</I>&gt;<i> Page handler: &lt;bound method rdiffLocationsPage.index of 
+</I>&gt;<i> &lt;rdiffWeb.page_locations.rdiffLocationsPage instance at 0x2aaab13db320&gt;&gt;
+</I>&gt;<i> Traceback (most recent call last):
+</I>&gt;<i>    File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cphttptools.py&quot;, 
+</I>&gt;<i> line 105, in _run
+</I>&gt;<i>      self.main()
+</I>&gt;<i>    File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cphttptools.py&quot;, 
+</I>&gt;<i> line 254, in main
+</I>&gt;<i>      body = page_handler(*virtual_path, **self.params)
+</I>&gt;<i>    File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_locations.py&quot;, 
+</I>&gt;<i> line 11, in index
+</I>&gt;<i>      page = page + self.compileTemplate(&quot;repo_listing.html&quot;, 
+</I>&gt;<i> **self.getParmsForPage(self.userDB.getUserRoot(self.getUsername()), 
+</I>&gt;<i> self.userDB.getUserRepoPaths(self.getUsername())))
+</I>&gt;<i>    File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_locations.py&quot;, 
+</I>&gt;<i> line 34, in getParmsForPage
+</I>&gt;<i>      repoDate = repoHistory.date.getDisplayString()
+</I>&gt;<i> AttributeError: 'NoneType' object has no attribute 'getDisplayString'
+</I>&gt;<i>
+</I>&gt;<i> Also, in case it's important, I get this sort of error in the terminal 
+</I>&gt;<i> where rdiff-web is running:
+</I>&gt;<i>
+</I>&gt;<i> Warning: unintelligible date string! Filename: 
+</I>&gt;<i> error_log.2007-10-04T13;05847;05858-04;05800.data.gz  Filetitle: 
+</I>&gt;<i> error_log.2007-10-04T13;05847;05858-04;05800  Date String: 
+</I>&gt;<i> 2007-10-04T13;05847;05858-04;05800
+</I>&gt;<i>
+</I>&gt;<i> And now I'm stumped.
+</I>&gt;<i>
+</I>&gt;<i> Also, beyond this problem, I'd like to eventually use the RSS feed, but 
+</I>&gt;<i> do I need to use MySQL for that?  I really don't know MySQL and I'd 
+</I>&gt;<i> rather not install any new servers I don't need on this box (trying to 
+</I>&gt;<i> keep it as secure as I can).
+</I>&gt;<i>
+</I>&gt;<i> Thanks for all the help,
+</I>&gt;<i> Matt
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000150.html">[Rdiffweb-discuss] Help a newb with rdiffweb
+</A></li>
+	<LI>Next message: <A HREF="000152.html">[Rdiffweb-discuss] Help a newb with rdiffweb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#151">[ date ]</a>
+              <a href="thread.html#151">[ thread ]</a>
+              <a href="subject.html#151">[ subject ]</a>
+              <a href="author.html#151">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

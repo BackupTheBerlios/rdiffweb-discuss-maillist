@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] rdiffweb on freebsd
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiffweb%20on%20freebsd&In-Reply-To=%3C4EC6A28A.5030103%40jungers.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000435.html">
+   <LINK REL="Next"  HREF="000437.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] rdiffweb on freebsd</H1>
+    <B>Nicolas Jungers</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiffweb%20on%20freebsd&In-Reply-To=%3C4EC6A28A.5030103%40jungers.net%3E"
+       TITLE="[Rdiffweb-discuss] rdiffweb on freebsd">nicolas at jungers.net
+       </A><BR>
+    <I>Fri Nov 18 19:23:06 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000435.html">[Rdiffweb-discuss] rdiffweb on freebsd
+</A></li>
+        <LI>Next message: <A HREF="000437.html">[Rdiffweb-discuss] rdiffweb on freebsd
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#436">[ date ]</a>
+              <a href="thread.html#436">[ thread ]</a>
+              <a href="subject.html#436">[ subject ]</a>
+              <a href="author.html#436">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On 2011-11-17 22:36, Stuart Robertson wrote:
+&gt;<i> Hi Lucas, thanks for answering.
+</I>&gt;<i>
+</I>&gt;<i> What I need really are clearer step by step instructions than on the
+</I>&gt;<i> wiki. Following the wiki I don't get anywhere.
+</I>&gt;<i>
+</I>&gt;<i> I've added '-d' to line 38 of '/etc/init.d/rdiff-web' and I've created
+</I>&gt;<i> rdw.conf and added the lines about serverhost and serverport. I've added
+</I>&gt;<i> 'import base64' to '/usr/bin/rdiff-web'. Starting rdiffweb looks fine
+</I>&gt;<i> but status says it is not running:
+</I>&gt;<i>
+</I>&gt;<i>   /etc/init.d/rdiff-web start
+</I>&gt;<i> Starting rdiffWeb... done
+</I>&gt;<i> /etc/init.d/rdiff-web status
+</I>&gt;<i> rdiffWeb is not running.
+</I>&gt;<i>
+</I>&gt;<i> I have 'python26-2.6.7_1', 'py26-cherrypy-3.2.0' and
+</I>&gt;<i> 'py26-sqlite3-2.6.7_1' installed. I don't really know where to look for
+</I>&gt;<i> hints as to what is not working.
+</I>
+Well, that's easy :-)
+
+What do you have in the logs? Or what do you have on the terminal when 
+you launch the program directly
+
+ &gt; rdiff-web -d
+
+N.
+
+&gt;<i>
+</I>&gt;<i> /Stuart
+</I>&gt;<i>
+</I>&gt;<i> 2011/11/17 Lucas Burdick &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">lucas at progressive-sealing.com</A>
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">lucas at progressive-sealing.com</A>&gt;&gt;
+</I>&gt;<i>
+</I>&gt;<i>     Are you starting it in debug mode? Check the wiki.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     -----Original Message-----
+</I>&gt;<i>     *From:* Stuart Robertson [<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">s.glendinning.robertson at gmail.com</A>
+</I>&gt;<i>     &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">s.glendinning.robertson at gmail.com</A>&gt;]
+</I>&gt;<i>     *Received:* Thursday, 17 Nov 2011, 1:27am
+</I>&gt;<i>     *To:* <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i>     &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>&gt;
+</I>&gt;<i>     [<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i>     &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>&gt;]
+</I>&gt;<i>     *Subject:* [Rdiffweb-discuss] rdiffweb on freebsd
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     Dear list,
+</I>&gt;<i>
+</I>&gt;<i>     I would like to use rdiffweb on freebsd. I have a working
+</I>&gt;<i>     rdiff-backup on a freebsd 8.2 server. I've installed rdiffweb 0.6.3
+</I>&gt;<i>     on the server but cannot make it start and I cannot access the web
+</I>&gt;<i>     pages.
+</I>&gt;<i>
+</I>&gt;<i>     I'm a competent home user, no expert so any help appreciated.
+</I>&gt;<i>
+</I>&gt;<i>     /stuart
+</I>&gt;<i>
+</I>&gt;<i>     _______________________________________________
+</I>&gt;<i>     Rdiffweb-discuss mailing list
+</I>&gt;<i>     <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i>     &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>&gt;
+</I>&gt;<i>     <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000435.html">[Rdiffweb-discuss] rdiffweb on freebsd
+</A></li>
+	<LI>Next message: <A HREF="000437.html">[Rdiffweb-discuss] rdiffweb on freebsd
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#436">[ date ]</a>
+              <a href="thread.html#436">[ thread ]</a>
+              <a href="subject.html#436">[ subject ]</a>
+              <a href="author.html#436">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

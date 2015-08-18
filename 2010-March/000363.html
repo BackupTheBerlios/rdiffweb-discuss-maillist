@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Problem with rdiff-web and repositories on a	USBdisk
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2010-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Problem%20with%20rdiff-web%20and%20repositories%20on%20a%0A%09USBdisk&In-Reply-To=%3CBAY118-DS20669615B92DD3A5EB9765B1370%40phx.gbl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000362.html">
+   <LINK REL="Next"  HREF="000364.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Problem with rdiff-web and repositories on a	USBdisk</H1>
+    <B>David Flink</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Problem%20with%20rdiff-web%20and%20repositories%20on%20a%0A%09USBdisk&In-Reply-To=%3CBAY118-DS20669615B92DD3A5EB9765B1370%40phx.gbl%3E"
+       TITLE="[Rdiffweb-discuss] Problem with rdiff-web and repositories on a	USBdisk">unixrulez at hotmail.com
+       </A><BR>
+    <I>Sat Mar  6 18:35:05 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000362.html">[Rdiffweb-discuss] Problem with rdiff-web and repositories on a USBdisk
+</A></li>
+        <LI>Next message: <A HREF="000364.html">[Rdiffweb-discuss] Problem with rdiff-web and repositories on a USBdisk
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#363">[ date ]</a>
+              <a href="thread.html#363">[ thread ]</a>
+              <a href="subject.html#363">[ subject ]</a>
+              <a href="author.html#363">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello.
+
+Sorry, but I have very limited resources at the moment, so I can't tell why 
+its not working, but I do have the same problem under CygWIN.
+
+I have been able to devised a horrible quick fix. It could cause other 
+problems if you uses some rare characters in filenames. Specifically, look 
+for a file called chars_to_quote in the rdiff-backup-data directory in your 
+backup location. If you use any character in that file then this will 
+probably break something else. Caveat emptor.
+
+This fix is:
+Find the file called librdiff.py. It should be in 
+/usr/lib/python2.5/site-packages/rdiffWeb
+
+Line 138 of the file should be:
+return self.quoteRegex.sub(self.getQuotedChar, unQuotedPath)
+Replace it with:
+return unQuotedPath
+
+Please let me know whether this fixes your problem. Whoever eventually finds 
+the correct solution may find that useful.
+
+Best of luck.
+
+--------------------------------------------------
+From: &quot;RaSca&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rasca at miamammausalinux.org</A>&gt;
+Sent: Friday, March 05, 2010 4:20 PM
+To: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rasca at miamammausalinux.org</A>&gt;; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>&gt;
+Cc: &quot;David Flink&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">unixrulez at hotmail.com</A>&gt;
+Subject: Re: [Rdiffweb-discuss] Problem with rdiff-web and repositories on a 
+USBdisk
+
+&gt;<i> Il giorno Mar 02 Mar 2010 17:54:37 CET, RaSca ha scritto:
+</I>&gt;&gt;<i> Il giorno Mar 02 Mar 2010 17:42:40 CET, David Flink ha scritto:
+</I>&gt;&gt;&gt;<i> Hello.
+</I>&gt;&gt;&gt;<i> Are you running under Linux?
+</I>&gt;&gt;&gt;<i> I have seen this problem under CygWIN (using local directories too), but 
+</I>&gt;&gt;&gt;<i> have not yet resolved it.
+</I>&gt;&gt;&gt;<i> What version of rdiff-backup, rdiff-web, Python and cherrypy are you 
+</I>&gt;&gt;&gt;<i> using?
+</I>&gt;&gt;<i> Of course, I'm on Linux: Debian Lenny 5.0.4, rdiff-backup 1.2.5-1, 
+</I>&gt;&gt;<i> rdiffweb 0.6.3, python 2.5.2-3, python-cherrypy3 3.0.2-2.
+</I>&gt;&gt;<i> Is there something wrong?
+</I>&gt;<i>
+</I>&gt;<i> Hey guys any news about this problem? Should somenone help me to 
+</I>&gt;<i> understand why I receive that strange error?
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i>
+</I>&gt;<i> -- 
+</I>&gt;<i> RaSca
+</I>&gt;<i> Mia Mamma Usa Linux: Niente &#232; impossibile da capire, se lo spieghi bene!
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rasca at miamammausalinux.org</A>
+</I>&gt;<i> <A HREF="http://www.miamammausalinux.org">http://www.miamammausalinux.org</A>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i> 
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000362.html">[Rdiffweb-discuss] Problem with rdiff-web and repositories on a USBdisk
+</A></li>
+	<LI>Next message: <A HREF="000364.html">[Rdiffweb-discuss] Problem with rdiff-web and repositories on a USBdisk
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#363">[ date ]</a>
+              <a href="thread.html#363">[ thread ]</a>
+              <a href="subject.html#363">[ subject ]</a>
+              <a href="author.html#363">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

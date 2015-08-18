@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Install rdiffweb into Centos+Plesk
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Install%20rdiffweb%20into%20Centos%2BPlesk&In-Reply-To=%3CBAY118-DS764A1B2CD082F452BFDC5B15E0%40phx.gbl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000356.html">
+   <LINK REL="Next"  HREF="000345.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Install rdiffweb into Centos+Plesk</H1>
+    <B>David Flink</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Install%20rdiffweb%20into%20Centos%2BPlesk&In-Reply-To=%3CBAY118-DS764A1B2CD082F452BFDC5B15E0%40phx.gbl%3E"
+       TITLE="[Rdiffweb-discuss] Install rdiffweb into Centos+Plesk">unixrulez at hotmail.com
+       </A><BR>
+    <I>Tue Jan 26 10:42:16 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000356.html">[Rdiffweb-discuss] Install rdiffweb into Centos+Plesk
+</A></li>
+        <LI>Next message: <A HREF="000345.html">[Rdiffweb-discuss] Install rdiffweb into Centos+Plesk
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#352">[ date ]</a>
+              <a href="thread.html#352">[ thread ]</a>
+              <a href="subject.html#352">[ subject ]</a>
+              <a href="author.html#352">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello.
+
+ 
+
+This is a python-specific problem.
+
+Basically, python can't find the code for rdiff-web.
+
+ 
+
+I've not seen this in any installation before. Can you confirm that you are 
+
+a] running rdiff-web as root, 
+
+b] the rdiff-web code is where you expect it (
+/usr/lib/python2.6/site-packages/rdiffWeb )
+
+c] root has full read/write permissions there
+
+d] other programs (such as rdiff-backup) work
+
+ 
+
+Have a read through chapter 6.1.2 on
+<A HREF="http://docs.python.org/tutorial/modules.html,">http://docs.python.org/tutorial/modules.html,</A> that may also help.
+
+ 
+
+When you fix this python problem, all versions of rdiff-web should work.
+
+ 
+
+From: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss-bounces at lists.berlios.de</A>
+[mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss-bounces at lists.berlios.de</A>] On Behalf Of Chencho
+Pc-cito
+Sent: 26 January 2010 08:51
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>
+Subject: Re: [Rdiffweb-discuss] Install rdiffweb into Centos+Plesk
+
+ 
+
+0.7.0b is uploaded to the list, november or october.
+
+Thats what happens when i execute 
+
+/usr/bin/rdiff-web
+
+
+Traceback (most recent call last):
+  File &quot;/usr/bin/rdiff-web&quot;, line 20, in ?
+    import rdiffWeb.rdw_config
+ImportError: No module named rdiffWeb.rdw_config
+
+I have translated all templates in this version, but i will updated with
+lastest official to see.
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20100126/7f9a1f97/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20100126/7f9a1f97/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000356.html">[Rdiffweb-discuss] Install rdiffweb into Centos+Plesk
+</A></li>
+	<LI>Next message: <A HREF="000345.html">[Rdiffweb-discuss] Install rdiffweb into Centos+Plesk
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#352">[ date ]</a>
+              <a href="thread.html#352">[ thread ]</a>
+              <a href="subject.html#352">[ subject ]</a>
+              <a href="author.html#352">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

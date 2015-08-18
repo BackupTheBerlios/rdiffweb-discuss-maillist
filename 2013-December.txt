@@ -1,0 +1,105 @@
+From lists at rsic.de  Mon Dec  9 14:24:19 2013
+From: lists at rsic.de (=?ISO-8859-1?Q?Ren=E9_Schaffrath?=)
+Date: Mon, 09 Dec 2013 14:24:19 +0100
+Subject: [Rdiffweb-discuss] Restore fails with "Invalid date parameter."
+In-Reply-To: <BAY179-DS2051E0B65954352049EDC6B1F40@phx.gbl>
+References: <52554693.6070309@rsic.de>
+	<BAY179-DS2051E0B65954352049EDC6B1F40@phx.gbl>
+Message-ID: <52A5C483.6080403@rsic.de>
+
+Hi David,
+
+sorry for the long delay. Been busy with other projects.
+
+Yes, umlauts are used in the paths (though I believe the issue happened 
+also without Umlauts, but maybe other non-ASCII chars). This seems to 
+have fixed the issue (not heavily tested):
+
+--- /root/rdw_helpers.py.ori    2013-12-09 11:45:00.869831024 +0100
++++ /usr/local/lib/python2.7/dist-packages/rdiffWeb/rdw_helpers.py 
+2013-12-09 12:10:20.971326544 +0100
+@@ -18,7 +18,7 @@
+     return path
+
+  def joinPaths(parentPath, *args):
+-   parentPath = encodePath(parentPath)
++   #parentPath = encodePath(parentPath)
+     args = [x.lstrip("/") for x in args]
+     return os.path.join(parentPath, *args)
+
+Hope this helps.
+
+Cheers,
+Ren?
+
+Am 02.11.2013 18:14, schrieb David:
+>
+> Hello Ren?.
+>
+> Traceback seems to say something about the characters used.
+>
+> Do you use characters in your file names that aren't' found on an 
+> American keyboard?
+>
+> 0xc3 is either ? (A with ~ over it) or  part of a UTF-8 multibyte 
+> character (part of the German character set, I think)
+>
+> Good Luck.
+>
+> *From:*rdiffweb-discuss-bounces at lists.berlios.de 
+> [mailto:rdiffweb-discuss-bounces at lists.berlios.de] *On Behalf Of *Ren? 
+> Schaffrath
+> *Sent:* Wednesday, 9 October 2013 20:06
+> *To:* rdiffweb-discuss at lists.berlios.de
+> *Subject:* [Rdiffweb-discuss] Restore fails with "Invalid date parameter."
+>
+> Hi All,
+>
+> sorry for not properly replying to C?dric - I just joined the list.
+>
+> I also get this error on many files (not all). I edited 
+> page_restore.py to get a proper traceback (this is from version 0.6.3):
+>
+> 127.0.0.1 - - [09/Oct/2013:13:45:28] "GET 
+> ////restore//?repo=debian&path=/data/daten/01+Einrichtungen/01+F%C3%BCr_Alle/Warteliste/Warteliste.xlsx&date=2013-10-08T23%3A00%3A07%2B02%3A00 
+> HTTP/1.1" 200 - 
+> "http://localhost:3333/browse/?repo=debian&path=/data/daten/01+Einrichtungen/01+F%C3%BCr_Alle/Warteliste" 
+> <http://localhost:3333/browse/?repo=debian&path=/data/daten/01+Einrichtungen/01+F%C3%BCr_Alle/Warteliste> 
+> "Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0"
+> Traceback (most recent call last):
+>   File 
+> "/usr/local/lib/python2.7/dist-packages/rdiffWeb/page_restore.py", 
+> line 39, in index
+>     filePath = librdiff.restoreFileOrDir(fullPath, path, file, 
+> restoreTime, useZipFormat)
+>   File "/usr/local/lib/python2.7/dist-packages/rdiffWeb/librdiff.py", 
+> line 279, in restoreFileOrDir
+>     filePath = joinPaths(dirPath, filename)
+>   File 
+> "/usr/local/lib/python2.7/dist-packages/rdiffWeb/rdw_helpers.py", line 
+> 23, in joinPaths
+>     return os.path.join(parentPath, *args)
+>   File "/usr/lib/python2.7/posixpath.py", line 80, in join
+>     path += '/' + b
+> UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position 
+> 33: ordinal not in range(128)
+>
+>
+> Unfortunately I don't have time to look into this right now, but maybe 
+> it helps others to locate the source of the problem.
+>
+>
+> Cheers,
+> Ren?
+>
+>
+>
+> _______________________________________________
+> Rdiffweb-discuss mailing list
+> Rdiffweb-discuss at lists.berlios.de
+> https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: <https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20131209/8ef93f3b/attachment.html>
+

@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] error 500
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2008-January/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20error%20500&In-Reply-To=%3C479F4725.1060807%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000204.html">
+   <LINK REL="Next"  HREF="000203.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] error 500</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20error%20500&In-Reply-To=%3C479F4725.1060807%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] error 500">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Tue Jan 29 16:32:53 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000204.html">[Rdiffweb-discuss] error 500
+</A></li>
+        <LI>Next message: <A HREF="000203.html">[Rdiffweb-discuss] Charset issue, 406 Error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#205">[ date ]</a>
+              <a href="thread.html#205">[ thread ]</a>
+              <a href="subject.html#205">[ subject ]</a>
+              <a href="author.html#205">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This should now be fixed in the latest subversion trunk. Try it again, 
+and see if it works for you.
+
+Thanks for reporting these bugs.
+
+JoshN
+
+Christoph Langbein wrote:
+&gt;<i> New backup is working now. If I use Admin and try to save changes I get:
+</I>&gt;<i> 500 Internal Server Error
+</I>&gt;<i> The server encountered an unexpected condition which prevented it from
+</I>&gt;<i> fulfilling the request.
+</I>&gt;<i>
+</I>&gt;<i> Traceback (most recent call last):
+</I>&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cprequest.py&quot;, line 551, in respond
+</I>&gt;<i>     cherrypy.response.body = self.handler()
+</I>&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cpdispatch.py&quot;, line 24, in __call__
+</I>&gt;<i>     return self.callable(*self.args, **self.kwargs)
+</I>&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_admin.py&quot;, line 21, in index
+</I>&gt;<i>     password = cherrypy.request.params[&quot;password&quot;]
+</I>&gt;<i> KeyError: 'password'
+</I>&gt;<i>
+</I>&gt;<i> Thanks a lot for the fast response
+</I>&gt;<i> Christoph
+</I>&gt;<i>
+</I>&gt;<i> Am Montag, den 28.01.2008, 18:51 -0600 schrieb Josh Nisly:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> This is the often-reported bug with encoding non-ascii characters. I've 
+</I>&gt;&gt;<i> committed several fixes to the latest svn that should fix this problem. 
+</I>&gt;&gt;<i> Could you please test with the latest subversion code to see if it works 
+</I>&gt;&gt;<i> for you?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thanks,
+</I>&gt;&gt;<i> JoshN
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Christoph Langbein wrote:
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> Hello,
+</I>&gt;&gt;&gt;<i> I've setup rdiffWeb-0.6.1 last week using cherryPy 3.0.3 on debian etch,
+</I>&gt;&gt;&gt;<i> python2.5. two &quot;old&quot; backups used with rdiffWeb-0.3.5.1 working as
+</I>&gt;&gt;&gt;<i> expected.
+</I>&gt;&gt;&gt;<i> Now I've created a new backup and get following error when selecting it:
+</I>&gt;&gt;&gt;<i> 500 Internal Server Error
+</I>&gt;&gt;&gt;<i> The server encountered an unexpected condition which prevented it from
+</I>&gt;&gt;&gt;<i> fulfilling the request.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Traceback (most recent call last):
+</I>&gt;&gt;&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cprequest.py&quot;, line 551, in respond
+</I>&gt;&gt;&gt;<i>     cherrypy.response.body = self.handler()
+</I>&gt;&gt;&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cpdispatch.py&quot;, line 24, in __call__
+</I>&gt;&gt;&gt;<i>     return self.callable(*self.args, **self.kwargs)
+</I>&gt;&gt;&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_browse.py&quot;, line 23, in index
+</I>&gt;&gt;&gt;<i>     parms = self.getParmsForPage(self.getUserDB().getUserRoot(self.getUsername()), repo, path, restore)
+</I>&gt;&gt;&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_browse.py&quot;, line 75, in getParmsForPage
+</I>&gt;&gt;&gt;<i>     entryLink = self.buildBrowseUrl(repo, joinPaths(path, libEntry.name), False)
+</I>&gt;&gt;&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_main.py&quot;, line 15, in buildBrowseUrl
+</I>&gt;&gt;&gt;<i>     url = &quot;/browse/?repo=&quot;+rdw_helpers.encodeUrl(repo, &quot;/&quot;)+&quot;&amp;path=&quot;+rdw_helpers.encodeUrl(path, &quot;/&quot;)
+</I>&gt;&gt;&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/rdw_helpers.py&quot;, line 28, in encodeUrl
+</I>&gt;&gt;&gt;<i>     return urllib.quote_plus(url, safeChars)
+</I>&gt;&gt;&gt;<i>   File &quot;urllib.py&quot;, line 1205, in quote_plus
+</I>&gt;&gt;&gt;<i>     return quote(s, safe)
+</I>&gt;&gt;&gt;<i>   File &quot;urllib.py&quot;, line 1197, in quote
+</I>&gt;&gt;&gt;<i>     res = map(safe_map.__getitem__, s)
+</I>&gt;&gt;&gt;<i> KeyError: u'\xdf'
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> and in the admin panel, when using &quot;save changes&quot;:
+</I>&gt;&gt;&gt;<i> Traceback (most recent call last):
+</I>&gt;&gt;&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cprequest.py&quot;, line 551, in respond
+</I>&gt;&gt;&gt;<i>     cherrypy.response.body = self.handler()
+</I>&gt;&gt;&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cpdispatch.py&quot;, line 24, in __call__
+</I>&gt;&gt;&gt;<i>     return self.callable(*self.args, **self.kwargs)
+</I>&gt;&gt;&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_admin.py&quot;, line 21, in index
+</I>&gt;&gt;&gt;<i>     password = cherrypy.request.params[&quot;password&quot;]
+</I>&gt;&gt;&gt;<i> KeyError: 'password'
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Maybe some has an idea what to do?
+</I>&gt;&gt;&gt;<i> Thanks in advance
+</I>&gt;&gt;&gt;<i> Christoph
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>   
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000204.html">[Rdiffweb-discuss] error 500
+</A></li>
+	<LI>Next message: <A HREF="000203.html">[Rdiffweb-discuss] Charset issue, 406 Error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#205">[ date ]</a>
+              <a href="thread.html#205">[ thread ]</a>
+              <a href="subject.html#205">[ subject ]</a>
+              <a href="author.html#205">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

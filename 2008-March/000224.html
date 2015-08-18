@@ -1,0 +1,148 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] RdiffWeb Restoration
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2008-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20RdiffWeb%20Restoration&In-Reply-To=%3C47ECDDFA.6000104%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000223.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] RdiffWeb Restoration</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20RdiffWeb%20Restoration&In-Reply-To=%3C47ECDDFA.6000104%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] RdiffWeb Restoration">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Fri Mar 28 13:00:58 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000223.html">[Rdiffweb-discuss] RdiffWeb Restoration
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#224">[ date ]</a>
+              <a href="thread.html#224">[ thread ]</a>
+              <a href="subject.html#224">[ subject ]</a>
+              <a href="author.html#224">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The email preferences on the web interface only appear if the stmp host 
+and username have been set in the configuration file. You'll need to set 
+those before setting anything on the web interface.
+
+JoshN
+
+AJ Kertis wrote:
+&gt;<i> Josh,
+</I>&gt;<i>
+</I>&gt;<i> Thanks for the quick reply. The restore did work as you said earlier but I
+</I>&gt;<i> can't seem to find where in the preferences on the web interface for each
+</I>&gt;<i> user where it stores the email address. Would a screenshot help as to what
+</I>&gt;<i> i'm seeing? I'm running the latest 0.6.3 also. The only thing I can see for
+</I>&gt;<i> the current user is to change the password but nothing about the email
+</I>&gt;<i> address.
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i>
+</I>&gt;<i> AJ
+</I>&gt;<i>
+</I>&gt;<i> On Thu, Mar 27, 2008 at 9:35 PM, Josh Nisly &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> AJ Kertis wrote:
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> Hi,
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I have successfully setup rdiffweb to work with rdiff-backup but I have
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> a
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> few issues and wasn't sure if anyone knew a solution. I can't seem to
+</I>&gt;&gt;&gt;<i> restore a backup from the web interface. After i click on a backup and
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> then
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> restore folder it does ask me the revision I want to backup but after
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> that
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> it just sits there and eventually I have to stop it and then restart the
+</I>&gt;&gt;&gt;<i> rdiffweb daemon. Also in ps -ef there is a process but it seems it is
+</I>&gt;&gt;&gt;<i> restoring the backup to /tmp and is there a way so it will restore it to
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> the
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> actual machine that was backed up? Is this a misconfiguration in some
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> way
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> that i've done?
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> rdiffWeb restores the data to a temporary location, then zips it up and
+</I>&gt;&gt;<i> lets you download it as a zip file. If it takes a long time after you
+</I>&gt;&gt;<i> select a revision to restore to then you are probably restoring a large
+</I>&gt;&gt;<i> amount of data.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> Also, what are the parameters to set up email alerts I was
+</I>&gt;&gt;&gt;<i> on the wiki and saw the parameters for the smtp host and the from
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> address
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> but is there a parameter for where to send the emails? Any help would be
+</I>&gt;&gt;&gt;<i> great!
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> The email address to send to is located in the user settings, which are
+</I>&gt;&gt;<i> accessed via the web interface.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> If you have any other questions, don't hesitate to ask.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thanks,
+</I>&gt;&gt;<i> JoshN
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000223.html">[Rdiffweb-discuss] RdiffWeb Restoration
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#224">[ date ]</a>
+              <a href="thread.html#224">[ thread ]</a>
+              <a href="subject.html#224">[ subject ]</a>
+              <a href="author.html#224">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

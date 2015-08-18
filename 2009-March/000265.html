@@ -1,0 +1,153 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] &quot;Access is Denied&quot; in root of backup
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20%22Access%20is%20Denied%22%20in%20root%20of%20backup&In-Reply-To=%3C49CA8504.2090700%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000264.html">
+   <LINK REL="Next"  HREF="000266.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] &quot;Access is Denied&quot; in root of backup</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20%22Access%20is%20Denied%22%20in%20root%20of%20backup&In-Reply-To=%3C49CA8504.2090700%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] &quot;Access is Denied&quot; in root of backup">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Wed Mar 25 20:24:52 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000264.html">[Rdiffweb-discuss] &quot;Access is Denied&quot; in root of backup
+</A></li>
+        <LI>Next message: <A HREF="000266.html">[Rdiffweb-discuss] &quot;Access is Denied&quot; in root of backup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#265">[ date ]</a>
+              <a href="thread.html#265">[ thread ]</a>
+              <a href="subject.html#265">[ subject ]</a>
+              <a href="author.html#265">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The error is coming from rdiffWeb's path validation. For some reason, it 
+thinks that something is suspicious with the path.
+
+Try running the following command from the command line, and see what it 
+returns. If it returns something other than &quot;/mnt/backup/daily/home&quot;, 
+then something is wrong.
+
+python -c &quot;import os; print os.path.realpath('/mnt/backup/daily/home')&quot;
+
+Thanks,
+Josh Nisly
+
+Damon Timm wrote:
+&gt;<i> Hi -
+</I>&gt;<i>
+</I>&gt;<i> The backup path is: /mnt/backup/daily/home/ ... /mnt/backup/daily/ is
+</I>&gt;<i> the system mount point for the ext3 device.  home/ is not a symlink,
+</I>&gt;<i> just a directory.
+</I>&gt;<i>
+</I>&gt;<i> Thanks for your quick reply.  My only thought is that because I run
+</I>&gt;<i> the rdiff-backup as &quot;root&quot; that I can't view it ... but is odd I can
+</I>&gt;<i> view everything else above it.
+</I>&gt;<i>
+</I>&gt;<i> D
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Wed, Mar 25, 2009 at 3:01 PM, Josh Nisly &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt; wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Are there symlinks in any part of the path?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> JoshN
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Damon Timm wrote:
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> Hi everyone -
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Just started using rdiffWeb ((0.6.3)) -- it works awesome!
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> The only problem I am having is that I get an &quot;Access is Denied&quot; error
+</I>&gt;&gt;&gt;<i> whenever I view the root &quot;/&quot; of my backup.  When I view this address I
+</I>&gt;&gt;&gt;<i> get the error: <A HREF="http://localhost:8080/browse/?repo=/&amp;path=/">http://localhost:8080/browse/?repo=/&amp;path=/</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> However, if I go to any sub-directories, everything lists without a
+</I>&gt;&gt;&gt;<i> problem: <A HREF="http://localhost:8080/browse/?repo=/&amp;path=/damon/">http://localhost:8080/browse/?repo=/&amp;path=/damon/</A>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I can also download and view all the files in these sub-directories.
+</I>&gt;&gt;&gt;<i> But I can't view the root folder !
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Here is the output I see on the command line ...
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> [25/Mar/2009:14:48:05] HTTP Serving HTTP on <A HREF="http://0.0.0.0:8080/">http://0.0.0.0:8080/</A>
+</I>&gt;&gt;&gt;<i> /var/lib/python-support/python2.5/cherrypy/lib/encoding.py:197:
+</I>&gt;&gt;&gt;<i> DeprecationWarning: 'l' format requires -2147483648 &lt;= number &lt;=
+</I>&gt;&gt;&gt;<i> 2147483647
+</I>&gt;&gt;&gt;<i>   yield struct.pack(&quot;&lt;l&quot;, crc)
+</I>&gt;&gt;&gt;<i> ::ffff:192.168.0.127 - - [25/Mar/2009:14:48:11] &quot;GET / HTTP/1.1&quot; 200 527 &quot;&quot; &quot;&quot;
+</I>&gt;&gt;&gt;<i> ::ffff:192.168.0.127 - - [25/Mar/2009:14:48:19] &quot;POST /login HTTP/1.1&quot;
+</I>&gt;&gt;&gt;<i> 303 87 &quot;&quot; &quot;&quot;
+</I>&gt;&gt;&gt;<i> ::ffff:192.168.0.127 - - [25/Mar/2009:14:48:19] &quot;GET / HTTP/1.1&quot; 200 511 &quot;&quot; &quot;&quot;
+</I>&gt;&gt;&gt;<i> ::ffff:192.168.0.127 - - [25/Mar/2009:14:48:24] &quot;GET
+</I>&gt;&gt;&gt;<i> /browse/?repo=/&amp;path=/ HTTP/1.1&quot; 200 308 &quot;&quot; &quot;&quot;
+</I>&gt;&gt;&gt;<i> ::ffff:192.168.0.127 - - [25/Mar/2009:14:48:33] &quot;GET
+</I>&gt;&gt;&gt;<i> /browse/?repo=/&amp;path=/damon/ HTTP/1.1&quot; 200 1547 &quot;&quot; &quot;&quot;
+</I>&gt;&gt;&gt;<i> [25/Mar/2009:14:50:59] ENGINE &lt;Ctrl-C&gt; hit: shutting down app engine
+</I>&gt;&gt;&gt;<i> [25/Mar/2009:14:50:59] HTTP HTTP Server shut down
+</I>&gt;&gt;&gt;<i> [25/Mar/2009:14:50:59] ENGINE CherryPy shut down
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Here are the permissions of the backup folder:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> drwxr-xr-x 13 root  root  4096 2009-03-24 17:05 .
+</I>&gt;&gt;&gt;<i> drwxr-xr-x  5 root  root  4096 2009-03-24 06:52 ..
+</I>&gt;&gt;&gt;<i> drwxr-xr-x  2 root  root  4096 2009-03-24 17:05 .AppleDB
+</I>&gt;&gt;&gt;<i> drwxr-xr-x 25 damon damon 4096 2009-03-24 20:40 damon
+</I>&gt;&gt;&gt;<i> drwx------  2 root  root  4096 2009-02-12 14:40 lost+found
+</I>&gt;&gt;&gt;<i> drwxrwsr-x  7 root  tps   4096 2009-03-09 14:02 media
+</I>&gt;&gt;&gt;<i> drwx------  3 root  root  4096 2009-03-24 22:13 rdiff-backup-data
+</I>&gt;&gt;&gt;<i> drwxrwsr-x 11 damon tps   4096 2009-03-08 19:17 rlshow
+</I>&gt;&gt;&gt;<i> drwxr-xr-x 21 rosa  rosa  4096 2009-03-01 11:33 rosa
+</I>&gt;&gt;&gt;<i> drwxrwsr-x 15 root  tps   4096 2009-03-22 16:17 tps
+</I>&gt;&gt;&gt;<i> drwxrwxrwt  4 root  root  4096 2009-03-04 16:01 .vmware
+</I>&gt;&gt;&gt;<i> drwxrwsr-x  5 root  tps   4096 2009-03-22 07:30 www
+</I>&gt;&gt;&gt;<i> drwxrwxr-x 16 damon tps   4096 2009-03-21 18:24 www-orig
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Any ideas ?
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Thanks!
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Damon
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000264.html">[Rdiffweb-discuss] &quot;Access is Denied&quot; in root of backup
+</A></li>
+	<LI>Next message: <A HREF="000266.html">[Rdiffweb-discuss] &quot;Access is Denied&quot; in root of backup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#265">[ date ]</a>
+              <a href="thread.html#265">[ thread ]</a>
+              <a href="subject.html#265">[ subject ]</a>
+              <a href="author.html#265">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

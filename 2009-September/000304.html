@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] CherryPy and rdiff-web
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20CherryPy%20and%20rdiff-web&In-Reply-To=%3C7440b4f30909291205q4db96576x513bb2091bc7e7f6%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000303.html">
+   <LINK REL="Next"  HREF="000305.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] CherryPy and rdiff-web</H1>
+    <B>Chencho Pc-cito</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20CherryPy%20and%20rdiff-web&In-Reply-To=%3C7440b4f30909291205q4db96576x513bb2091bc7e7f6%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] CherryPy and rdiff-web">chencho.cs at gmail.com
+       </A><BR>
+    <I>Tue Sep 29 21:05:12 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000303.html">[Rdiffweb-discuss] Problems running the svn version
+</A></li>
+        <LI>Next message: <A HREF="000305.html">[Rdiffweb-discuss] CherryPy and rdiff-web
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#304">[ date ]</a>
+              <a href="thread.html#304">[ thread ]</a>
+              <a href="subject.html#304">[ subject ]</a>
+              <a href="author.html#304">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all.
+
+i'm trying to install rdiff-web but i cant do it.
+
+It seems that i had a problem with cherrypy.
+
+After read this mail list, i make some changes into my system:
+
+1) remove all Cherrypy manual installations (3.0.0 and 3.1.2) from
+/usr/local/lib/python2.6/dist-packages/
+2) install python-cherrypy3 from apt
+
+Then, if i execute rdiff-web y had this:
+
+&gt;<i> /var/lib/python-support/python2.6/cherrypy/_cperror.py:150:
+</I>DeprecationWarning: BaseException.message has been deprecated as of Python
+2.6
+&gt;<i>   self.message = message
+</I>&gt;<i> /var/lib/python-support/python2.6/cherrypy/lib/cptools.py:3:
+</I>DeprecationWarning: the md5 module is deprecated; use hashlib instead
+&gt;<i>   import md5
+</I>&gt;<i> /var/lib/python-support/python2.6/cherrypy/lib/sessions.py:16:
+</I>DeprecationWarning: the sha module is deprecated; use the hashlib module
+instead
+&gt;<i>   import sha
+</I>&gt;<i> Exception in thread CPHTTPServer Thread-3:
+</I>&gt;<i> Traceback (most recent call last):
+</I>&gt;<i>   File &quot;/usr/lib/python2.6/threading.py&quot;, line 525, in __bootstrap_inner
+</I>&gt;<i>     self.run()
+</I>&gt;<i>   File &quot;/usr/lib/python2.6/threading.py&quot;, line 477, in run
+</I>&gt;<i>     self.__target(*self.__args, **self.__kwargs)
+</I>&gt;<i>   File &quot;/var/lib/python-support/python2.6/cherrypy/_cpserver.py&quot;, line
+</I>126, in _start_http_thread
+&gt;<i>     httpserver.start()
+</I>&gt;<i>   File
+</I>&quot;/var/lib/python-support/python2.6/cherrypy/wsgiserver/__init__.py&quot;, line
+851, in start
+&gt;<i>     raise socket.error, msg
+</I>&gt;<i> error: [Errno 98] Address already in use
+</I>
+Debug show the same error.
+
+Also, in the installation guide shows:
+
+python -c &quot;from pysqlite2 import test;test.test()&quot;
+
+But i had a error:
+
+
+&gt;<i> Traceback (most recent call last):
+</I>&gt;<i>   File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+</I>&gt;<i> ImportError: cannot import name test
+</I>
+I install python-pysqlite2 libsqlite3-dev without errors messages
+
+Thank in advance
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20090929/896013a9/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20090929/896013a9/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000303.html">[Rdiffweb-discuss] Problems running the svn version
+</A></li>
+	<LI>Next message: <A HREF="000305.html">[Rdiffweb-discuss] CherryPy and rdiff-web
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#304">[ date ]</a>
+              <a href="thread.html#304">[ thread ]</a>
+              <a href="subject.html#304">[ subject ]</a>
+              <a href="author.html#304">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

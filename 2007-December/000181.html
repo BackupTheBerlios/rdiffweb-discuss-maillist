@@ -1,0 +1,110 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] entryTime not defined
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-December/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20entryTime%20not%20defined&In-Reply-To=%3C47560EB6.8040003%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000180.html">
+   <LINK REL="Next"  HREF="000182.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] entryTime not defined</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20entryTime%20not%20defined&In-Reply-To=%3C47560EB6.8040003%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] entryTime not defined">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Wed Dec  5 03:36:38 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000180.html">[Rdiffweb-discuss] entryTime not defined
+</A></li>
+        <LI>Next message: <A HREF="000182.html">[Rdiffweb-discuss] Please test current SVN code (inconsistent paths)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#181">[ date ]</a>
+              <a href="thread.html#181">[ thread ]</a>
+              <a href="subject.html#181">[ subject ]</a>
+              <a href="author.html#181">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Could you please try this with the current subversion code? I think that 
+this is fixed in the soon-to-be-released version, but I'd like to 
+confirm before releasing.
+
+Thanks,
+JoshN
+
+Marcel Hild wrote:
+&gt;<i> -----BEGIN PGP SIGNED MESSAGE-----
+</I>&gt;<i> Hash: SHA1
+</I>&gt;<i>
+</I>&gt;<i> I just installed the latest rpm (0.4)
+</I>&gt;<i> when browsing to a backup status (e.g. <A HREF="http://smeik:8080/status/entry?repo=&amp;date=2007-12-02T01%3A00%3A06%2B01%3A00">http://smeik:8080/status/entry?repo=&amp;date=2007-12-02T01%3A00%3A06%2B01%3A00</A>)
+</I>&gt;<i> I get the following error:
+</I>&gt;<i>
+</I>&gt;<i> 02/Dec/2007:11:40:47 HTTP INFO Page handler: &lt;bound method rdiffStatusPage.entry of &lt;rdiffWeb.page_status.rdiffStatusPage instance at 0xb797b64c&gt;&gt;
+</I>&gt;<i> Traceback (most recent call last):
+</I>&gt;<i>   File &quot;/var/lib/python-support/python2.5/cherrypy/_cphttptools.py&quot;, line 105, in _run
+</I>&gt;<i>     self.main()
+</I>&gt;<i>   File &quot;/var/lib/python-support/python2.5/cherrypy/_cphttptools.py&quot;, line 254, in main
+</I>&gt;<i>     body = page_handler(*virtual_path, **self.params)
+</I>&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_status.py&quot;, line 23, in entry
+</I>&gt;<i>     userMessages = self._getUserMessagesForDay(date)
+</I>&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_status.py&quot;, line 84, in _getUserMessagesForDay
+</I>&gt;<i>     startTime.timeInSeconds = entryTime.timeInSeconds
+</I>&gt;<i> NameError: global name 'entryTime' is not defined
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> earlier in this python file entryTime is protected by a try/except block. Maybe we need this here too?
+</I>&gt;<i>
+</I>&gt;<i> cheers
+</I>&gt;<i> marcel
+</I>&gt;<i> -----BEGIN PGP SIGNATURE-----
+</I>&gt;<i> Version: GnuPG v1.4.6 (GNU/Linux)
+</I>&gt;<i> Comment: Using GnuPG with Mozilla - <A HREF="http://enigmail.mozdev.org">http://enigmail.mozdev.org</A>
+</I>&gt;<i>
+</I>&gt;<i> iD8DBQFHUoy4EhnfFAtpDHURAhDTAJ9cLGgDu8oB420atL9jqa/a2cCXlgCfe8Nn
+</I>&gt;<i> fkWS9UY/rAiLR0hza+P9Kgc=
+</I>&gt;<i> =x3aM
+</I>&gt;<i> -----END PGP SIGNATURE-----
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000180.html">[Rdiffweb-discuss] entryTime not defined
+</A></li>
+	<LI>Next message: <A HREF="000182.html">[Rdiffweb-discuss] Please test current SVN code (inconsistent paths)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#181">[ date ]</a>
+              <a href="thread.html#181">[ thread ]</a>
+              <a href="subject.html#181">[ subject ]</a>
+              <a href="author.html#181">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] rdiffWeb installation question regarding	sqlite
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2010-October/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiffWeb%20installation%20question%20regarding%0A%09sqlite&In-Reply-To=%3C4CC6746A.2030702%40timedicer.co.uk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000389.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] rdiffWeb installation question regarding	sqlite</H1>
+    <B>Dominic Raferd</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiffWeb%20installation%20question%20regarding%0A%09sqlite&In-Reply-To=%3C4CC6746A.2030702%40timedicer.co.uk%3E"
+       TITLE="[Rdiffweb-discuss] rdiffWeb installation question regarding	sqlite">dominic at timedicer.co.uk
+       </A><BR>
+    <I>Tue Oct 26 08:25:46 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000389.html">[Rdiffweb-discuss] rdiffWeb installation question regarding sqlite
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#390">[ date ]</a>
+              <a href="thread.html#390">[ thread ]</a>
+              <a href="subject.html#390">[ subject ]</a>
+              <a href="author.html#390">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Your question is quite reasonable, the installation instructions for 
+rdiffWeb are not clear, to say the least.
+
+The attached install-rdiffweb.sh script should work as an all-in-one 
+download/install/configure for rdiffWeb under Ubuntu including 10.10 
+(derived from my TimeDicer-server-setup.sh). Note that if you have an 
+existing rdiffweb installation it will overwrite the configuration.
+
+Dominic
+
+
+
+On 26/10/10 02:12, Tom Gederberg wrote:
+&gt;<i> Sorry for a real newbie question, but I am trying to get install 
+</I>&gt;<i> rdiffWeb and using the installation instructions on the website, I am 
+</I>&gt;<i> installing sqlite2 as shown below:
+</I>&gt;<i>
+</I>&gt;<i> $ sudo apt-get install python-pysqlite2 libsqlite3-dev
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> The website says that to test the installation:
+</I>&gt;<i>
+</I>&gt;<i> $ python -c &#8220;from pysqlite2 import test;test.test()&#8221;
+</I>&gt;<i>
+</I>&gt;<i> and you should see dots and dashes and a message that a load of tests 
+</I>&gt;<i> ran. However, I am getting the following:
+</I>&gt;<i>
+</I>&gt;<i> Traceback (most recent call last):
+</I>&gt;<i>
+</I>&gt;<i> File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+</I>&gt;<i>
+</I>&gt;<i> ImportError: cannot import name test
+</I>&gt;<i>
+</I>&gt;<i> I have Python 2.6.6 installed and am running Ubuntu 10.10.
+</I>&gt;<i>
+</I>&gt;<i> Thanks
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: install-rdiffweb.sh
+Type: application/x-sh
+Size: 1867 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20101026/13664d34/attachment.sh">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20101026/13664d34/attachment.sh</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000389.html">[Rdiffweb-discuss] rdiffWeb installation question regarding sqlite
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#390">[ date ]</a>
+              <a href="thread.html#390">[ thread ]</a>
+              <a href="subject.html#390">[ subject ]</a>
+              <a href="author.html#390">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Bug in svn (typo)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-January/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Bug%20in%20svn%20%28typo%29&In-Reply-To=%3C047DE086-35D1-4D5D-B710-617D16C55C6E%40users.sourceforge.net%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000253.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Bug in svn (typo)</H1>
+    <B>Masseboeuf Mathieu</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Bug%20in%20svn%20%28typo%29&In-Reply-To=%3C047DE086-35D1-4D5D-B710-617D16C55C6E%40users.sourceforge.net%3E"
+       TITLE="[Rdiffweb-discuss] Bug in svn (typo)">mathieuma at users.sourceforge.net
+       </A><BR>
+    <I>Sat Jan 31 23:53:07 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000253.html">[Rdiffweb-discuss] cannot send email notifications
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#255">[ date ]</a>
+              <a href="thread.html#255">[ thread ]</a>
+              <a href="subject.html#255">[ subject ]</a>
+              <a href="author.html#255">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+
+I just tried rdiff-backup - and checked out the latest SVN version.
+One of the reasons being a nice debian package, plus some multi-user  
+ease without a fat db.
+
+There is a bug in the database schema when installing, there is an  
+extra ')' :
+   File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/db_sqlite.py&quot;, line  
+218, in _migrateExistingData
+     cursor.execute(statement)
+sqlite3.OperationalError: near &quot;,&quot;: syntax error
+
+
+Thanks,
+--
+Palpix - <A HREF="http://palpix.com">http://palpix.com</A>
+Mathieu - Directeur Technique
+
+
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000253.html">[Rdiffweb-discuss] cannot send email notifications
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#255">[ date ]</a>
+              <a href="thread.html#255">[ thread ]</a>
+              <a href="subject.html#255">[ subject ]</a>
+              <a href="author.html#255">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

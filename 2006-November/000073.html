@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] User is Admin
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-November/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20User%20is%20Admin&In-Reply-To=%3C45625E71.1080004%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000072.html">
+   <LINK REL="Next"  HREF="000076.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] User is Admin</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20User%20is%20Admin&In-Reply-To=%3C45625E71.1080004%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] User is Admin">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Tue Nov 21 03:03:29 CET 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000072.html">[Rdiffweb-discuss] User is Admin
+</A></li>
+        <LI>Next message: <A HREF="000076.html">[Rdiffweb-discuss] skinning
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#73">[ date ]</a>
+              <a href="thread.html#73">[ thread ]</a>
+              <a href="subject.html#73">[ subject ]</a>
+              <a href="author.html#73">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Yes, this is definitely a bug. You're welcome to submit a bug report 
+and/or patch on the berlios.de tracker. :-)
+
+I've been wanting to rewrite the admin functionality for some time. 
+Things that would be nice to accomplish:
+* Allowing users to change their own passwords
+* Allowing users to update their list of repositories (i.e. spider for 
+new ones.)
+* Allowing users to administrate their root folders, for example add 
+sub-users, and those sub-users could add sub-sub-users, etc. This could 
+be useful for when administers back up a server that contains multiple 
+home directories, and want users to be able to restore files from their 
+home folders, without having access to the whole backup.
+* Providing a nice gui in general. The current admin interface is horrible.
+
+Any thoughts on this? Anybody? Particularly the point about allowing 
+sub-users...
+
+JoshN
+
+Jan Hugo Prins wrote:
+&gt;<i> Hi, I found something funny,
+</I>&gt;<i>
+</I>&gt;<i> I use a MySQL backend for Rdiff-Web and when I create a regular user and 
+</I>&gt;<i> don't select the &quot;user is admin&quot; checkbox there is a perfect 0 in the 
+</I>&gt;<i> database.
+</I>&gt;<i>
+</I>&gt;<i> But when I go to the management interface and do a &quot;edit user&quot; on this 
+</I>&gt;<i> user. The checkbox &quot;User is Admin&quot; is suddenly selected. So this status 
+</I>&gt;<i> is not properly retrieved from the database. When I then press the &quot;Edit 
+</I>&gt;<i> User&quot; button the user is indeed changed into a admin user. For a user 
+</I>&gt;<i> that is admin, this checkbox is also selected and this user stays admin 
+</I>&gt;<i> pressing the button.
+</I>&gt;<i>
+</I>&gt;<i> I have not upgraded to the latest version yet so this could be recently 
+</I>&gt;<i> fixed but I don't expect so because there is nothing about this in the 
+</I>&gt;<i> changelogs.
+</I>&gt;<i>
+</I>&gt;<i> Greetings,
+</I>&gt;<i> Jan Hugo Prins
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000072.html">[Rdiffweb-discuss] User is Admin
+</A></li>
+	<LI>Next message: <A HREF="000076.html">[Rdiffweb-discuss] skinning
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#73">[ date ]</a>
+              <a href="thread.html#73">[ thread ]</a>
+              <a href="subject.html#73">[ subject ]</a>
+              <a href="author.html#73">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

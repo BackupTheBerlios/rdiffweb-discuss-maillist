@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] &quot;Access is Denied&quot; in root of backup
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20%22Access%20is%20Denied%22%20in%20root%20of%20backup&In-Reply-To=%3C262679b50903251153v17dcb4a7i44350892cbfa71ce%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000261.html">
+   <LINK REL="Next"  HREF="000263.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] &quot;Access is Denied&quot; in root of backup</H1>
+    <B>Damon Timm</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20%22Access%20is%20Denied%22%20in%20root%20of%20backup&In-Reply-To=%3C262679b50903251153v17dcb4a7i44350892cbfa71ce%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] &quot;Access is Denied&quot; in root of backup">damontimm at gmail.com
+       </A><BR>
+    <I>Wed Mar 25 19:53:09 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000261.html">[Rdiffweb-discuss] Rdiff web 0.6.3 and cherrypy error
+</A></li>
+        <LI>Next message: <A HREF="000263.html">[Rdiffweb-discuss] &quot;Access is Denied&quot; in root of backup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#262">[ date ]</a>
+              <a href="thread.html#262">[ thread ]</a>
+              <a href="subject.html#262">[ subject ]</a>
+              <a href="author.html#262">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi everyone -
+
+Just started using rdiffWeb ((0.6.3)) -- it works awesome!
+
+The only problem I am having is that I get an &quot;Access is Denied&quot; error
+whenever I view the root &quot;/&quot; of my backup.  When I view this address I
+get the error: <A HREF="http://localhost:8080/browse/?repo=/&amp;path=/">http://localhost:8080/browse/?repo=/&amp;path=/</A>
+
+However, if I go to any sub-directories, everything lists without a
+problem: <A HREF="http://localhost:8080/browse/?repo=/&amp;path=/damon/">http://localhost:8080/browse/?repo=/&amp;path=/damon/</A>
+
+I can also download and view all the files in these sub-directories.
+But I can't view the root folder !
+
+Here is the output I see on the command line ...
+
+[25/Mar/2009:14:48:05] HTTP Serving HTTP on <A HREF="http://0.0.0.0:8080/">http://0.0.0.0:8080/</A>
+/var/lib/python-support/python2.5/cherrypy/lib/encoding.py:197:
+DeprecationWarning: 'l' format requires -2147483648 &lt;= number &lt;=
+2147483647
+  yield struct.pack(&quot;&lt;l&quot;, crc)
+::<i>ffff:192.168.0.127 - - [25/Mar/2009:14:48:11] &quot;GET / HTTP/1.1&quot; 200 527 &quot;&quot; &quot;&quot;
+</I>::<i>ffff:192.168.0.127 - - [25/Mar/2009:14:48:19] &quot;POST /login HTTP/1.1&quot;
+</I>303 87 &quot;&quot; &quot;&quot;
+::<i>ffff:192.168.0.127 - - [25/Mar/2009:14:48:19] &quot;GET / HTTP/1.1&quot; 200 511 &quot;&quot; &quot;&quot;
+</I>::<i>ffff:192.168.0.127 - - [25/Mar/2009:14:48:24] &quot;GET
+</I>/browse/?repo=/&amp;path=/ HTTP/1.1&quot; 200 308 &quot;&quot; &quot;&quot;
+::<i>ffff:192.168.0.127 - - [25/Mar/2009:14:48:33] &quot;GET
+</I>/browse/?repo=/&amp;path=/damon/ HTTP/1.1&quot; 200 1547 &quot;&quot; &quot;&quot;
+[25/Mar/2009:14:50:59] ENGINE &lt;Ctrl-C&gt; hit: shutting down app engine
+[25/Mar/2009:14:50:59] HTTP HTTP Server shut down
+[25/Mar/2009:14:50:59] ENGINE CherryPy shut down
+
+Here are the permissions of the backup folder:
+
+drwxr-xr-x 13 root  root  4096 2009-03-24 17:05 .
+drwxr-xr-x  5 root  root  4096 2009-03-24 06:52 ..
+drwxr-xr-x  2 root  root  4096 2009-03-24 17:05 .AppleDB
+drwxr-xr-x 25 damon damon 4096 2009-03-24 20:40 damon
+drwx------  2 root  root  4096 2009-02-12 14:40 lost+found
+drwxrwsr-x  7 root  tps   4096 2009-03-09 14:02 media
+drwx------  3 root  root  4096 2009-03-24 22:13 rdiff-backup-data
+drwxrwsr-x 11 damon tps   4096 2009-03-08 19:17 rlshow
+drwxr-xr-x 21 rosa  rosa  4096 2009-03-01 11:33 rosa
+drwxrwsr-x 15 root  tps   4096 2009-03-22 16:17 tps
+drwxrwxrwt  4 root  root  4096 2009-03-04 16:01 .vmware
+drwxrwsr-x  5 root  tps   4096 2009-03-22 07:30 www
+drwxrwxr-x 16 damon tps   4096 2009-03-21 18:24 www-orig
+
+Any ideas ?
+
+Thanks!
+
+Damon
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000261.html">[Rdiffweb-discuss] Rdiff web 0.6.3 and cherrypy error
+</A></li>
+	<LI>Next message: <A HREF="000263.html">[Rdiffweb-discuss] &quot;Access is Denied&quot; in root of backup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#262">[ date ]</a>
+              <a href="thread.html#262">[ thread ]</a>
+              <a href="subject.html#262">[ subject ]</a>
+              <a href="author.html#262">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

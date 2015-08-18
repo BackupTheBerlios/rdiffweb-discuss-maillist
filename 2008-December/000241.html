@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote problem
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2008-December/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiffWeb%200.6.3%20and%20rdiff%202.1.1%0A%20chars_to_quote%20problem&In-Reply-To=%3C49482DCE.9000603%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000240.html">
+   <LINK REL="Next"  HREF="000242.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote problem</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiffWeb%200.6.3%20and%20rdiff%202.1.1%0A%20chars_to_quote%20problem&In-Reply-To=%3C49482DCE.9000603%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote problem">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Tue Dec 16 23:38:06 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000240.html">[Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote	problem
+</A></li>
+        <LI>Next message: <A HREF="000242.html">[Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#241">[ date ]</a>
+              <a href="thread.html#241">[ thread ]</a>
+              <a href="subject.html#241">[ subject ]</a>
+              <a href="author.html#241">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>This is almost certainly a bug in rdiffWeb, but I can't duplicate it. 
+Can you send me a test repository that shows the problem?
+
+Thanks,
+JoshN
+
+S-Abf wrote:
+&gt;<i> Hello
+</I>&gt;<i>
+</I>&gt;<i> I have multiple rdiff backup 'locations', created with rdiff-backup  
+</I>&gt;<i> 1.1.5-4 (Debian Etch), and rdiffWeb 0.6.3 was working perfectly.
+</I>&gt;<i>
+</I>&gt;<i> The backups are on a NAS box, mounted via smbfs (case-insensitive).
+</I>&gt;<i>
+</I>&gt;<i> Because of smb compatibility I upgraded rdiff-backup to 1.2.1-1  
+</I>&gt;<i> (Etch-Backport). On the next backup over the existing folders,  
+</I>&gt;<i> rdiff-backup upgraded to the new quoting style.
+</I>&gt;<i>
+</I>&gt;<i>  From then on, the upgraded backup locations show up with a size of 0 Byte  
+</I>&gt;<i> (Last Backup Size), and only the root folder of that backup is accessible  
+</I>&gt;<i> over the browser. If I try to go deeper, rdiffWeb says &quot;The backup  
+</I>&gt;<i> location does not exist.&quot;.
+</I>&gt;<i>
+</I>&gt;<i> This occurs even with completely new created backup locations on that  
+</I>&gt;<i> drive.
+</I>&gt;<i>
+</I>&gt;<i> However, I can fix it if I revert the &quot;chars_to_quote&quot; file in  
+</I>&gt;<i> rdiff-backup data folder to the previous version (from 'A-Z-&quot;*/:&lt;&gt;?\\|;'  
+</I>&gt;<i> to '^A-Za-z0-9_ -.'). If I do so, the backup can be browsed again, but I  
+</I>&gt;<i> believe any further backups/restores will fail - so I need anonther  
+</I>&gt;<i> solution for this or I have to go back to rdiff-backup 1.1.5.
+</I>&gt;<i>
+</I>&gt;<i> Thanks in advance for any hints on this issue ..
+</I>&gt;<i>
+</I>&gt;<i> Nils
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000240.html">[Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote	problem
+</A></li>
+	<LI>Next message: <A HREF="000242.html">[Rdiffweb-discuss] rdiffWeb 0.6.3 and rdiff 2.1.1 chars_to_quote problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#241">[ date ]</a>
+              <a href="thread.html#241">[ thread ]</a>
+              <a href="subject.html#241">[ subject ]</a>
+              <a href="author.html#241">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

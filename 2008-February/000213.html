@@ -1,0 +1,130 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] rdw Spider
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2008-February/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdw%20Spider&In-Reply-To=%3C47AC7CEF.9020700%40jhprins.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000212.html">
+   <LINK REL="Next"  HREF="000214.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] rdw Spider</H1>
+    <B>Jan Hugo Prins</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdw%20Spider&In-Reply-To=%3C47AC7CEF.9020700%40jhprins.org%3E"
+       TITLE="[Rdiffweb-discuss] rdw Spider">jhp at jhprins.org
+       </A><BR>
+    <I>Fri Feb  8 17:01:51 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000212.html">[Rdiffweb-discuss] rdw Spider
+</A></li>
+        <LI>Next message: <A HREF="000214.html">[Rdiffweb-discuss] rdw Spider
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#213">[ date ]</a>
+              <a href="thread.html#213">[ thread ]</a>
+              <a href="subject.html#213">[ subject ]</a>
+              <a href="author.html#213">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Josh Nisly wrote:
+&gt;<i> Right now, rdiffWeb can only update repositories at intervals, not at a 
+</I>&gt;<i> given time. I could add this, though. As far as when it is done, it is 
+</I>&gt;<i> done when the daemon is started, and then every interval after that.
+</I>&gt;<i>
+</I>&gt;<i> One thing - the spider stops traversing a directory as soon as it sees 
+</I>&gt;<i> that it is a repository, so the size of your repository shouldn't 
+</I>&gt;<i> matter, only how many files/directories you have that are inside the 
+</I>&gt;<i> root but not in a repository. Does this make sense?
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>Well, it partly makes sence, except that I don't want to depend on 
+something like having to start a certain service at a special time to 
+make sure that something that should be done in cron is done at a 
+specific time of day.
+What I wuold like is a little script that I can run that starts the 
+spider from cron the way it used to be.
+
+Besides that, starting a spider from any one of the users just takes to 
+long to run in the webinterface so that is not an option either.
+
+Jan Hugo
+
+&gt;<i> Thanks,
+</I>&gt;<i> JoshN
+</I>&gt;<i>
+</I>&gt;<i> Jan Hugo Prins wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Hi,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I just installed 0.6.2 on a testsystem to see if I could easilly upgrade 
+</I>&gt;&gt;<i> my old 0.3.5.1 install to 0.6.2 and everything seems to work ok, but 
+</I>&gt;&gt;<i> there is one little thing.
+</I>&gt;&gt;<i> In the past I had a cronjob that did the update of my repositories. I 
+</I>&gt;&gt;<i> know that rdiff-Web can do that internally now, but I don't want it to 
+</I>&gt;&gt;<i> do that every 1 hour, but only at 7.30 in the morning, when all the 
+</I>&gt;&gt;<i> backups are finished. Is there a way to config this? When I say, do it 
+</I>&gt;&gt;<i> every 24 hours, how do I know what time it gets done?
+</I>&gt;&gt;<i> I tried to do it from within the website when I was logged in, but that 
+</I>&gt;&gt;<i> resulted in a timeout. My repository is just to big :-)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Unrecoverable error in the server.
+</I>&gt;&gt;<i> Traceback (most recent call last):
+</I>&gt;&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cpwsgi.py&quot;, line 39, in setapp
+</I>&gt;&gt;<i>     s, h, b = self.get_response()
+</I>&gt;&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cpwsgi.py&quot;, line 175, in get_response
+</I>&gt;&gt;<i>     response = self.request.run(meth, path, qs, rproto, headers, rfile)
+</I>&gt;&gt;<i>   File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cprequest.py&quot;, line 511, in run
+</I>&gt;&gt;<i>     raise cherrypy.TimeoutError()
+</I>&gt;&gt;<i> TimeoutError
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Jan Hugo Prins
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000212.html">[Rdiffweb-discuss] rdw Spider
+</A></li>
+	<LI>Next message: <A HREF="000214.html">[Rdiffweb-discuss] rdw Spider
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#213">[ date ]</a>
+              <a href="thread.html#213">[ thread ]</a>
+              <a href="subject.html#213">[ subject ]</a>
+              <a href="author.html#213">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

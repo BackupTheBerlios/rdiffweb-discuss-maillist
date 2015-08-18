@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] New features and changes to rdiffweb
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20New%20features%20and%20changes%20to%20rdiffweb&In-Reply-To=%3C200703301306.56625.jesus%40mxtelecom.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000109.html">
+   <LINK REL="Next"  HREF="000107.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] New features and changes to rdiffweb</H1>
+    <B>Jesus Roncero</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20New%20features%20and%20changes%20to%20rdiffweb&In-Reply-To=%3C200703301306.56625.jesus%40mxtelecom.com%3E"
+       TITLE="[Rdiffweb-discuss] New features and changes to rdiffweb">jesus at mxtelecom.com
+       </A><BR>
+    <I>Fri Mar 30 14:06:56 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000109.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+        <LI>Next message: <A HREF="000107.html">[Rdiffweb-discuss] Version 0.3.5.1 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#110">[ date ]</a>
+              <a href="thread.html#110">[ thread ]</a>
+              <a href="subject.html#110">[ subject ]</a>
+              <a href="author.html#110">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Friday 30 March 2007 12:38, Josh Nisly wrote:
+&gt;<i> &gt; it won't work as it will try to validate the path of the repository and
+</I>&gt;<i> &gt; the path itself, wich will create wrong paths. Please, see my patch from
+</I>&gt;<i> &gt; yesterday in which I validate that the path (rootDir + repo + path) sent
+</I>&gt;<i> &gt; by page_browse.py is actually a subdirectory of rootDir.
+</I>&gt;<i>
+</I>&gt;<i> No, the patch simply validates against the &quot;..&quot; syntax, as you
+</I>&gt;<i> described. As I stated earlier, I wanted to fix that hole first. Now
+</I>&gt;<i> that we have it fix, we can look at the other changes, including the
+</I>&gt;<i> check against the root dir.
+</I>
+Ok, but as it is now, it doesn't work for me. Accessing the root directory of 
+one of my defined repositories gives me an access denied error.
+
+
+&gt;<i> &gt; Also, I stored the rootDir in a session variable for easy access as it
+</I>&gt;<i> &gt; seems to me that a sql query is overkill everytime we hit a browsing
+</I>&gt;<i> &gt; page.
+</I>&gt;<i>
+</I>&gt;<i> I agree, though I don't like the way that it is initialized. We should
+</I>&gt;<i> have a separate function which explicitly sets the session variable.
+</I>&gt;<i> I'll code this soon.
+</I>
+Sure. I don't like it either. I am still learning about cherrypy and am not 
+that proficient with it. 
+
+&gt;<i> I'm okay with the change to 4 spaces, though I'm not excited about a
+</I>&gt;<i> blanket change. I'll look into this soon. Perhaps I can convert
+</I>&gt;<i> everything over in a single patch. As for the other stuff, I simply
+</I>&gt;<i> haven't had time to look at it.
+</I>
+Well, attached is a patch to change everything into 4 spaces and also, a bit 
+of bash scripting that I used for converting it. You have to execute it in 
+every directory that contains .py files and execute it manualy for rdiff-web 
+and rdiff-web-config. Let me know what you think and thanks for changing :)
+
+
+&gt;<i> &gt; Anyway, I'll keep reading the source code and will be back with more
+</I>&gt;<i> &gt; stuff as soon as I have some more time to devote to it.
+</I>&gt;<i>
+</I>&gt;<i> Great! I'd be interested in everything you have to offer. One thing that
+</I>&gt;<i> I've thought about is adding a plugin-style system, so that users can
+</I>&gt;<i> add hooks to do whatever custom things that they want. What do you think?
+</I>
+Yes, that would be great, but I'd focus first in getting things right and then 
+adding that extra functionality. If I have some more free time later this 
+evening, which seems unlikely to me atm, I'll elaborate an email of what I've 
+been finding and what I'd like to suggest/improve/comment on. 
+
+Anyway, thank you very much.
+
+-- 
+Jes&#250;s Roncero &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">jesus at mxtelecom.com</A>&gt;
+System Developer
+Tel: +44 (0) 845 666 7778
+<A HREF="http://www.mxtelecom.com">http://www.mxtelecom.com</A>
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: convert.sh
+Type: application/x-shellscript
+Size: 224 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20070330/365ca272/attachment.bin">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20070330/365ca272/attachment.bin</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: 4spaces.diff.gz
+Type: application/x-gzip
+Size: 36182 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20070330/365ca272/attachment-0001.bin">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20070330/365ca272/attachment-0001.bin</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000109.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+	<LI>Next message: <A HREF="000107.html">[Rdiffweb-discuss] Version 0.3.5.1 released
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#110">[ date ]</a>
+              <a href="thread.html#110">[ thread ]</a>
+              <a href="subject.html#110">[ subject ]</a>
+              <a href="author.html#110">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

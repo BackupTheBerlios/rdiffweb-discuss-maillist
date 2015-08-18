@@ -1,0 +1,102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Rdiff web 0.6.3 and cherrypy error
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Rdiff%20web%200.6.3%20and%20cherrypy%20error&In-Reply-To=%3C49CA34D2.5020201%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000260.html">
+   <LINK REL="Next"  HREF="000262.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Rdiff web 0.6.3 and cherrypy error</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Rdiff%20web%200.6.3%20and%20cherrypy%20error&In-Reply-To=%3C49CA34D2.5020201%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] Rdiff web 0.6.3 and cherrypy error">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Wed Mar 25 14:42:42 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000260.html">[Rdiffweb-discuss] Rdiff web 0.6.3 and cherrypy error
+</A></li>
+        <LI>Next message: <A HREF="000262.html">[Rdiffweb-discuss] &quot;Access is Denied&quot; in root of backup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#261">[ date ]</a>
+              <a href="thread.html#261">[ thread ]</a>
+              <a href="subject.html#261">[ subject ]</a>
+              <a href="author.html#261">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>You'll need to edit /etc/rdiffweb/rdw.conf and set the &quot;ServerHost&quot; 
+setting to &quot;0.0.0.0&quot;.
+
+Josh Nisly
+
+Ufficio Sistemi Informativi - Istituto degli Innocenti wrote:
+&gt;<i> Hello everybody,
+</I>&gt;<i> i have installed Rdiff web 0.6.3 on a linux debian 64 machine, with 
+</I>&gt;<i> rdiff-backup 1.2.8, python 2.5.4 and python-cherrypy 3.1.1.
+</I>&gt;<i> Running rdiff-web i get this error:
+</I>&gt;<i>
+</I>&gt;<i> Traceback (most recent call last):
+</I>&gt;<i> File &quot;/usr/bin/rdiff-web&quot;, line 107, in &lt;module&gt;
+</I>&gt;<i>   cherrypy.config.update(global_settings)
+</I>&gt;<i> File &quot;/var/lib/python-support/python2.5/cherrypy/_cpconfig.py&quot;, line 
+</I>&gt;<i> 286, in update
+</I>&gt;<i>   self.namespaces(config)
+</I>&gt;<i> File &quot;/var/lib/python-support/python2.5/cherrypy/_cpconfig.py&quot;, line 
+</I>&gt;<i> 222, in __call__
+</I>&gt;<i>   handler(k, v)
+</I>&gt;<i> File &quot;/var/lib/python-support/python2.5/cherrypy/_cpconfig.py&quot;, line 
+</I>&gt;<i> 245, in &lt;lambda&gt;
+</I>&gt;<i>   **{&quot;server&quot;: lambda k, v: setattr(cherrypy.server, k, v),
+</I>&gt;<i> File &quot;/var/lib/python-support/python2.5/cherrypy/_cpserver.py&quot;, line 30, 
+</I>&gt;<i> in _set_socket_host
+</I>&gt;<i>   raise ValueError(&quot;Host values of '' or None are not allowed. &quot;
+</I>&gt;<i> ValueError: Host values of '' or None are not allowed. Use '0.0.0.0' 
+</I>&gt;<i> instead to listen on all active interfaces (INADDR_ANY).
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Any ideas?
+</I>&gt;<i>
+</I>&gt;<i> Thanks
+</I>&gt;<i> Leonardo
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000260.html">[Rdiffweb-discuss] Rdiff web 0.6.3 and cherrypy error
+</A></li>
+	<LI>Next message: <A HREF="000262.html">[Rdiffweb-discuss] &quot;Access is Denied&quot; in root of backup
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#261">[ date ]</a>
+              <a href="thread.html#261">[ thread ]</a>
+              <a href="subject.html#261">[ subject ]</a>
+              <a href="author.html#261">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

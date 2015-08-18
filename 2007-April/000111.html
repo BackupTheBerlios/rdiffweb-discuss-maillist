@@ -1,0 +1,106 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Suggestions/changes
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Suggestions/changes&In-Reply-To=%3C200704021247.18833.jesus%40mxtelecom.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000112.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Suggestions/changes</H1>
+    <B>Jesus Roncero</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Suggestions/changes&In-Reply-To=%3C200704021247.18833.jesus%40mxtelecom.com%3E"
+       TITLE="[Rdiffweb-discuss] Suggestions/changes">jesus at mxtelecom.com
+       </A><BR>
+    <I>Mon Apr  2 13:47:18 CEST 2007</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000112.html">[Rdiffweb-discuss] Suggestions/changes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#111">[ date ]</a>
+              <a href="thread.html#111">[ thread ]</a>
+              <a href="subject.html#111">[ subject ]</a>
+              <a href="author.html#111">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi,
+
+As I said last week, here is a list of what I would like to do on rdiff-web, 
+or at least what we would like to use it. The idea we have in the office is 
+to have some kind of automated backup system for workstations where the admin 
+user creates an entry for each of the users and a nightly backup script will 
+retrieve the data from the workstations, possibly by having some remote 
+directories mounted or something. This doesn't necessarily need to be part of 
+rdiff-web but might be interesting to have it.
+
+So, here there is a list of things I've been thinking:
+
+- Add more logging, depending on whether you are running it in debug mode or 
+not. It is useful to have more information when you are debugging or you are 
+reading the source code to understand how it works.
+- The admin user manages the users. So, I'd like to extend the user admin 
+capabilities. For example, to add more parameters or others that might be 
+included in the future.
+- Separate users authentication from the &quot;users&quot; database, or have it as 
+something optional. So, we can have the users database where all the 
+information is stored, but use other backends for authentication, such as 
+other mysql dbs, or LDAP. This could help integration with existing 
+environments.
+- It would be possible that the user could choose their backup directories. 
+This would work with the backup script I just talked about, so they can 
+choose the directories (Need to think more about this)
+- Improvements to the browsing interface (nothing specific, just anything that 
+could be improved)
+- Improve the installation script.
+- Improve the status page (it fails when accessing it without credentials)
+- anything?
+
+Well, those are the ideas floating in my mind. They don't necessarily need to 
+be included into trunk, but it would be nice to have them and, also, not have 
+something that is very different from trunk (a specific fork). So, that's 
+probably what I am going to start working on to have something similar to 
+what we want to have here :). Please, comments/objections/suggestions are 
+very welcome.
+
+Again, thanks!
+
+-- 
+Jes&#250;s Roncero &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">jesus at mxtelecom.com</A>&gt;
+System Developer
+Tel: +44 (0) 845 666 7778
+<A HREF="http://www.mxtelecom.com">http://www.mxtelecom.com</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000112.html">[Rdiffweb-discuss] Suggestions/changes
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#111">[ date ]</a>
+              <a href="thread.html#111">[ thread ]</a>
+              <a href="subject.html#111">[ subject ]</a>
+              <a href="author.html#111">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

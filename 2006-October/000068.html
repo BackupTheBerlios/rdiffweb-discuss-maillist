@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] A small Patch to have file/folder	images... (rdiff: message 6 of 20)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-October/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20A%20small%20Patch%20to%20have%20file/folder%09images...%0A%20%28rdiff%3A%20message%206%20of%2020%29&In-Reply-To=%3C454237F7.3050407%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000067.html">
+   <LINK REL="Next"  HREF="000062.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] A small Patch to have file/folder	images... (rdiff: message 6 of 20)</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20A%20small%20Patch%20to%20have%20file/folder%09images...%0A%20%28rdiff%3A%20message%206%20of%2020%29&In-Reply-To=%3C454237F7.3050407%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] A small Patch to have file/folder	images... (rdiff: message 6 of 20)">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Fri Oct 27 18:46:47 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000067.html">[Rdiffweb-discuss] A small Patch to have file/folder	images...	(rdiff: message 6 of 20)
+</A></li>
+        <LI>Next message: <A HREF="000062.html">[Rdiffweb-discuss] Unable to subscribe to RSS feed in thunderbird
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#68">[ date ]</a>
+              <a href="thread.html#68">[ thread ]</a>
+              <a href="subject.html#68">[ subject ]</a>
+              <a href="author.html#68">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'd like to push back on this, or at least delay it for a future 
+release. I think it should be implemented as a user preference, and 
+rdiffWeb currently has no architecture for user preferences.
+
+There are a number of other features that would benefit from a user 
+preference, so maybe we could add this at that point.
+
+JoshN
+
+Dominique CARON wrote:
+&gt;<i> Le 26.10.2006, Josh Nisly - <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A> a &#233;crit:
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Ok, I've committed a version of this patch. If you want to try it out
+</I>&gt;&gt;<i> and let me know what you think, I'd appreciate it.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thanks,
+</I>&gt;&gt;<i> Josh Nisly
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> I've just tried the new cvs release .. nice for me ...
+</I>&gt;<i>
+</I>&gt;<i> Il also remove the hours from date and changeDateStr (cause I don't  
+</I>&gt;<i> care of this, cause I don not make more than one backup per day )
+</I>&gt;<i> May be you can propose this in the conf file or better ( but more  
+</I>&gt;<i> difficult ;-) : check if there is 2 or more backups during the same  
+</I>&gt;<i> day and only show hours if there is 2 or more backups a day ?
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> #### patch In the 'page_browse.py' file to not show the backup hours  
+</I>&gt;<i> ##########
+</I>&gt;<i>
+</I>&gt;<i> - &quot;changeDateStr&quot; : x.getDisplayString() } for x in entryChangeDates]
+</I>&gt;<i> + &quot;changeDateStr&quot; : x.getDisplayString().split(' ')[0] } for x in  
+</I>&gt;<i> entryChangeDates]
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>   - &quot;date&quot; : libEntry.changeDates[-1].getDisplayString(),
+</I>&gt;<i>   + &quot;date&quot; : libEntry.changeDates[-1].getDisplayString().split(' ')[0],
+</I>&gt;<i>
+</I>&gt;<i> ######################################
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Thank's
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000067.html">[Rdiffweb-discuss] A small Patch to have file/folder	images...	(rdiff: message 6 of 20)
+</A></li>
+	<LI>Next message: <A HREF="000062.html">[Rdiffweb-discuss] Unable to subscribe to RSS feed in thunderbird
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#68">[ date ]</a>
+              <a href="thread.html#68">[ thread ]</a>
+              <a href="subject.html#68">[ subject ]</a>
+              <a href="author.html#68">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

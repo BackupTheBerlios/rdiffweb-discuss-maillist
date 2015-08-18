@@ -1,0 +1,173 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Add column sorting
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2012-November/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Add%20column%20sorting&In-Reply-To=%3C50B7B3B1.6080405%40timedicer.co.uk%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000471.html">
+   <LINK REL="Next"  HREF="000473.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Add column sorting</H1>
+    <B>Dominic Raferd</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Add%20column%20sorting&In-Reply-To=%3C50B7B3B1.6080405%40timedicer.co.uk%3E"
+       TITLE="[Rdiffweb-discuss] Add column sorting">dominic at timedicer.co.uk
+       </A><BR>
+    <I>Thu Nov 29 20:12:49 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000471.html">[Rdiffweb-discuss] Add column sorting
+</A></li>
+        <LI>Next message: <A HREF="000473.html">[Rdiffweb-discuss] Add column sorting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#472">[ date ]</a>
+              <a href="thread.html#472">[ thread ]</a>
+              <a href="subject.html#472">[ subject ]</a>
+              <a href="author.html#472">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks Patrik I tried it now and the column sorting works well with 
+small directory listings. But with a big listing it takes a really long 
+time and Firefox issues several warnings about an unresponsive script 
+(jquery.sortelements.js). In the end it finishes okay, but the first 
+click of the 'Last Revision' column has put them into ascending date 
+order so I then have to click again to get the more useful descending 
+date order. Which takes a very long time again.
+
+Apart from this issue I have a perception that this version is slower 
+than regular 0.6.3 - but this may not be correct. In general rdiffweb 
+(whichever version) gets very slow if it has to load a large directory 
+listing. This is understandable but it would be better if it was faster, 
+I think many users who aren't used to it would give up long before the 
+page had loaded (it can take more than 5 minutes in my experience).
+
+One further idea: I would prefer smaller default text with rdiffweb. The 
+large text means that sometimes the most important stuff (version 
+details) gets squashed over to the right-hand side of the screen (or 
+even off it). See the attached screenshot. This is not a new problem but 
+I think a smaller default text would help.
+
+Thanks for your great work, it's really good to see some improvements 
+coming to rdiffweb!
+
+Dominic
+
+
+On 25/11/12 02:55, Patrik Dufresne wrote:
+&gt;<i> @Dominic
+</I>&gt;<i>
+</I>&gt;<i> Did you manage to test the new functionality? Is it working as expected?
+</I>&gt;<i>
+</I>&gt;<i> Patrik Dufresne
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> On Fri, Nov 16, 2012 at 5:11 PM, Patrik Dufresne &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">ikus060 at gmail.com</A> 
+</I>&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">ikus060 at gmail.com</A>&gt;&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>     You may follow the instruction present on this page :
+</I>&gt;<i>     <A HREF="https://github.com/ikus060/rdiffweb/blob/master/README.md">https://github.com/ikus060/rdiffweb/blob/master/README.md</A>
+</I>&gt;<i>
+</I>&gt;<i>     Replace the wget URL by this one :
+</I>&gt;<i>     <A HREF="https://github.com/ikus060/rdiffweb/tarball/ikus060/columns-sorting.">https://github.com/ikus060/rdiffweb/tarball/ikus060/columns-sorting.</A>
+</I>&gt;<i>
+</I>&gt;<i>     I don't know if it's possible to test without install... I didn't
+</I>&gt;<i>     yet have a deep look into the init script.
+</I>&gt;<i>
+</I>&gt;<i>     Patrik Dufresne
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>     On Thu, Nov 15, 2012 at 11:15 AM, Dominic Raferd
+</I>&gt;<i>     &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">dominic at timedicer.co.uk</A> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">dominic at timedicer.co.uk</A>&gt;&gt; wrote:
+</I>&gt;<i>
+</I>&gt;<i>         Hi Patrik
+</I>&gt;<i>
+</I>&gt;<i>         This sounds great, but I am not familiar with github. How can
+</I>&gt;<i>         I try this branch version (with the column sorting), and
+</I>&gt;<i>         especially how can I build it without installing it so that I
+</I>&gt;<i>         can test on a production backup machine without breaking an
+</I>&gt;<i>         existing rdiff-backup installation?
+</I>&gt;<i>
+</I>&gt;<i>         Thanks for all your work
+</I>&gt;<i>
+</I>&gt;<i>         Dominic
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>         On 12/11/2012 01:34, Patrik Dufresne wrote:
+</I>&gt;&gt;<i>         Hello,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         I've implement the column sorting using JavaScript/Jquery.
+</I>&gt;&gt;<i>         The sorting column and direction is stored using html5
+</I>&gt;&gt;<i>         localStorage. The implementation is available in this branch
+</I>&gt;&gt;<i>         :
+</I>&gt;&gt;<i>         <A HREF="https://github.com/ikus060/rdiffweb/tree/ikus060/columns-sorting">https://github.com/ikus060/rdiffweb/tree/ikus060/columns-sorting</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         Patrik Dufresne
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>         _______________________________________________
+</I>&gt;&gt;<i>         Rdiffweb-discuss mailing list
+</I>&gt;&gt;<i>         <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>  &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>&gt;
+</I>&gt;&gt;<i>         <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>         -- 
+</I>&gt;<i>         *TimeDicer* &lt;<A HREF="http://www.timedicer.co.uk">http://www.timedicer.co.uk</A>&gt;: Free File Recovery
+</I>&gt;<i>         from Whenever
+</I>&gt;<i>
+</I>&gt;<i>         _______________________________________________
+</I>&gt;<i>         Rdiffweb-discuss mailing list
+</I>&gt;<i>         <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i>         &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>&gt;
+</I>&gt;<i>         <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+
+-- 
+*TimeDicer - Windows Backup and File Recovery from Whenever&quot; 
+&lt;<A HREF="http://www.timedicer.co.uk/">http://www.timedicer.co.uk/</A>&gt;*
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20121129/3cc8bc2f/attachment-0001.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20121129/3cc8bc2f/attachment-0001.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: rdiffweb0.6.4ex1.png
+Type: image/png
+Size: 35571 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20121129/3cc8bc2f/attachment-0001.png">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20121129/3cc8bc2f/attachment-0001.png</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000471.html">[Rdiffweb-discuss] Add column sorting
+</A></li>
+	<LI>Next message: <A HREF="000473.html">[Rdiffweb-discuss] Add column sorting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#472">[ date ]</a>
+              <a href="thread.html#472">[ thread ]</a>
+              <a href="subject.html#472">[ subject ]</a>
+              <a href="author.html#472">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,204 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] rdiffweb on freebsd
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2011-November/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiffweb%20on%20freebsd&In-Reply-To=%3CCACfFiPYzZO5zef-sghQ4aMph-NzXbkNhs1urgdv1%2Bc%2B%3DbFbJNA%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000438.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] rdiffweb on freebsd</H1>
+    <B>Stuart Robertson</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiffweb%20on%20freebsd&In-Reply-To=%3CCACfFiPYzZO5zef-sghQ4aMph-NzXbkNhs1urgdv1%2Bc%2B%3DbFbJNA%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] rdiffweb on freebsd">s.glendinning.robertson at gmail.com
+       </A><BR>
+    <I>Mon Nov 21 23:22:04 CET 2011</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000438.html">[Rdiffweb-discuss] rdiffweb on freebsd
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#439">[ date ]</a>
+              <a href="thread.html#439">[ thread ]</a>
+              <a href="subject.html#439">[ subject ]</a>
+              <a href="author.html#439">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks Lucas.
+
+Freebsd installs python to /usr/local/bin/python. I added a symbolic link
+in /usr/bin/python and now it works perfectly.
+
+Thanks for your help.
+
+Stuart
+
+2011/11/19 Lucas Burdick &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">lucas at progressive-sealing.com</A>&gt;
+
+&gt;<i> Stuart,
+</I>&gt;<i>
+</I>&gt;<i> It appears that your python binary is not where rdiff-web expects it to
+</I>&gt;<i> be. Perhaps you can find where your distribution is storing it and either
+</I>&gt;<i> symlink it to /usr/bin or copy it there.
+</I>&gt;<i>
+</I>&gt;<i> Lucas
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> -----Original Message-----
+</I>&gt;<i> *From:* Stuart Robertson [<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">s.glendinning.robertson at gmail.com</A>]
+</I>&gt;<i> *Received:* Saturday, 19 Nov 2011, 3:39am
+</I>&gt;<i> *To:* <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A> [<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> ]
+</I>&gt;<i> *Subject:* Re: [Rdiffweb-discuss] rdiffweb on freebsd
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Hi Nicolas,
+</I>&gt;<i>
+</I>&gt;<i> When I run '/usr/bin/rdiff-web -d' or 'rdiff-web -d' as root on the server
+</I>&gt;<i> I get the response
+</I>&gt;<i>
+</I>&gt;<i> '/usr/bin/rdiff-web: /usr/bin/python: bad interpreter: No such file or
+</I>&gt;<i> directory'
+</I>&gt;<i>
+</I>&gt;<i> Where would I manually find debug logs? There's nothing in
+</I>&gt;<i> /var/log/debug.log.
+</I>&gt;<i>
+</I>&gt;<i> /Stuart
+</I>&gt;<i>
+</I>&gt;<i> On 18 November 2011 19:23, Nicolas Jungers &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">nicolas at jungers.net</A>&gt; wrote:
+</I>&gt;<i>
+</I>&gt;&gt;<i> On 2011-11-17 22:36, Stuart Robertson wrote:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> Hi Lucas, thanks for answering.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> What I need really are clearer step by step instructions than on the
+</I>&gt;&gt;&gt;<i> wiki. Following the wiki I don't get anywhere.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I've added '-d' to line 38 of '/etc/init.d/rdiff-web' and I've created
+</I>&gt;&gt;&gt;<i> rdw.conf and added the lines about serverhost and serverport. I've added
+</I>&gt;&gt;&gt;<i> 'import base64' to '/usr/bin/rdiff-web'. Starting rdiffweb looks fine
+</I>&gt;&gt;&gt;<i> but status says it is not running:
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>  /etc/init.d/rdiff-web start
+</I>&gt;&gt;&gt;<i> Starting rdiffWeb... done
+</I>&gt;&gt;&gt;<i> /etc/init.d/rdiff-web status
+</I>&gt;&gt;&gt;<i> rdiffWeb is not running.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> I have 'python26-2.6.7_1', 'py26-cherrypy-3.2.0' and
+</I>&gt;&gt;&gt;<i> 'py26-sqlite3-2.6.7_1' installed. I don't really know where to look for
+</I>&gt;&gt;&gt;<i> hints as to what is not working.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Well, that's easy :-)
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> What do you have in the logs? Or what do you have on the terminal when
+</I>&gt;&gt;<i> you launch the program directly
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> &gt; rdiff-web -d
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> N.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> /Stuart
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> 2011/11/17 Lucas Burdick &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">lucas at progressive-sealing.com</A>
+</I>&gt;&gt;&gt;<i> &lt;mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">lucas at progressive-</A>**sealing.com &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">lucas at progressive-sealing.com</A>&gt;
+</I>&gt;&gt;&gt;<i> &gt;&gt;
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>    Are you starting it in debug mode? Check the wiki.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>    -----Original Message-----
+</I>&gt;&gt;&gt;<i>    *From:* Stuart Robertson [s.glendinning.robertson@**gmail.com&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">s.glendinning.robertson at gmail.com</A>&gt;
+</I>&gt;&gt;&gt;<i>    &lt;mailto:s.glendinning.**<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">robertson at gmail.com</A>&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">s.glendinning.robertson at gmail.com</A>&gt;
+</I>&gt;&gt;&gt;<i> &gt;]
+</I>&gt;&gt;&gt;<i>    *Received:* Thursday, 17 Nov 2011, 1:27am
+</I>&gt;&gt;&gt;<i>    *To:* <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.</A>**berlios.de&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>&gt;
+</I>&gt;&gt;&gt;<i>    &lt;mailto:rdiffweb-discuss@**lists.berlios.de&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>&gt;
+</I>&gt;&gt;&gt;<i> &gt;
+</I>&gt;&gt;&gt;<i>    [<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.</A>**berlios.de&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>&gt;
+</I>&gt;&gt;&gt;<i>    &lt;mailto:rdiffweb-discuss@**lists.berlios.de&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>&gt;
+</I>&gt;&gt;&gt;<i> &gt;]
+</I>&gt;&gt;&gt;<i>    *Subject:* [Rdiffweb-discuss] rdiffweb on freebsd
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>    Dear list,
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>    I would like to use rdiffweb on freebsd. I have a working
+</I>&gt;&gt;&gt;<i>    rdiff-backup on a freebsd 8.2 server. I've installed rdiffweb 0.6.3
+</I>&gt;&gt;&gt;<i>    on the server but cannot make it start and I cannot access the web
+</I>&gt;&gt;&gt;<i>    pages.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>    I'm a competent home user, no expert so any help appreciated.
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>    /stuart
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>    ______________________________**_________________
+</I>&gt;&gt;&gt;<i>    Rdiffweb-discuss mailing list
+</I>&gt;&gt;&gt;<i>    <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.</A>**berlios.de&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>&gt;
+</I>&gt;&gt;&gt;<i>    &lt;mailto:Rdiffweb-discuss@**lists.berlios.de&lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>&gt;
+</I>&gt;&gt;&gt;<i> &gt;
+</I>&gt;&gt;&gt;<i>    <A HREF="https://lists.berlios.de/**mailman/listinfo/rdiffweb-**discuss&lt;https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/**mailman/listinfo/rdiffweb-**discuss&lt;https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>&gt;
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;&gt;<i> ______________________________**_________________
+</I>&gt;&gt;&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.</A>**berlios.de &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>&gt;
+</I>&gt;&gt;&gt;<i> <A HREF="https://lists.berlios.de/**mailman/listinfo/rdiffweb-**discuss&lt;https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/**mailman/listinfo/rdiffweb-**discuss&lt;https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>&gt;
+</I>&gt;&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> ______________________________**_________________
+</I>&gt;&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.</A>**berlios.de &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>&gt;
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/**mailman/listinfo/rdiffweb-**discuss&lt;https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/**mailman/listinfo/rdiffweb-**discuss&lt;https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>&gt;
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20111121/05fa33ce/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20111121/05fa33ce/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000438.html">[Rdiffweb-discuss] rdiffweb on freebsd
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#439">[ date ]</a>
+              <a href="thread.html#439">[ thread ]</a>
+              <a href="subject.html#439">[ subject ]</a>
+              <a href="author.html#439">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

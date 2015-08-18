@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] 406 Not Acceptable
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-July/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20406%20Not%20Acceptable&In-Reply-To=%3Ccc703c350907010635y21cd4e2dj309af2a76afb9ee8%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000276.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] 406 Not Acceptable</H1>
+    <B>Nick Demou</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20406%20Not%20Acceptable&In-Reply-To=%3Ccc703c350907010635y21cd4e2dj309af2a76afb9ee8%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] 406 Not Acceptable">ndemou at gmail.com
+       </A><BR>
+    <I>Wed Jul  1 15:35:04 CEST 2009</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000276.html">[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#275">[ date ]</a>
+              <a href="thread.html#275">[ thread ]</a>
+              <a href="subject.html#275">[ subject ]</a>
+              <a href="author.html#275">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Josh, I'm using rdiffWeb v0.5.1. I will be able to install the testing
+release in a couple of weeks (after my vacations) and let you know what
+happens there.
+
+(I must confess that I had completely forget this issue until today I was
+asked by a friend for a GUI backup)
+
+2009/6/27 Josh Nisly &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt;
+
+&gt;<i> Nick, I've tried to duplicate this, but it just works for me, even using
+</I>&gt;<i> the names that you gave as examples. What version of cherrypy are you
+</I>&gt;<i> using?
+</I>&gt;<i>
+</I>&gt;<i> JoshN
+</I>&gt;<i>
+</I>&gt;<i> Nick Demou wrote:
+</I>&gt;<i> &gt; Don't consider this a &quot;pushing for a solution post&quot; -- I'm just
+</I>&gt;<i> &gt; curious about whether there was any progress.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Nick Demou
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; On Fri, Mar 20, 2009 at 4:14 PM, Nick Demou &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">ndemou at gmail.com</A>&gt; wrote:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; Yes Josh, it's my home folder and a lot of files contain unicode chars
+</I>&gt;<i> &gt;&gt; because I speak Greek. I'm pasting bellow those that the were created
+</I>&gt;<i> &gt;&gt; by the Ubuntu Installer:
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; &#914;&#943;&#957;&#964;&#949;&#959;
+</I>&gt;<i> &gt;&gt; &#948;&#951;&#956;&#972;&#963;&#953;&#959;
+</I>&gt;<i> &gt;&gt; &#904;&#947;&#947;&#961;&#945;&#966;&#945;
+</I>&gt;<i> &gt;&gt; &#917;&#953;&#954;&#972;&#957;&#949;&#962;
+</I>&gt;<i> &gt;&gt; &#917;&#960;&#953;&#966;&#940;&#957;&#949;&#953;&#945; &#949;&#961;&#947;&#945;&#963;&#943;&#945;&#962;
+</I>&gt;<i> &gt;&gt; &#924;&#959;&#965;&#963;&#953;&#954;&#942;
+</I>&gt;<i> &gt;&gt; &#928;&#961;&#972;&#964;&#965;&#960;&#945;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Here is the first of them (&quot;&#914;&#943;&#957;&#964;&#949;&#959;&quot; which is Video in Greek) in hex:
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; echo &quot;&#914;&#943;&#957;&#964;&#949;&#959;&quot;  | hexdump -C
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt; 00000000  ce 92 ce af ce bd cf 84  ce b5 ce bf 0a
+</I>&gt;<i> |.............|
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; if there is anything else I can do to help just ask.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Nick Demou
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; On Fri, Mar 20, 2009 at 3:38 PM, Josh Nisly &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt;
+</I>&gt;<i> wrote:
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; I would guess that a file in your directory contains unicode
+</I>&gt;<i> characters,
+</I>&gt;<i> &gt;&gt;&gt; and that is confusing rdiffWeb. If you can find that file and send the
+</I>&gt;<i> &gt;&gt;&gt; filename to me, I can try to reproduce and fix the problem.
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; Thanks,
+</I>&gt;<i> &gt;&gt;&gt; JoshN
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; Nick Demou wrote:
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt; Hi, after an easy and successful installation with no problems, when I
+</I>&gt;<i> &gt;&gt;&gt;&gt; visit <A HREF="http://localhost:8080">http://localhost:8080</A> and click on the one and only backup
+</I>&gt;<i> &gt;&gt;&gt;&gt; location I get this error:
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt; ---------
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> <A HREF="http://localhost:8080/browse/?repo=/home/shares/mng_backups/nd/home/&amp;path=/">http://localhost:8080/browse/?repo=/home/shares/mng_backups/nd/home/&amp;path=/</A>
+</I>&gt;<i> &gt;&gt;&gt;&gt; ---------
+</I>&gt;<i> &gt;&gt;&gt;&gt; 406 Not Acceptable
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt; Your client sent this Accept-Charset header: UTF-8,*. We tried these
+</I>&gt;<i> &gt;&gt;&gt;&gt; charsets: UTF-8, utf-8.
+</I>&gt;<i> &gt;&gt;&gt;&gt; [...]
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>
+
+
+-- 
+&quot;The software is licensed, not sold&quot; -- MICROSOFT LICENSE TERMS
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20090701/64bbde88/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20090701/64bbde88/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000276.html">[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#275">[ date ]</a>
+              <a href="thread.html#275">[ thread ]</a>
+              <a href="subject.html#275">[ subject ]</a>
+              <a href="author.html#275">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Rdiff web 0.6.3 and cherrypy error
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Rdiff%20web%200.6.3%20and%20cherrypy%20error&In-Reply-To=%3C49CA1C39.5010700%40istitutodeglinnocenti.it%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000267.html">
+   <LINK REL="Next"  HREF="000261.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Rdiff web 0.6.3 and cherrypy error</H1>
+    <B>Ufficio Sistemi Informativi - Istituto degli Innocenti</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Rdiff%20web%200.6.3%20and%20cherrypy%20error&In-Reply-To=%3C49CA1C39.5010700%40istitutodeglinnocenti.it%3E"
+       TITLE="[Rdiffweb-discuss] Rdiff web 0.6.3 and cherrypy error">informatica at istitutodeglinnocenti.it
+       </A><BR>
+    <I>Wed Mar 25 12:57:45 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000267.html">[Rdiffweb-discuss] 406 Not Acceptable
+</A></li>
+        <LI>Next message: <A HREF="000261.html">[Rdiffweb-discuss] Rdiff web 0.6.3 and cherrypy error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#260">[ date ]</a>
+              <a href="thread.html#260">[ thread ]</a>
+              <a href="subject.html#260">[ subject ]</a>
+              <a href="author.html#260">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello everybody,
+i have installed Rdiff web 0.6.3 on a linux debian 64 machine, with 
+rdiff-backup 1.2.8, python 2.5.4 and python-cherrypy 3.1.1.
+Running rdiff-web i get this error:
+
+Traceback (most recent call last):
+File &quot;/usr/bin/rdiff-web&quot;, line 107, in &lt;module&gt;
+  cherrypy.config.update(global_settings)
+File &quot;/var/lib/python-support/python2.5/cherrypy/_cpconfig.py&quot;, line 
+286, in update
+  self.namespaces(config)
+File &quot;/var/lib/python-support/python2.5/cherrypy/_cpconfig.py&quot;, line 
+222, in __call__
+  handler(k, v)
+File &quot;/var/lib/python-support/python2.5/cherrypy/_cpconfig.py&quot;, line 
+245, in &lt;lambda&gt;
+  **{&quot;server&quot;: lambda k, v: setattr(cherrypy.server, k, v),
+File &quot;/var/lib/python-support/python2.5/cherrypy/_cpserver.py&quot;, line 30, 
+in _set_socket_host
+  raise ValueError(&quot;Host values of '' or None are not allowed. &quot;
+ValueError: Host values of '' or None are not allowed. Use '0.0.0.0' 
+instead to listen on all active interfaces (INADDR_ANY).
+
+
+Any ideas?
+
+Thanks
+Leonardo
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000267.html">[Rdiffweb-discuss] 406 Not Acceptable
+</A></li>
+	<LI>Next message: <A HREF="000261.html">[Rdiffweb-discuss] Rdiff web 0.6.3 and cherrypy error
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#260">[ date ]</a>
+              <a href="thread.html#260">[ thread ]</a>
+              <a href="subject.html#260">[ subject ]</a>
+              <a href="author.html#260">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

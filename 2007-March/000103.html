@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] New features and changes to rdiffweb
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20New%20features%20and%20changes%20to%20rdiffweb&In-Reply-To=%3C460BDF06.3090206%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000105.html">
+   <LINK REL="Next"  HREF="000104.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] New features and changes to rdiffweb</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20New%20features%20and%20changes%20to%20rdiffweb&In-Reply-To=%3C460BDF06.3090206%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] New features and changes to rdiffweb">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Thu Mar 29 17:45:10 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000105.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+        <LI>Next message: <A HREF="000104.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#103">[ date ]</a>
+              <a href="thread.html#103">[ thread ]</a>
+              <a href="subject.html#103">[ subject ]</a>
+              <a href="author.html#103">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thanks for all your work on this! Comments are interspersed below.
+
+Jesus Roncero wrote:
+&gt;<i> Hi All,
+</I>&gt;<i>
+</I>&gt;<i> I recently came across rdiffWeb because I was looking to implement something 
+</I>&gt;<i> similar for our office, as we use rdiff-backup extensively. I've been testing 
+</I>&gt;<i> rdiffweb and it's very nice. Thanks for writing it :-)
+</I>&gt;<i>
+</I>&gt;<i> As it doesn't entirely suit our needs as it is now, we would like to extend it 
+</I>&gt;<i> by adding new features and improvements that we think could be useful for all 
+</I>&gt;<i> rdiffweb users. So I was thinking that I could send the patches and changes I 
+</I>&gt;<i> make so you can review them and get them into trunk if possible, so we would 
+</I>&gt;<i> keep closer to trunk :-). If that could be possible, I'd be vert grateful.
+</I>&gt;<i>
+</I>&gt;<i> To start with it, attached there is a patch that fixes a small problem with 
+</I>&gt;<i> rdiffweb as it is now. Rdiffweb lets you enter a non validated path that lets 
+</I>&gt;<i> you walk down the file system hierachy as 
+</I>&gt;<i> <A HREF="http://localhost:8080/browse/?repo=b&amp;path=..%2F..%2F..%2Fetc">http://localhost:8080/browse/?repo=b&amp;path=..%2F..%2F..%2Fetc</A>
+</I>&gt;<i>   
+</I>Wow, if that is really the case, then that is a huge hole. I can't 
+reproduce this, however -- I get an &quot;Access Denied&quot; page, as expected. 
+(The ensurePathValid function is supposed to protect against this.) Can 
+you give me an example of when it happens? What server OS are you running?
+&gt;<i> I've also modified the page_locations.py file and the repo_listing.html 
+</I>&gt;<i> template in order to have separate loops for the repos that work and the ones 
+</I>&gt;<i> that have some kind of error.
+</I>&gt;<i> You'll find random changes and comments I added while I was reading the source 
+</I>&gt;<i> code, for the sake of clarity and understanding (still reading source 
+</I>&gt;<i> code) :-) Also added a primary key to the repos table, so it is easier to 
+</I>&gt;<i> handle it (for example, to delete any given row)
+</I>&gt;<i>   
+</I>I'd prefer not to add this, unless we have migration code. I don't want 
+users to have to run the install over again. (It's enough of a pain to 
+run it once! :-) ) One thing I've been thinking of adding is a framework 
+for detecting version, and being able to change the db appropriately.
+&gt;<i> Lastly, I've noticed that all the files are indented using 3 spaces. I was 
+</I>&gt;<i> wondering if it could be changed to 4 spaces as that is what most python 
+</I>&gt;<i> applications are written with and definitely would make things easier for 
+</I>&gt;<i> other developers :-)
+</I>&gt;<i>   
+</I>I don't mind switching, but I'd like a more conclusive case that most 
+python apps are written using 4 spaces. Examples?
+&gt;<i> In any case, let me know what you think, and keep up the good work :-)
+</I>&gt;<i>   
+</I>I'm still reading through your changes, and will probably comment more 
+later. Thanks again!
+
+JoshN
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000105.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+	<LI>Next message: <A HREF="000104.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#103">[ date ]</a>
+              <a href="thread.html#103">[ thread ]</a>
+              <a href="subject.html#103">[ subject ]</a>
+              <a href="author.html#103">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

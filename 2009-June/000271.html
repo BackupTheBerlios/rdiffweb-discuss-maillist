@@ -1,0 +1,139 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-June/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Undefined%20Symbol%20%3A%20sqlite3_set_authorizer&In-Reply-To=%3Ce98d4f8c0906271102n1ebfa540u95c2ab7d2f85cb09%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000270.html">
+   <LINK REL="Next"  HREF="000272.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer</H1>
+    <B>Gabriel Hahmann</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Undefined%20Symbol%20%3A%20sqlite3_set_authorizer&In-Reply-To=%3Ce98d4f8c0906271102n1ebfa540u95c2ab7d2f85cb09%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer">gabriel.hahmann at gmail.com
+       </A><BR>
+    <I>Sat Jun 27 20:02:16 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000270.html">[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer
+</A></li>
+        <LI>Next message: <A HREF="000272.html">[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#271">[ date ]</a>
+              <a href="thread.html#271">[ thread ]</a>
+              <a href="subject.html#271">[ subject ]</a>
+              <a href="author.html#271">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Thank you very much Josh.
+
+I've tried searching around last night a little bit more and I discovered
+that the problem is with the libsqlite3.so.0.8.6. The sqlite3_set_authorizer
+was undefined in the library provided by netgear.
+
+The only problem is that this library is used for apache and a lot of other
+applications and when I try to change the version it denies me. I'm a little
+bit scaried of bricking my NAS but I want this to work.
+
+So what I've done is download the last version of this library to the sarge
+distribution unpack it and substitute the file (making a backup copy) on my
+NAS. It worked perfectly, but I want to play around to see if I didnt break
+anything.
+
+The only problem that I have is a bug alredy mentioned in oct/2008, that I
+only can run rdiffWeb if I started it in debug mode (-d). I'm using the last
+version, so I dont know how to fix it.
+
+I'm getting the following error if run without -d :
+
+nas-server:~/usr/lib# rdiff-web
+Traceback (most recent call last):
+  File &quot;/usr/bin/rdiff-web&quot;, line 123, in ?
+    cherrypy.engine.on_stop_engine_list.append(lambda: killEvent.set())
+AttributeError: 'Bus' object has no attribute 'on_stop_engine_list'
+
+Are there anything else that I can do?
+
+Thanks in advance.
+Best regards,
+Gabriel.
+
+On Sat, Jun 27, 2009 at 12:49 PM, Josh Nisly &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt; wrote:
+
+&gt;<i> Gabriel Hahmann wrote:
+</I>&gt;<i> &gt; Hi all,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I'm trying to use the rdiffWeb application on a NAS I just bought
+</I>&gt;<i> &gt; (ReadyNAS Duo). I've downloaded all packages, compiled rdiff-backup
+</I>&gt;<i> &gt; and it's working ok.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Then I've downloaded everything for rdiffWeb. The problem cames when I
+</I>&gt;<i> &gt; try to run rdiffWeb it gave me the following error:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Traceback (most recent call last):
+</I>&gt;<i> &gt;   File &quot;/usr/bin/rdiff-web-config&quot;, line 144, in ?
+</I>&gt;<i> &gt;     doMainSetup()
+</I>&gt;<i> &gt;   File &quot;/usr/bin/rdiff-web-config&quot;, line 94, in doMainSetup
+</I>&gt;<i> &gt;     sqlSetup()
+</I>&gt;<i> &gt;   File &quot;/usr/bin/rdiff-web-config&quot;, line 49, in sqlSetup
+</I>&gt;<i> &gt;     from pysqlite2 import dbapi2 as sqlite3
+</I>&gt;<i> &gt;   File &quot;/usr/lib/python2.4/site-packages/pysqlite2/dbapi2.py&quot;, line
+</I>&gt;<i> &gt; 27, in ?
+</I>&gt;<i> &gt;     from pysqlite2._sqlite import *
+</I>&gt;<i> &gt; ImportError: /usr/lib/python2.4/site-packages/pysqlite2/_sqlite.so:
+</I>&gt;<i> &gt; undefined symbol: sqlite3_set_authorizer
+</I>&gt;<i> &gt; ...
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; I've downloaded and compiled pysqlite2 with no problem, the
+</I>&gt;<i> &gt; distribution on ReadyNAS is based on debian sarge, but the libraries
+</I>&gt;<i> &gt; is an updated version from netgear.
+</I>&gt;<i> This is your problem. The python bindings for sqlite are tied closely
+</I>&gt;<i> with the actual libraries, so if there's a slight mismatch, it won't
+</I>&gt;<i> work. You'll probably need to switch from using the netgear libraries to
+</I>&gt;<i> the standard debian versions.
+</I>&gt;<i>
+</I>&gt;<i> FWIW, this error is not specific to rdiffWeb. I'd recommend searching
+</I>&gt;<i> for this error online.
+</I>&gt;<i>
+</I>&gt;<i> JoshN
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20090627/51adf879/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20090627/51adf879/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000270.html">[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer
+</A></li>
+	<LI>Next message: <A HREF="000272.html">[Rdiffweb-discuss] Undefined Symbol : sqlite3_set_authorizer
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#271">[ date ]</a>
+              <a href="thread.html#271">[ thread ]</a>
+              <a href="subject.html#271">[ subject ]</a>
+              <a href="author.html#271">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

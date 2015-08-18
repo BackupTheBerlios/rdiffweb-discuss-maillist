@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Restore fails with &quot;Invalid date parameter.&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2013-November/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Restore%20fails%20with%20%22Invalid%20date%20parameter.%22&In-Reply-To=%3CBAY179-DS2051E0B65954352049EDC6B1F40%40phx.gbl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000504.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Restore fails with &quot;Invalid date parameter.&quot;</H1>
+    <B>David</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Restore%20fails%20with%20%22Invalid%20date%20parameter.%22&In-Reply-To=%3CBAY179-DS2051E0B65954352049EDC6B1F40%40phx.gbl%3E"
+       TITLE="[Rdiffweb-discuss] Restore fails with &quot;Invalid date parameter.&quot;">unixrulez at hotmail.com
+       </A><BR>
+    <I>Sat Nov  2 18:14:15 CET 2013</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000504.html">[Rdiffweb-discuss] Why error to recover with rdiff-web ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#503">[ date ]</a>
+              <a href="thread.html#503">[ thread ]</a>
+              <a href="subject.html#503">[ subject ]</a>
+              <a href="author.html#503">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello Ren&#233;.
+
+ 
+
+Traceback seems to say something about the characters used.
+
+Do you use characters in your file names that aren&#146;t&#146; found on an American
+keyboard?
+
+0xc3 is either &#195; (A with ~ over it) or  part of a UTF-8 multibyte character
+(part of the German character set, I think)
+
+ 
+
+Good Luck.
+
+ 
+
+ 
+
+From: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss-bounces at lists.berlios.de</A>
+[mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss-bounces at lists.berlios.de</A>] On Behalf Of Ren&#233;
+Schaffrath
+Sent: Wednesday, 9 October 2013 20:06
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>
+Subject: [Rdiffweb-discuss] Restore fails with &quot;Invalid date parameter.&quot;
+
+ 
+
+Hi All, 
+
+sorry for not properly replying to C&#233;dric - I just joined the list. 
+
+I also get this error on many files (not all). I edited page_restore.py to
+get a proper traceback (this is from version 0.6.3): 
+
+127.0.0.1 - - [09/Oct/2013:13:45:28] &quot;GET
+/restore/?repo=debian&amp;path=/data/daten/01+Einrichtungen/01+F%C3%BCr_Alle/War
+teliste/Warteliste.xlsx&amp;date=2013-10-08T23%3A00%3A07%2B02%3A00 HTTP/1.1&quot; 200
+-
+&lt;<A HREF="http://localhost:3333/browse/?repo=debian&amp;path=/data/daten/01+Einrichtungen">http://localhost:3333/browse/?repo=debian&amp;path=/data/daten/01+Einrichtungen</A>
+/01+F%C3%BCr_Alle/Warteliste&gt;
+&quot;<A HREF="http://localhost:3333/browse/?repo=debian&amp;path=/data/daten/01+Einrichtungen">http://localhost:3333/browse/?repo=debian&amp;path=/data/daten/01+Einrichtungen</A>
+/01+F%C3%BCr_Alle/Warteliste&quot; &quot;Mozilla/5.0 (X11; Linux x86_64; rv:24.0)
+Gecko/20100101 Firefox/24.0&quot; 
+Traceback (most recent call last): 
+  File &quot;/usr/local/lib/python2.7/dist-packages/rdiffWeb/page_restore.py&quot;,
+line 39, in index 
+    filePath = librdiff.restoreFileOrDir(fullPath, path, file, restoreTime,
+useZipFormat) 
+  File &quot;/usr/local/lib/python2.7/dist-packages/rdiffWeb/librdiff.py&quot;, line
+279, in restoreFileOrDir 
+    filePath = joinPaths(dirPath, filename) 
+  File &quot;/usr/local/lib/python2.7/dist-packages/rdiffWeb/rdw_helpers.py&quot;,
+line 23, in joinPaths 
+    return os.path.join(parentPath, *args) 
+  File &quot;/usr/lib/python2.7/posixpath.py&quot;, line 80, in join 
+    path += '/' + b 
+UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position 33:
+ordinal not in range(128) 
+
+
+Unfortunately I don't have time to look into this right now, but maybe it
+helps others to locate the source of the problem. 
+
+
+Cheers, 
+Ren&#233; 
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20131103/8c56b13c/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20131103/8c56b13c/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000504.html">[Rdiffweb-discuss] Why error to recover with rdiff-web ?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#503">[ date ]</a>
+              <a href="thread.html#503">[ thread ]</a>
+              <a href="subject.html#503">[ subject ]</a>
+              <a href="author.html#503">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

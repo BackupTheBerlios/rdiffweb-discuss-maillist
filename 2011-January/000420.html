@@ -1,0 +1,136 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] howto install rdiffweb into centos
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2011-January/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20howto%20install%20rdiffweb%20into%20centos&In-Reply-To=%3CAANLkTikFrWmP6fuF-KnQVs5k89osy%2BF1Fe5bVgRqCdw6%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000421.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] howto install rdiffweb into centos</H1>
+    <B>Chencho Pc-cito</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20howto%20install%20rdiffweb%20into%20centos&In-Reply-To=%3CAANLkTikFrWmP6fuF-KnQVs5k89osy%2BF1Fe5bVgRqCdw6%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] howto install rdiffweb into centos">chencho.cs at gmail.com
+       </A><BR>
+    <I>Tue Jan 11 18:00:54 CET 2011</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000421.html">[Rdiffweb-discuss] howto install rdiffweb into centos
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#420">[ date ]</a>
+              <a href="thread.html#420">[ thread ]</a>
+              <a href="subject.html#420">[ subject ]</a>
+              <a href="author.html#420">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi again.
+
+I'm trying to install rdiffweb into several OS with no luck.
+
+Finally return to Centos and now i can run rdiffweb :)
+
+Here are my steps:
+
+wget <A HREF="http://download.cherrypy.org/cherrypy/3.1.2/CherryPy-3.1.2.tar.gz">http://download.cherrypy.org/cherrypy/3.1.2/CherryPy-3.1.2.tar.gz</A>
+tar -xvf CherryPy-3.1.2.tar.gz
+cd CherryPy-3.1.2
+python setup.py install
+wget
+<A HREF="http://packages.sw.be/python-sqlite2/python-sqlite2-2.3.3-1.el5.rf.x86_64.rpm">http://packages.sw.be/python-sqlite2/python-sqlite2-2.3.3-1.el5.rf.x86_64.rpm</A>
+rpm -i python-sqlite2-2.3.3-1.el5.rf.x86_64.rpm
+
+---
+I install rjs_rdw (0.7.0b) from unixrulez
+---
+
+Edit /usr/lib/python2.4/site-packages/rdiffWeb/page_prefs.py and
+remove line 9 &quot;import PAM&quot;
+Edit /usr/lib/python2.4/site-packages/rdiffWeb/page_main.py and
+remove line 10 &quot;import PAM&quot;
+useradd user (to use it as admin into rdiffweb)
+ridff-web-config (change localhost with 0.0.0.0)
+
+Now i can enter at rdiffweb an see my repos.
+
+But when i open administrator page i have a error:
+
+Traceback (most recent call last):
+  File &quot;/usr/lib/python2.4/site-packages/cherrypy/_cprequest.py&quot;, line
+606, in respond
+    cherrypy.response.body = self.handler()
+  File &quot;/usr/lib/python2.4/site-packages/cherrypy/_cpdispatch.py&quot;,
+line 25, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/page_admin.py&quot;, line
+18, in index
+    return self._generatePageHtml(&quot;&quot;, &quot;&quot;)
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/page_admin.py&quot;, line
+116, in _generatePageHtml
+    return self.startPage(&quot;Administration&quot;) +
+self.compileTemplate(&quot;admin_main.html&quot;, **parms) + self.endPage()
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/page_main.py&quot;, line
+45, in compileTemplate
+    return rdw_helpers.compileTemplate(templatePath, **kwargs)
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/rdw_helpers.py&quot;,
+line 88, in compileTemplate
+    return rdw_templating.templateParser().parseTemplate(templateText, **kwargs)
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/rdw_templating.py&quot;,
+line 34, in parseTemplate
+    workingText = self.parseSingleTemplate(workingText)
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/rdw_templating.py&quot;,
+line 41, in parseSingleTemplate
+    templateString = regex.sub(self._handleDeleteIf, templateString)
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/rdw_templating.py&quot;,
+line 90, in _handleDeleteIf
+    return self._handleConditionalInclude(match, False)
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/rdw_templating.py&quot;,
+line 98, in _handleConditionalInclude
+    conditionalIsTrue = self._lookupReplacement(conditional)
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/rdw_templating.py&quot;,
+line 118, in _lookupReplacement
+    raise templateDataError, repr(self.replacements)+'\n'+repr(keyword)
+templateDataError: [{'username': '', 'userEmail': u'', 'users':
+[{'username': u'user', 'isAdmin': True, 'userRoot':
+'/home/user/backups'}], 'userRoot': '', 'isAdmin': False,
+'notificationsEnabled': False, 'error': '', 'message': '',
+'notificationsTable': ''}]
+'usePAM'
+
+
+I will see if i can merge it with 0.6.3
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20110111/44d57374/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20110111/44d57374/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000421.html">[Rdiffweb-discuss] howto install rdiffweb into centos
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#420">[ date ]</a>
+              <a href="thread.html#420">[ thread ]</a>
+              <a href="subject.html#420">[ subject ]</a>
+              <a href="author.html#420">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

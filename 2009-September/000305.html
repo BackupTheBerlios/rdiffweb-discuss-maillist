@@ -1,0 +1,128 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] CherryPy and rdiff-web
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-September/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20CherryPy%20and%20rdiff-web&In-Reply-To=%3C7440b4f30909291238g27a6073dp8c17ed3e0f04430a%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000304.html">
+   <LINK REL="Next"  HREF="000306.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] CherryPy and rdiff-web</H1>
+    <B>Chencho Pc-cito</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20CherryPy%20and%20rdiff-web&In-Reply-To=%3C7440b4f30909291238g27a6073dp8c17ed3e0f04430a%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] CherryPy and rdiff-web">chencho.cs at gmail.com
+       </A><BR>
+    <I>Tue Sep 29 21:38:00 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000304.html">[Rdiffweb-discuss] CherryPy and rdiff-web
+</A></li>
+        <LI>Next message: <A HREF="000306.html">[Rdiffweb-discuss] CherryPy and rdiff-web
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#305">[ date ]</a>
+              <a href="thread.html#305">[ thread ]</a>
+              <a href="subject.html#305">[ subject ]</a>
+              <a href="author.html#305">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Sorry! It's now ok!
+
+I see over ps aux that i have multiple instances for rdiff-web; i kill all
+them and now it works!
+
+2009/9/29 Chencho Pc-cito &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">chencho.cs at gmail.com</A>&gt;
+
+&gt;<i> Hi all.
+</I>&gt;<i>
+</I>&gt;<i> i'm trying to install rdiff-web but i cant do it.
+</I>&gt;<i>
+</I>&gt;<i> It seems that i had a problem with cherrypy.
+</I>&gt;<i>
+</I>&gt;<i> After read this mail list, i make some changes into my system:
+</I>&gt;<i>
+</I>&gt;<i> 1) remove all Cherrypy manual installations (3.0.0 and 3.1.2) from
+</I>&gt;<i> /usr/local/lib/python2.6/dist-packages/
+</I>&gt;<i> 2) install python-cherrypy3 from apt
+</I>&gt;<i>
+</I>&gt;<i> Then, if i execute rdiff-web y had this:
+</I>&gt;<i>
+</I>&gt;<i> &gt; /var/lib/python-support/python2.6/cherrypy/_cperror.py:150:
+</I>&gt;<i> DeprecationWarning: BaseException.message has been deprecated as of Python
+</I>&gt;<i> 2.6
+</I>&gt;<i> &gt;   self.message = message
+</I>&gt;<i> &gt; /var/lib/python-support/python2.6/cherrypy/lib/cptools.py:3:
+</I>&gt;<i> DeprecationWarning: the md5 module is deprecated; use hashlib instead
+</I>&gt;<i> &gt;   import md5
+</I>&gt;<i> &gt; /var/lib/python-support/python2.6/cherrypy/lib/sessions.py:16:
+</I>&gt;<i> DeprecationWarning: the sha module is deprecated; use the hashlib module
+</I>&gt;<i> instead
+</I>&gt;<i> &gt;   import sha
+</I>&gt;<i> &gt; Exception in thread CPHTTPServer Thread-3:
+</I>&gt;<i> &gt; Traceback (most recent call last):
+</I>&gt;<i> &gt;   File &quot;/usr/lib/python2.6/threading.py&quot;, line 525, in __bootstrap_inner
+</I>&gt;<i> &gt;     self.run()
+</I>&gt;<i> &gt;   File &quot;/usr/lib/python2.6/threading.py&quot;, line 477, in run
+</I>&gt;<i> &gt;     self.__target(*self.__args, **self.__kwargs)
+</I>&gt;<i> &gt;   File &quot;/var/lib/python-support/python2.6/cherrypy/_cpserver.py&quot;, line
+</I>&gt;<i> 126, in _start_http_thread
+</I>&gt;<i> &gt;     httpserver.start()
+</I>&gt;<i> &gt;   File
+</I>&gt;<i> &quot;/var/lib/python-support/python2.6/cherrypy/wsgiserver/__init__.py&quot;, line
+</I>&gt;<i> 851, in start
+</I>&gt;<i> &gt;     raise socket.error, msg
+</I>&gt;<i> &gt; error: [Errno 98] Address already in use
+</I>&gt;<i>
+</I>&gt;<i> Debug show the same error.
+</I>&gt;<i>
+</I>&gt;<i> Also, in the installation guide shows:
+</I>&gt;<i>
+</I>&gt;<i> python -c &quot;from pysqlite2 import test;test.test()&quot;
+</I>&gt;<i>
+</I>&gt;<i> But i had a error:
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> &gt; Traceback (most recent call last):
+</I>&gt;<i> &gt;   File &quot;&lt;string&gt;&quot;, line 1, in &lt;module&gt;
+</I>&gt;<i> &gt; ImportError: cannot import name test
+</I>&gt;<i>
+</I>&gt;<i> I install python-pysqlite2 libsqlite3-dev without errors messages
+</I>&gt;<i>
+</I>&gt;<i> Thank in advance
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20090929/a2a7dfe5/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20090929/a2a7dfe5/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000304.html">[Rdiffweb-discuss] CherryPy and rdiff-web
+</A></li>
+	<LI>Next message: <A HREF="000306.html">[Rdiffweb-discuss] CherryPy and rdiff-web
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#305">[ date ]</a>
+              <a href="thread.html#305">[ thread ]</a>
+              <a href="subject.html#305">[ subject ]</a>
+              <a href="author.html#305">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

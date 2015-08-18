@@ -1,0 +1,96 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Please test current SVN code (inconsistent paths)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-November/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Please%20test%20current%20SVN%20code%20%28inconsistent%0A%20paths%29&In-Reply-To=%3C47501F43.7010408%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000177.html">
+   <LINK REL="Next"  HREF="000175.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Please test current SVN code (inconsistent paths)</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Please%20test%20current%20SVN%20code%20%28inconsistent%0A%20paths%29&In-Reply-To=%3C47501F43.7010408%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] Please test current SVN code (inconsistent paths)">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Fri Nov 30 15:33:39 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000177.html">[Rdiffweb-discuss] Please test current SVN code (inconsistent paths)
+</A></li>
+        <LI>Next message: <A HREF="000175.html">[Rdiffweb-discuss] Roadmap update
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#178">[ date ]</a>
+              <a href="thread.html#178">[ thread ]</a>
+              <a href="subject.html#178">[ subject ]</a>
+              <a href="author.html#178">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hmm. Good catch! I'll fix this before release.
+
+Thanks,
+JoshN
+
+Giso wrote:
+&gt;<i> Hi JoshN,
+</I>&gt;<i> i just tested the current version from the repo.
+</I>&gt;<i>
+</I>&gt;<i> On my OpenSuse 10.3 setup.py installs a file /usr/local/bin/rdiff-web.
+</I>&gt;<i> But the init script tries to call /usr/bin/rdiff-web.
+</I>&gt;<i> I am not familiar with python, but could have something to do with the
+</I>&gt;<i> distutils?
+</I>&gt;<i>
+</I>&gt;<i> And although the file doesn't exist at /usr/bin, the init script doesn't
+</I>&gt;<i> give an error message, it just says &quot;Starting rdiffWeb...	done&quot;.
+</I>&gt;<i>
+</I>&gt;<i> Giso
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Josh Nisly schrieb:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> I'll be releasing the current svn code within the next week or two, so 
+</I>&gt;&gt;<i> any and all testing people do would be welcome.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Significant changes since last release:
+</I>&gt;&gt;<i> * Move repository spidering and email notifications to be daemon 
+</I>&gt;&gt;<i> threads, removing the need to set up cron jobs.
+</I>&gt;&gt;<i> * UI refresh
+</I>&gt;&gt;<i> * Ability to restore directories as .tar.gz, which has support for 
+</I>&gt;&gt;<i> permissions, symlinks, etc.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Let me know what you find!
+</I>&gt;&gt;<i> JoshN
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000177.html">[Rdiffweb-discuss] Please test current SVN code (inconsistent paths)
+</A></li>
+	<LI>Next message: <A HREF="000175.html">[Rdiffweb-discuss] Roadmap update
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#178">[ date ]</a>
+              <a href="thread.html#178">[ thread ]</a>
+              <a href="subject.html#178">[ subject ]</a>
+              <a href="author.html#178">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

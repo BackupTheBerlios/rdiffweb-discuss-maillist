@@ -1,0 +1,120 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] problem with naming zip archives repositories
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-February/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20problem%20with%20naming%20zip%20archives%20repositories&In-Reply-To=%3C45DE33AA.7060401%40bellanet.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000079.html">
+   <LINK REL="Next"  HREF="000082.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] problem with naming zip archives repositories</H1>
+    <B>Graham Todd</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20problem%20with%20naming%20zip%20archives%20repositories&In-Reply-To=%3C45DE33AA.7060401%40bellanet.org%3E"
+       TITLE="[Rdiffweb-discuss] problem with naming zip archives repositories">gtodd at bellanet.org
+       </A><BR>
+    <I>Fri Feb 23 01:22:02 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000079.html">[Rdiffweb-discuss] problem with naming zip archives repositories
+</A></li>
+        <LI>Next message: <A HREF="000082.html">[Rdiffweb-discuss] problem with naming zip archives repositories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#81">[ date ]</a>
+              <a href="thread.html#81">[ thread ]</a>
+              <a href="subject.html#81">[ subject ]</a>
+              <a href="author.html#81">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Graham Todd wrote:
+&gt;<i> (can't find a Trac or bug reporting tool for this so hope the list
+</I>&gt;<i> doesn't mind)
+</I>&gt;<i> 
+</I>&gt;<i> The following occurs with 0.3.2 and 0.3.5.
+</I>&gt;<i> 
+</I>&gt;<i> From the main &quot;Backup Locations&quot; page if I select an rdiff repository
+</I>&gt;<i> and then drill down into a directory path to &quot;restore&quot; it, rdiffweb
+</I>&gt;<i> tries to create a .zip file of the archive by asking me to &quot;Choose a
+</I>&gt;<i> backup date to restore as of&quot;.  So e.g. visiting:
+</I>&gt;<i> 
+</I>&gt;<i> <A HREF="http://localhost:8080/browse/?repo=%2Fotherbackeduphost&amp;path=%2Fwww">http://localhost:8080/browse/?repo=%2Fotherbackeduphost&amp;path=%2Fwww</A>
+</I>&gt;<i> 
+</I>&gt;<i> I can restore &quot;www&quot;. But when I click to restore the folder rdiffweb
+</I>&gt;<i> builds a zip file for downloading that invariably calls &quot;\(root\).zip&quot;.
+</I>&gt;<i> 
+</I>&gt;<i> Where is rdiffweb getting this \(root\) and \(root\).zip  name from?
+</I>
+It turns out that (root) is a temporary value (but why the &quot;()&quot;?) and that
+rdiff-web's zip creation routines were failing since they were unable to
+handle symlinks in the rdiff-backup repository. The application then would
+serve what was left in the temp file location over HTTP as (root).zip or
+something like that. I changed my rdiff-backup scripts to use
+--exclude-special-files and crash no longer occurs. The file is now being
+named/served as &quot;restore&quot; (with no .zip extension). I take it this is the
+correct behaviour?
+
+&gt;<i> The UI and config files don't give me an option for naming repositories
+</I>&gt;<i> - which I guess is how the zip file should be named (either that or the
+</I>&gt;<i> name of the repository path by default which in the case above would be
+</I>&gt;<i> otherbackeduphost_www.zip).  Is there anyway to make sure the .zip
+</I>&gt;<i> download is named correctly?
+</I>&gt;<i> 
+</I>&gt;<i> One possibly related issue is that if I limit a user's root to a
+</I>&gt;<i> directory the directory listing always appears as &quot;/&quot; on the user's
+</I>&gt;<i> &quot;Backup Locations&quot; page. It's hard to click on the hyperlink anchor for
+</I>&gt;<i> &quot;/&quot; because it has no associated name.
+</I>&gt;<i> 
+</I>&gt;<i> Two other minor issues that are related:
+</I>&gt;<i> 
+</I>&gt;<i> - rdiffweb isn't really &quot;restoring&quot; the backup (that's a job for
+</I>&gt;<i> rdiff-backup running on the machine where the restore takes place), it's
+</I>&gt;<i> providing a zip archive of the folder so maybe &quot;Choose a backup date to
+</I>&gt;<i> download as a ZIP archive&quot; might be a better string?.
+</I>&gt;<i> 
+</I>&gt;<i> - &quot;folder&quot; should be &quot;directory&quot; :-)
+</I>&gt;<i> 
+</I>&gt;<i> Cheers
+</I>&gt;<i> 
+</I>&gt;<i> ps: I had to modify the temporary directory setting since /tmp/, which
+</I>&gt;<i> is where tempfile() ssems to create random temporary files by default,
+</I>&gt;<i> was not large enough to build the zip file for download - attached a
+</I>&gt;<i> small patch for that ... if I recall correctly the source suggests this
+</I>&gt;<i> should all be a config setting
+</I>
+
+-- 
+Graham Todd - <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Bellanet at IDRC</A>
+<A HREF="http://sandbox.bellanet.org/users/gtodd/contact">http://sandbox.bellanet.org/users/gtodd/contact</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000079.html">[Rdiffweb-discuss] problem with naming zip archives repositories
+</A></li>
+	<LI>Next message: <A HREF="000082.html">[Rdiffweb-discuss] problem with naming zip archives repositories
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#81">[ date ]</a>
+              <a href="thread.html#81">[ thread ]</a>
+              <a href="subject.html#81">[ subject ]</a>
+              <a href="author.html#81">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

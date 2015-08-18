@@ -1,0 +1,151 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Restore fails with &quot;Invalid date parameter.&quot;
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2013-December/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Restore%20fails%20with%20%22Invalid%20date%20parameter.%22&In-Reply-To=%3C52A5C483.6080403%40rsic.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Restore fails with &quot;Invalid date parameter.&quot;</H1>
+    <B>Ren&#233; Schaffrath</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Restore%20fails%20with%20%22Invalid%20date%20parameter.%22&In-Reply-To=%3C52A5C483.6080403%40rsic.de%3E"
+       TITLE="[Rdiffweb-discuss] Restore fails with &quot;Invalid date parameter.&quot;">lists at rsic.de
+       </A><BR>
+    <I>Mon Dec  9 14:24:19 CET 2013</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#505">[ date ]</a>
+              <a href="thread.html#505">[ thread ]</a>
+              <a href="subject.html#505">[ subject ]</a>
+              <a href="author.html#505">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi David,
+
+sorry for the long delay. Been busy with other projects.
+
+Yes, umlauts are used in the paths (though I believe the issue happened 
+also without Umlauts, but maybe other non-ASCII chars). This seems to 
+have fixed the issue (not heavily tested):
+
+--- /root/rdw_helpers.py.ori    2013-12-09 11:45:00.869831024 +0100
++++ /usr/local/lib/python2.7/dist-packages/rdiffWeb/rdw_helpers.py 
+2013-12-09 12:10:20.971326544 +0100
+@@ -18,7 +18,7 @@
+     return path
+
+  def joinPaths(parentPath, *args):
+-   parentPath = encodePath(parentPath)
++   #parentPath = encodePath(parentPath)
+     args = [x.lstrip(&quot;/&quot;) for x in args]
+     return os.path.join(parentPath, *args)
+
+Hope this helps.
+
+Cheers,
+Ren&#233;
+
+Am 02.11.2013 18:14, schrieb David:
+&gt;<i>
+</I>&gt;<i> Hello Ren&#233;.
+</I>&gt;<i>
+</I>&gt;<i> Traceback seems to say something about the characters used.
+</I>&gt;<i>
+</I>&gt;<i> Do you use characters in your file names that aren't' found on an 
+</I>&gt;<i> American keyboard?
+</I>&gt;<i>
+</I>&gt;<i> 0xc3 is either &#195; (A with ~ over it) or  part of a UTF-8 multibyte 
+</I>&gt;<i> character (part of the German character set, I think)
+</I>&gt;<i>
+</I>&gt;<i> Good Luck.
+</I>&gt;<i>
+</I>&gt;<i> *From:*<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss-bounces at lists.berlios.de</A> 
+</I>&gt;<i> [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss-bounces at lists.berlios.de</A>] *On Behalf Of *Ren&#233; 
+</I>&gt;<i> Schaffrath
+</I>&gt;<i> *Sent:* Wednesday, 9 October 2013 20:06
+</I>&gt;<i> *To:* <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> *Subject:* [Rdiffweb-discuss] Restore fails with &quot;Invalid date parameter.&quot;
+</I>&gt;<i>
+</I>&gt;<i> Hi All,
+</I>&gt;<i>
+</I>&gt;<i> sorry for not properly replying to C&#233;dric - I just joined the list.
+</I>&gt;<i>
+</I>&gt;<i> I also get this error on many files (not all). I edited 
+</I>&gt;<i> page_restore.py to get a proper traceback (this is from version 0.6.3):
+</I>&gt;<i>
+</I>&gt;<i> 127.0.0.1 - - [09/Oct/2013:13:45:28] &quot;GET 
+</I>&gt;<i> ////restore//?repo=debian&amp;path=/data/daten/01+Einrichtungen/01+F%C3%BCr_Alle/Warteliste/Warteliste.xlsx&amp;date=2013-10-08T23%3A00%3A07%2B02%3A00 
+</I>&gt;<i> HTTP/1.1&quot; 200 - 
+</I>&gt;<i> &quot;<A HREF="http://localhost:3333/browse/?repo=debian&amp;path=/data/daten/01+Einrichtungen/01+F%C3%BCr_Alle/Warteliste">http://localhost:3333/browse/?repo=debian&amp;path=/data/daten/01+Einrichtungen/01+F%C3%BCr_Alle/Warteliste</A>&quot; 
+</I>&gt;<i> &lt;<A HREF="http://localhost:3333/browse/?repo=debian&amp;path=/data/daten/01+Einrichtungen/01+F%C3%BCr_Alle/Warteliste">http://localhost:3333/browse/?repo=debian&amp;path=/data/daten/01+Einrichtungen/01+F%C3%BCr_Alle/Warteliste</A>&gt; 
+</I>&gt;<i> &quot;Mozilla/5.0 (X11; Linux x86_64; rv:24.0) Gecko/20100101 Firefox/24.0&quot;
+</I>&gt;<i> Traceback (most recent call last):
+</I>&gt;<i>   File 
+</I>&gt;<i> &quot;/usr/local/lib/python2.7/dist-packages/rdiffWeb/page_restore.py&quot;, 
+</I>&gt;<i> line 39, in index
+</I>&gt;<i>     filePath = librdiff.restoreFileOrDir(fullPath, path, file, 
+</I>&gt;<i> restoreTime, useZipFormat)
+</I>&gt;<i>   File &quot;/usr/local/lib/python2.7/dist-packages/rdiffWeb/librdiff.py&quot;, 
+</I>&gt;<i> line 279, in restoreFileOrDir
+</I>&gt;<i>     filePath = joinPaths(dirPath, filename)
+</I>&gt;<i>   File 
+</I>&gt;<i> &quot;/usr/local/lib/python2.7/dist-packages/rdiffWeb/rdw_helpers.py&quot;, line 
+</I>&gt;<i> 23, in joinPaths
+</I>&gt;<i>     return os.path.join(parentPath, *args)
+</I>&gt;<i>   File &quot;/usr/lib/python2.7/posixpath.py&quot;, line 80, in join
+</I>&gt;<i>     path += '/' + b
+</I>&gt;<i> UnicodeDecodeError: 'ascii' codec can't decode byte 0xc3 in position 
+</I>&gt;<i> 33: ordinal not in range(128)
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Unfortunately I don't have time to look into this right now, but maybe 
+</I>&gt;<i> it helps others to locate the source of the problem.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Cheers,
+</I>&gt;<i> Ren&#233;
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20131209/8ef93f3b/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20131209/8ef93f3b/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#505">[ date ]</a>
+              <a href="thread.html#505">[ thread ]</a>
+              <a href="subject.html#505">[ subject ]</a>
+              <a href="author.html#505">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

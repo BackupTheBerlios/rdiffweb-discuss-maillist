@@ -1,0 +1,371 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] rdiff-web can't find its RSS pages
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-September/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiff-web%20can%27t%20find%20its%20RSS%20pages&In-Reply-To=%3Cbf7d8e5f0609070447t2b872107xdff11b364f3c0a93%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000038.html">
+   <LINK REL="Next"  HREF="000032.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] rdiff-web can't find its RSS pages</H1>
+    <B>Victor Moran</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiff-web%20can%27t%20find%20its%20RSS%20pages&In-Reply-To=%3Cbf7d8e5f0609070447t2b872107xdff11b364f3c0a93%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] rdiff-web can't find its RSS pages">diadian at gmail.com
+       </A><BR>
+    <I>Thu Sep  7 13:47:43 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000038.html">[Rdiffweb-discuss] rdiff-web can't find its RSS pages
+</A></li>
+        <LI>Next message: <A HREF="000032.html">[Rdiffweb-discuss] Automatic setup script
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#39">[ date ]</a>
+              <a href="thread.html#39">[ thread ]</a>
+              <a href="subject.html#39">[ subject ]</a>
+              <a href="author.html#39">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Josh,
+
+Its not mine either.  As long as its on purpose its fine to me.  I do
+have two ideas for you.
+
+1. when a backup completes with errors, you shouldn't mark it as
+&quot;failed&quot; on the status page, it should be &quot;completed with errors&quot; or
+&quot;succeeded with errors&quot;.  That's pretty standard across every backup
+system on the market.
+
+2. add a simple email status function.  In other words, lets say that
+the user has set up a cron job that causes the backup functions to run
+at 1am.  At 3am I would love to have the ability to email a copy of
+the status page to a few people who need to know if the backup job
+worked.  I know that I can do this using some lynx + sendmail scripts,
+but I thought it would be a nice feature to add.
+
+Thats it for now.  I'm only now starting to work with it so I may have
+more ideas later.
+
+Victor.
+
+On 9/7/06, Josh Nisly &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt; wrote:
+&gt;<i> No, the background is white by default.
+</I>&gt;<i>
+</I>&gt;<i> Any patches, suggestions, or comments to improve the look of the pages
+</I>&gt;<i> would be welcome. Web site design is not my strong point. :-)
+</I>&gt;<i>
+</I>&gt;<i> Josh Nisly
+</I>&gt;<i>
+</I>&gt;<i> Victor Moran wrote:
+</I>&gt;<i> &gt; Josh,
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Also, I didn't re-run the setup script.  Will that make a difference
+</I>&gt;<i> &gt; to the colors and the look of the pages?
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; Victor.
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt; On 9/6/06, Victor Moran &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">diadian at gmail.com</A>&gt; wrote:
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;&gt; Josh,
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; I tried it.  I started by deleting the original install directory
+</I>&gt;<i> &gt;&gt; completely and running the python install script again.  This time
+</I>&gt;<i> &gt;&gt; there are no error messages.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; However, the page is stil white (except for the logo in the upper
+</I>&gt;<i> &gt;&gt; right hand corner) instead of the nice dark colors on your web page.
+</I>&gt;<i> &gt;&gt; Is that by design?
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Thanks for your fast fix.  I really appreciate it.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; Victor.
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt; On 9/6/06, Victor Moran &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">diadian at gmail.com</A>&gt; wrote:
+</I>&gt;<i> &gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; Thanks I'll try it tonight.
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; Victor.
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt; On 9/6/06, Josh Nisly &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt; wrote:
+</I>&gt;<i> &gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt; OK, I installed CentOS last night and found the problem. (The setup
+</I>&gt;<i> &gt;&gt;&gt;&gt; script was depending on python features new to 2.4; CentOS has Python
+</I>&gt;<i> &gt;&gt;&gt;&gt; 2.3.  I've committed a fix to subversion; could you please try that and
+</I>&gt;<i> &gt;&gt;&gt;&gt; see if it works for you?  If it does, I'll release a new version with
+</I>&gt;<i> &gt;&gt;&gt;&gt; the fix included.
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt; Thanks,
+</I>&gt;<i> &gt;&gt;&gt;&gt; Josh Nisly
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt; Victor Moran wrote:
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; Josh,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; I did install it using python setup.py install...
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; This is a clean install of CentOS.  Its running 4.3 (from 4.2 cd's
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; with yum update).  Its running the &quot;server installation&quot; plus the
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; development package.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; I found that the static directory didn't even exist in
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; /usr/lib/python2.3/site-packages/rdiffWeb/ so I created it and then I
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; copied the pages in static from the distribution into that directory.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; It seems to work better (no css error messages) but it still has a
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; white background instead of the color in your screenshots.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; Victor.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt; On 9/5/06, Josh Nisly &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt; wrote:
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt; I assume you installed it by running &quot;python setup.py install&quot;?
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt; If so, is this a clean install of CentOS?  What did you install to get
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt; it to this point? If it's not too difficult, I may install CentOS under
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt; VMware and try to duplicate the problem.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt; Thanks,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt; Josh Nisly
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt; Victor Moran wrote:
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; Josh,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; I ran rdiffweb using /usr/bin/python /usr/bin/rdiff-web
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; --pid-file=/var/run/rdiff-web -d
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; As soon as I went to the homepage I got errors:
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; 192.168.1.103 - - [05/Sep/2006:14:51:54] &quot;GET / HTTP/1.1&quot; 200 374 &quot;&quot;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; &quot;Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.8.0.6)
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; Gecko/20060728 Firefox/1.5.0.6&quot;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; 192.168.1.103 - - [05/Sep/2006:14:51:54] &quot;GET /favicon.ico HTTP/1.1&quot;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; 200 1406 &quot;&quot; &quot;Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; rv:1.8.0.6) Gecko/20060728 Firefox/1.5.0.6&quot;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; 192.168.1.103 - - [05/Sep/2006:14:52:02] &quot;POST /doLogin HTTP/1.1&quot; 302
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; 151 &quot;<A HREF="http://192.168.1.99:8080/">http://192.168.1.99:8080/</A>&quot; &quot;Mozilla/5.0 (Macintosh; U; PPC Mac OS
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; X Mach-O; en-US; rv:1.8.0.6) Gecko/20060728 Firefox/1.5.0.6&quot;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; 192.168.1.103 - - [05/Sep/2006:14:52:02] &quot;GET / HTTP/1.1&quot; 200 1530
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; &quot;<A HREF="http://192.168.1.99:8080/">http://192.168.1.99:8080/</A>&quot; &quot;Mozilla/5.0 (Macintosh; U; PPC Mac OS X
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; Mach-O; en-US; rv:1.8.0.6) Gecko/20060728 Firefox/1.5.0.6&quot;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; 05/Sep/2006:14:52:02 DEBUG INFO     NOT FOUND file:
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; /usr/lib/python2.3/site-packages/rdiffWeb/static/main.css
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; 05/Sep/2006:14:52:02 HTTP INFO Page handler: &quot;The path
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; '/static/main.css' was not found.&quot;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; Traceback (most recent call last):
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   File &quot;/usr/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; line 105, in _run
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;     self.main()
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   File &quot;/usr/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; line 246, in main
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;     page_handler, object_path, virtual_path = self.mapPathToObject(path)
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   File &quot;/usr/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; line 312, in mapPathToObject
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;     raise cherrypy.NotFound(objectpath)
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; NotFound: 404
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; Request Headers:
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   REFERER: <A HREF="http://192.168.1.99:8080/">http://192.168.1.99:8080/</A>
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   Content-Length:
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   ACCEPT-CHARSET: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   USER-AGENT: Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; rv:1.8.0.6) Gecko/20060728 Firefox/1.5.0.6
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   CONNECTION: keep-alive
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   COOKIE: session_id=3f9c61ea5c7576775658f9e936a1137421f91a13
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   HOST: 192.168.1.99:8080
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   ACCEPT: text/css,*/*;q=0.1
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   Remote-Addr: 192.168.1.103
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   ACCEPT-LANGUAGE: en-us,en;q=0.5
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   Content-Type:
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   Remote-Host: 192.168.1.103
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   ACCEPT-ENCODING: gzip,deflate
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;   KEEP-ALIVE: 300
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; 192.168.1.103 - - [05/Sep/2006:14:52:02] &quot;GET /static/main.css
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; HTTP/1.1&quot; 404 1235 &quot;<A HREF="http://192.168.1.99:8080/">http://192.168.1.99:8080/</A>&quot; &quot;Mozilla/5.0
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.8.0.6) Gecko/20060728
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; Firefox/1.5.0.6&quot;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; 192.168.1.103 - - [05/Sep/2006:14:52:03] &quot;GET /favicon.ico HTTP/1.1&quot;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; 200 1406 &quot;&quot; &quot;Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; rv:1.8.0.6) Gecko/20060728 Firefox/1.5.0.6&quot;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; So I tried to locate a few of the missing files:
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; [<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">root at backup-server</A> ~]# locate main.css
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; /root/rdiffWeb-0.3.2/rdiffWeb/static/main.css
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; [<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">root at backup-server</A> ~]# locate revisions_popup.js
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; /root/rdiffWeb-0.3.2/rdiffWeb/static/revisions_popup.js
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; It seems that the static pages are in the distribution (which I
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; untarred in /root/rdiffWeb-0.3.2) but the installer never put them
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; into the right directories where the program can find them when it
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; runs.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; What do you think?
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; Thanks,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; Victor.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; On 9/5/06, Victor Moran &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">diadian at gmail.com</A>&gt; wrote:
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Josh,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Thanks for your rapid reply.  I'll try running it with -d today.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; As for CherryPy, I installed 2.2.1.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Its installed at /usr/lib/python2.4/site-packages/rdiffWeb.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; The OS on this box is CentOS 4.3 (final).  Its a fresh installation
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; that is going to do nothing but run rdiff-backup and rdiffweb.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Be well,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Victor.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; On 9/5/06, Josh Nisly &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt; wrote:
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; It would appear that rdiffWeb somehow is not finding the static files.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Where was rdiffWeb installed to? (For me, it's
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; /usr/lib/python2.4/site-packages/rdiffWeb) What version of CherryPy are
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; you using? To help debug, you could run rdiffWeb with the -d parameter,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; which makes it run in the foreground and log to screen. This may give
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; more clues into what is going wrong.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Josh Nisly
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Victor Moran wrote:
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Hi List,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; I am new to rdiff-backup, rdiff-web and python.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; I am using rdiff-backup to backup 3 mac's to one linux machine.  I'd
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; like to use rdiff-web to give the users an easy way to see if the
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; backup ran correctly the night before.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; The problem I'm having is that after I start rdiff-web and connect to
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; the web site, most pages that are part of rdiff-web cannot be found by
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; the program.  For example, all of the RSS pages are not found, so the
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; pages displayed look horrible.  The same is true for the graphics,
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; logos etc.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; I've compared the error messags to the files actually on disk and the
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; files needed appear to exist, however python can't find them.  Since
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; I'm new to python, I don't know how to change its behavior.  I'm
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; hoping someone here can point me in the right direction.  I've
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; searched the archives but there was nothing in there that pertained to
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; this problem.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Here are some details:
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; rdiff-web-0.3.2 (from source)
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; [<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">root at backup-server</A> ~]# rpm -qa |grep python
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; libxml2-python-2.6.16-6
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; python-sqlite-1.1.6-1
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; python-urlgrabber-2.9.6-2
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; python-ldap-2.0.1-2
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; python-2.3.4-14.2
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; rpm-python-4.3.3-13_nonptl
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; python-devel-2.3.4-14.2
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; python-elementtree-1.2.6-4
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; [<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">root at backup-server</A> ~]# which python
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; /usr/bin/python
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; [<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">root at backup-server</A> ~]# /usr/bin/python -V
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Python 2.3.4
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Any help would be appreciated.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Victor.
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; _______________________________________________
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Rdiffweb-discuss mailing list
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; _______________________________________________
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; Rdiffweb-discuss mailing list
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; _______________________________________________
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; Rdiffweb-discuss mailing list
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt; _______________________________________________
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt; Rdiffweb-discuss mailing list
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt; _______________________________________________
+</I>&gt;<i> &gt;&gt;&gt;&gt; Rdiffweb-discuss mailing list
+</I>&gt;<i> &gt;&gt;&gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> &gt;&gt;&gt;&gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt;&gt;&gt;&gt;
+</I>&gt;<i> &gt; _______________________________________________
+</I>&gt;<i> &gt; Rdiffweb-discuss mailing list
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> &gt; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i> &gt;
+</I>&gt;<i> &gt;
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000038.html">[Rdiffweb-discuss] rdiff-web can't find its RSS pages
+</A></li>
+	<LI>Next message: <A HREF="000032.html">[Rdiffweb-discuss] Automatic setup script
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#39">[ date ]</a>
+              <a href="thread.html#39">[ thread ]</a>
+              <a href="subject.html#39">[ subject ]</a>
+              <a href="author.html#39">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

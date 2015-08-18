@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Check status of multiple accounts
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2013-February/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Check%20status%20of%20multiple%20accounts&In-Reply-To=%3C21F222EE-063B-42F8-AA43-B7F3764D0865%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000484.html">
+   <LINK REL="Next"  HREF="000486.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Check status of multiple accounts</H1>
+    <B>Sergio Bellver Aliaga</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Check%20status%20of%20multiple%20accounts&In-Reply-To=%3C21F222EE-063B-42F8-AA43-B7F3764D0865%40gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] Check status of multiple accounts">chencho.cs at gmail.com
+       </A><BR>
+    <I>Tue Feb 19 16:51:40 CET 2013</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000484.html">[Rdiffweb-discuss] Error update repo
+</A></li>
+        <LI>Next message: <A HREF="000486.html">[Rdiffweb-discuss] Check status of multiple accounts
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#485">[ date ]</a>
+              <a href="thread.html#485">[ thread ]</a>
+              <a href="subject.html#485">[ subject ]</a>
+              <a href="author.html#485">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>We want to set up a monitored backup with rdiffweb to all my repos (differents users)
+
+I have two ideas to do it,	
+	- over rss (my rss's don't won't to see rdiffweb btw)
+	- over sh which search all rdiff-backup-data and do rdiff-backup --verify
+
+Someone have something like that?
+
+My idea to sh is something like this:
+
+find /home -type d -name rdiff-backup-data &gt; CUENTAS
+sed 's/rdiff-backup-data//g' CUENTAS &gt;&gt; CUENTAS2
+for CUENTA in `cat CUENTAS2`
+do
+        echo $CUENTA &gt;&gt; CONTROL
+        rdiff-backup --verify $CUENTA &gt;&gt; CONTROL
+done
+#Check CONTROL and if error, send an email
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000484.html">[Rdiffweb-discuss] Error update repo
+</A></li>
+	<LI>Next message: <A HREF="000486.html">[Rdiffweb-discuss] Check status of multiple accounts
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#485">[ date ]</a>
+              <a href="thread.html#485">[ thread ]</a>
+              <a href="subject.html#485">[ subject ]</a>
+              <a href="author.html#485">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

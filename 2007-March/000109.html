@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] New features and changes to rdiffweb
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20New%20features%20and%20changes%20to%20rdiffweb&In-Reply-To=%3C460CF6CD.4000605%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000108.html">
+   <LINK REL="Next"  HREF="000110.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] New features and changes to rdiffweb</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20New%20features%20and%20changes%20to%20rdiffweb&In-Reply-To=%3C460CF6CD.4000605%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] New features and changes to rdiffweb">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Fri Mar 30 13:38:53 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000108.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+        <LI>Next message: <A HREF="000110.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#109">[ date ]</a>
+              <a href="thread.html#109">[ thread ]</a>
+              <a href="subject.html#109">[ subject ]</a>
+              <a href="author.html#109">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Jesus Roncero wrote:
+&gt;<i> On Thursday 29 March 2007 20:33, Josh Nisly wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Oh. My. Goodness. Wow. Fixed in r78:
+</I>&gt;&gt;<i> <A HREF="http://svn.berlios.de/viewcvs/rdiffweb/trunk/rdiffWeb/rdw_helpers.py?rev=78">http://svn.berlios.de/viewcvs/rdiffweb/trunk/rdiffWeb/rdw_helpers.py?rev=78</A>
+</I>&gt;&gt;<i> &amp;view=diff&amp;r1=78&amp;r2=77&amp;p1=trunk/rdiffWeb/rdw_helpers.py&amp;p2=/trunk/rdiffWeb/r
+</I>&gt;&gt;<i> dw_helpers.py
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I'll release this as 3.5.1 and 3.2.1 as soon as possible. Thanks for
+</I>&gt;&gt;<i> catching!
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> It seems to me that that patch break the application. As the call to to 
+</I>&gt;<i> ensurePathValid is:
+</I>&gt;<i>    def index(self, repo=&quot;&quot;, path=&quot;&quot;, restore=&quot;&quot;):
+</I>&gt;<i>       try:
+</I>&gt;<i>          rdw_helpers.ensurePathValid(repo)
+</I>&gt;<i>          rdw_helpers.ensurePathValid(path)
+</I>&gt;<i>
+</I>&gt;<i> it won't work as it will try to validate the path of the repository and the 
+</I>&gt;<i> path itself, wich will create wrong paths. Please, see my patch from 
+</I>&gt;<i> yesterday in which I validate that the path (rootDir + repo + path) sent by 
+</I>&gt;<i> page_browse.py is actually a subdirectory of rootDir.
+</I>&gt;<i>   
+</I>No, the patch simply validates against the &quot;..&quot; syntax, as you 
+described. As I stated earlier, I wanted to fix that hole first. Now 
+that we have it fix, we can look at the other changes, including the 
+check against the root dir.
+&gt;<i> Also, I stored the rootDir in a session variable for easy access as it seems 
+</I>&gt;<i> to me that a sql query is overkill everytime we hit a browsing page.
+</I>&gt;<i>   
+</I>I agree, though I don't like the way that it is initialized. We should 
+have a separate function which explicitly sets the session variable. 
+I'll code this soon.
+&gt;<i> So, what about the change to 4 spaces and the rest of the stuff? :-)
+</I>&gt;<i>   
+</I>I'm okay with the change to 4 spaces, though I'm not excited about a 
+blanket change. I'll look into this soon. Perhaps I can convert 
+everything over in a single patch. As for the other stuff, I simply 
+haven't had time to look at it.
+&gt;<i> Anyway, I'll keep reading the source code and will be back with more stuff as 
+</I>&gt;<i> soon as I have some more time to devote to it.
+</I>&gt;<i>   
+</I>Great! I'd be interested in everything you have to offer. One thing that 
+I've thought about is adding a plugin-style system, so that users can 
+add hooks to do whatever custom things that they want. What do you think?
+&gt;<i> Thanks.
+</I>&gt;<i>   
+</I>Thank you!
+
+Josh
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000108.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+	<LI>Next message: <A HREF="000110.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#109">[ date ]</a>
+              <a href="thread.html#109">[ thread ]</a>
+              <a href="subject.html#109">[ subject ]</a>
+              <a href="author.html#109">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

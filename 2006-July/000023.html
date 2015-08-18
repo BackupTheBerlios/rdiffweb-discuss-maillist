@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Setting Up Backups
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-July/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Setting%20Up%20Backups&In-Reply-To=%3C44B65045.6080505%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000022.html">
+   <LINK REL="Next"  HREF="000024.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Setting Up Backups</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Setting%20Up%20Backups&In-Reply-To=%3C44B65045.6080505%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] Setting Up Backups">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Thu Jul 13 15:53:09 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000022.html">[Rdiffweb-discuss] Setting Up Backups
+</A></li>
+        <LI>Next message: <A HREF="000024.html">[Rdiffweb-discuss] Setting Up Backups
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#23">[ date ]</a>
+              <a href="thread.html#23">[ thread ]</a>
+              <a href="subject.html#23">[ subject ]</a>
+              <a href="author.html#23">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Okay, I was thinking of something different.  I was thinking that the 
+rdiff-web would give you a commandline that you would paste into cron on 
+the *client* machine, aka the machine whose data is being backed up.  If 
+you do it in reverse, you have to worry about firewalls, NATs, moving 
+notebooks, etc.  It would really be a pull-style backup, which isn't 
+really rdiff-backup's style.  That's more down the line of backupPC and 
+similar projects.
+
+Josh Nisly
+
+Timothy White wrote:
+&gt;<i> On 7/12/06, Josh Nisly &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt; wrote:
+</I>&gt;&gt;<i> I use cron to run a shell script with a list of backups.  I've
+</I>&gt;&gt;<i> considered having some sort of page to let you browse the path on your
+</I>&gt;&gt;<i> local computer to back up, then let you browse the remote computer for a
+</I>&gt;&gt;<i> destination folder, and give you a command to run via cron, bash, etc.
+</I>&gt;&gt;<i> Is this what you were expecting?
+</I>&gt;<i>
+</I>&gt;<i> Yes. I was kinda hoping for a simple cron addition, that would run a
+</I>&gt;<i> script managed by the frontend.
+</I>&gt;<i> All the page would really need would be:
+</I>&gt;<i>  * Remote Computer Hostname
+</I>&gt;<i>  * Remote Computer Username (maybe ssh key as well?)
+</I>&gt;<i>  * Local User, Repository, and destination (seeing as we already have
+</I>&gt;<i> a repo location, it just needs to be a subdir in that location. Local
+</I>&gt;<i> user is also just a subdir of the root repo IIRC)
+</I>&gt;<i> * Then a list of 'options' that just toggle command line switches
+</I>&gt;<i>
+</I>&gt;<i> I'm going to have a go at building some sort of script, and simple
+</I>&gt;<i> config file, that would be easy to do. The web interface is the harder
+</I>&gt;<i> part, and I would probably not bother with it for now, but it would be
+</I>&gt;<i> very nice.
+</I>&gt;<i>
+</I>&gt;<i> I'm more than happy to help with development of this, where ever
+</I>&gt;<i> possible. My initial trials of rdiff-backup and rdiffweb have
+</I>&gt;<i> impressed me!
+</I>&gt;<i>
+</I>&gt;<i> Tim
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000022.html">[Rdiffweb-discuss] Setting Up Backups
+</A></li>
+	<LI>Next message: <A HREF="000024.html">[Rdiffweb-discuss] Setting Up Backups
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#23">[ date ]</a>
+              <a href="thread.html#23">[ thread ]</a>
+              <a href="subject.html#23">[ subject ]</a>
+              <a href="author.html#23">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

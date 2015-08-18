@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] 500 Internal error
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20500%20Internal%20error&In-Reply-To=%3C45F0329A.7060800%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000084.html">
+   <LINK REL="Next"  HREF="000085.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] 500 Internal error</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20500%20Internal%20error&In-Reply-To=%3C45F0329A.7060800%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] 500 Internal error">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Thu Mar  8 16:58:18 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000084.html">[Rdiffweb-discuss] 500 Internal error
+</A></li>
+        <LI>Next message: <A HREF="000085.html">[Rdiffweb-discuss] Hello
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#90">[ date ]</a>
+              <a href="thread.html#90">[ thread ]</a>
+              <a href="subject.html#90">[ subject ]</a>
+              <a href="author.html#90">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Try running rdiff-web with the -d parameter. This will cause tracebacks 
+to be logged to screen. That should give pretty good debugging 
+information, which I can use to track down and fix the problem.
+
+Thanks,
+JoshN
+
+Bruno CAPELETO wrote:
+&gt;<i> Just a precision concerning point 2: it is systematic with the same
+</I>&gt;<i> folder to be restored, but with some folders it works and with some
+</I>&gt;<i> others not.
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Dear all,
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I'm quite new at rdiff-backup and rdiffweb, so I can't say really if my
+</I>&gt;&gt;<i> problem comes from rdiff-backup or from rdiffweb, but I hope I can get
+</I>&gt;&gt;<i> some help here.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I tried both version 0.3.2 and 0.3.5 with MySQL and I got the same
+</I>&gt;&gt;<i> systematic error:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> --------------------------------------------------------------------------------------
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     500 Internal error
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The server encountered an unexpected condition which prevented it from
+</I>&gt;&gt;<i> fulfilling the request.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Powered by CherryPy 2.2.1 &lt;<A HREF="http://www.cherrypy.org">http://www.cherrypy.org</A>&gt;
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> --------------------------------------------------------------------------------------
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> This happened at two locations with rdiffweb:
+</I>&gt;&gt;<i> 1. when pressing the button &quot;Find and update repositories&quot;
+</I>&gt;&gt;<i> 2. when I want to restore a folder and choose the date
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> With point 1, I get the error from the web server but the mysql table is
+</I>&gt;&gt;<i> correctly updated
+</I>&gt;&gt;<i> With point 2, I get the error and the directory is not restored
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Any help would be very appreciated.
+</I>&gt;&gt;<i> For example, I couldn't find any detailed log which could help solve the
+</I>&gt;&gt;<i> problem...
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Cheers,
+</I>&gt;&gt;<i> Bruno
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>   
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000084.html">[Rdiffweb-discuss] 500 Internal error
+</A></li>
+	<LI>Next message: <A HREF="000085.html">[Rdiffweb-discuss] Hello
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#90">[ date ]</a>
+              <a href="thread.html#90">[ thread ]</a>
+              <a href="subject.html#90">[ subject ]</a>
+              <a href="author.html#90">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

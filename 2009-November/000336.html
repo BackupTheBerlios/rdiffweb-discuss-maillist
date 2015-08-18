@@ -1,0 +1,90 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] HTTPS and Intermediate Certificates
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20HTTPS%20and%20Intermediate%20Certificates&In-Reply-To=%3C57bdd531-6a41-42db-b3e7-28e3d2a03fe7%40progressive-sealing.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000334.html">
+   <LINK REL="Next"  HREF="000337.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] HTTPS and Intermediate Certificates</H1>
+    <B>Lucas Burdick</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20HTTPS%20and%20Intermediate%20Certificates&In-Reply-To=%3C57bdd531-6a41-42db-b3e7-28e3d2a03fe7%40progressive-sealing.com%3E"
+       TITLE="[Rdiffweb-discuss] HTTPS and Intermediate Certificates">lucas at progressive-sealing.com
+       </A><BR>
+    <I>Fri Nov 13 22:11:23 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000334.html">[Rdiffweb-discuss] Updates
+</A></li>
+        <LI>Next message: <A HREF="000337.html">[Rdiffweb-discuss] HTTPS and Intermediate Certificates
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#336">[ date ]</a>
+              <a href="thread.html#336">[ thread ]</a>
+              <a href="subject.html#336">[ subject ]</a>
+              <a href="author.html#336">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Well,
+ 
+I found this post:
+ 
+<A HREF="http://blog.joshnisly.com/2009/01/24/using-godaddy-certificates-with-cherrypy/">http://blog.joshnisly.com/2009/01/24/using-godaddy-certificates-with-cherrypy/</A>
+ 
+But it doesn&#146;t seem to work with Rdiffweb.  The patch runs fine. 
+ 
+When I try to specify the cert and key in rdw.conf and specify &#147;only&#148; the chain cert in _cpserver.py and __init__.py the service won&#146;t run.  When I try and specify the cert, key and chain cert in the latter two files AND the key and cert in rdw.conf it won&#146;t run.  When I specify no cert or key in rdw.conf and everything in the other two files, it doesn&#146;t run.
+ 
+I&#146;m stuck
+please help
+ 
+Thanks!!
+ 
+From: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss-bounces at lists.berlios.de</A> [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss-bounces at lists.berlios.de</A>] On Behalf Of Lucas Burdick
+Sent: Friday, November 13, 2009 7:38 AM
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>
+Subject: [Rdiffweb-discuss] HTTPS and Intermediate Certificates
+ 
+Hey Josh,
+ 
+Is there any way to specify an intermediate SSL certificate in RdiffWeb?  It seems this is key to getting some signed certificates to work in some browsers.
+ 
+Thanks
+Lucas
+ 
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20091113/ed21b993/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20091113/ed21b993/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000334.html">[Rdiffweb-discuss] Updates
+</A></li>
+	<LI>Next message: <A HREF="000337.html">[Rdiffweb-discuss] HTTPS and Intermediate Certificates
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#336">[ date ]</a>
+              <a href="thread.html#336">[ thread ]</a>
+              <a href="subject.html#336">[ subject ]</a>
+              <a href="author.html#336">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

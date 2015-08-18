@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Rdiffweb 0.6.3 upgrade
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-January/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Rdiffweb%200.6.3%20upgrade&In-Reply-To=%3C7031f6c2-1f60-46ec-b6ee-01fddbc20a12%40progressive-sealing.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000244.html">
+   <LINK REL="Next"  HREF="000246.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Rdiffweb 0.6.3 upgrade</H1>
+    <B>Lucas Burdick</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Rdiffweb%200.6.3%20upgrade&In-Reply-To=%3C7031f6c2-1f60-46ec-b6ee-01fddbc20a12%40progressive-sealing.com%3E"
+       TITLE="[Rdiffweb-discuss] Rdiffweb 0.6.3 upgrade">lucas at progressive-sealing.com
+       </A><BR>
+    <I>Mon Jan  5 19:34:56 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000244.html">[Rdiffweb-discuss] Rdiffweb 0.6.3 upgrade
+</A></li>
+        <LI>Next message: <A HREF="000246.html">[Rdiffweb-discuss] rdiff-web doesn't log anything
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#245">[ date ]</a>
+              <a href="thread.html#245">[ thread ]</a>
+              <a href="subject.html#245">[ subject ]</a>
+              <a href="author.html#245">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Aha!
+ 
+Thank you sir...the rdiff-web &#150;d option turned up the error &#147;You must install pyOpenSSL to use HTTPS&#148; which I didn&#146;t have installed.  I did that and everything is perfect!
+ 
+Thanks for a wonderful front-end by the way.  Keep up the good work.
+ 
+Lucas Burdick
+ 
+From: Josh Nisly [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>] 
+Sent: January-05-09 7:42 AM
+To: Lucas Burdick; <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>
+Subject: Re: [Rdiffweb-discuss] Rdiffweb 0.6.3 upgrade
+ 
+Using relative paths will almost certainly not work. Try using absolute paths to the certificate:
+SSLCertificate=/etc/rdiffweb/rdw.pem
+SSLPrivateKey=/etc/rdiffweb/rdw.pem
+
+If this doesn't work, try running the server interactively with &quot;rdiff-web -d&quot;, and report any error messages.
+
+JoshN
+
+Lucas Burdick wrote: 
+Hi There,
+ 
+I had version 5 running very smoothly, but I wanted to check out the newer version.  After a couple of initial troubles getting rdiffweb to work with cherrypy 3.1.1 (I had to use 3.0.3) I have it working.  The only thing I can&#146;t seem to do is setup SSL.  I had the old version working with stunnel but there doesn&#146;t seem to be an option for that with the new version. 
+ 
+How do I enable SSL on .6.3? I have tried
+ 
+SSLCertificate=rdw.pem
+SSLPrivateKey=rdw.pem
+ 
+In my conf file, but nothing.
+ 
+Thanks
+Lucas
+ 
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20090105/4184fc09/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20090105/4184fc09/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000244.html">[Rdiffweb-discuss] Rdiffweb 0.6.3 upgrade
+</A></li>
+	<LI>Next message: <A HREF="000246.html">[Rdiffweb-discuss] rdiff-web doesn't log anything
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#245">[ date ]</a>
+              <a href="thread.html#245">[ thread ]</a>
+              <a href="subject.html#245">[ subject ]</a>
+              <a href="author.html#245">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

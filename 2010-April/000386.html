@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Running the daemon with a user different from root
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2010-April/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Running%20the%20daemon%20with%20a%20user%20different%0A%20from%20root&In-Reply-To=%3C4BD7EFCF.4020406%40miamammausalinux.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000384.html">
+   <LINK REL="Next"  HREF="000387.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Running the daemon with a user different from root</H1>
+    <B>RaSca</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Running%20the%20daemon%20with%20a%20user%20different%0A%20from%20root&In-Reply-To=%3C4BD7EFCF.4020406%40miamammausalinux.org%3E"
+       TITLE="[Rdiffweb-discuss] Running the daemon with a user different from root">rasca at miamammausalinux.org
+       </A><BR>
+    <I>Wed Apr 28 10:20:31 CEST 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000384.html">[Rdiffweb-discuss] Running the daemon with a user different from root
+</A></li>
+        <LI>Next message: <A HREF="000387.html">[Rdiffweb-discuss] Problem over svn code
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#386">[ date ]</a>
+              <a href="thread.html#386">[ thread ]</a>
+              <a href="subject.html#386">[ subject ]</a>
+              <a href="author.html#386">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Il giorno Mar 27 Apr 2010 19:54:13 CET, Josh Nisly ha scritto:
+&gt;<i> Right now, it's not possible.
+</I>&gt;<i> Josh Nisly
+</I>
+Hi Josh,
+I don't think this is a problem, and also I found a solution. My 
+filesystem was, as I wrote, an sshfs kind, looking at the man page of 
+the sshfs command I find out that the &quot;-o allow_other&quot; option does the 
+trick. Now I'm able to access the rdiff-backup directories via rdiffweb 
+and doing the backups in the same locations with my user rdiff-backup.
+
+Thanks,
+
+-- 
+RaSca
+Mia Mamma Usa Linux: Niente &#232; impossibile da capire, se lo spieghi bene!
+<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rasca at miamammausalinux.org</A>
+<A HREF="http://www.miamammausalinux.org">http://www.miamammausalinux.org</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000384.html">[Rdiffweb-discuss] Running the daemon with a user different from root
+</A></li>
+	<LI>Next message: <A HREF="000387.html">[Rdiffweb-discuss] Problem over svn code
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#386">[ date ]</a>
+              <a href="thread.html#386">[ thread ]</a>
+              <a href="subject.html#386">[ subject ]</a>
+              <a href="author.html#386">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

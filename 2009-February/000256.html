@@ -1,0 +1,83 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Bug in svn (typo)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-February/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Bug%20in%20svn%20%28typo%29&In-Reply-To=%3C4987068E.3070808%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Bug in svn (typo)</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Bug%20in%20svn%20%28typo%29&In-Reply-To=%3C4987068E.3070808%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] Bug in svn (typo)">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Mon Feb  2 15:43:26 CET 2009</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#256">[ date ]</a>
+              <a href="thread.html#256">[ thread ]</a>
+              <a href="subject.html#256">[ subject ]</a>
+              <a href="author.html#256">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Masseboeuf Mathieu wrote:
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> I just tried rdiff-backup - and checked out the latest SVN version.
+</I>&gt;<i> One of the reasons being a nice debian package, plus some multi-user  
+</I>&gt;<i> ease without a fat db.
+</I>&gt;<i>
+</I>&gt;<i> There is a bug in the database schema when installing, there is an  
+</I>&gt;<i> extra ')' :
+</I>&gt;<i>    File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/db_sqlite.py&quot;, line  
+</I>&gt;<i> 218, in _migrateExistingData
+</I>&gt;<i>      cursor.execute(statement)
+</I>&gt;<i> sqlite3.OperationalError: near &quot;,&quot;: syntax error
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i> --
+</I>&gt;<i> Palpix - <A HREF="http://palpix.com">http://palpix.com</A>
+</I>&gt;<i> Mathieu - Directeur Technique
+</I>&gt;<i>   
+</I>Oops. I had this fixed in my local working copy, and failed to commit 
+it. This is now fixed.
+
+Thanks,
+JoshN
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#256">[ date ]</a>
+              <a href="thread.html#256">[ thread ]</a>
+              <a href="subject.html#256">[ subject ]</a>
+              <a href="author.html#256">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

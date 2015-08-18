@@ -1,0 +1,88 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] stable version 0.5.1 fails to start
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2008-May/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20stable%20version%200.5.1%20fails%20to%20start&In-Reply-To=%3C483F49EA.2080109%40firebus.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] stable version 0.5.1 fails to start</H1>
+    <B>Russell Uman</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20stable%20version%200.5.1%20fails%20to%20start&In-Reply-To=%3C483F49EA.2080109%40firebus.com%3E"
+       TITLE="[Rdiffweb-discuss] stable version 0.5.1 fails to start">lists at firebus.com
+       </A><BR>
+    <I>Fri May 30 02:27:22 CEST 2008</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#225">[ date ]</a>
+              <a href="thread.html#225">[ thread ]</a>
+              <a href="subject.html#225">[ subject ]</a>
+              <a href="author.html#225">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+howdy.
+
+i've been using version 0.3.5.1 successfully for some time.
+
+i attempted an uprgade to version 0.5.1
+
+when i try to start 0.5.1, i get an error:
+
+# /usr/bin/rdiff-web --pid-file=/var/run/rdiff-web
+Traceback (most recent call last):
+   File &quot;/usr/bin/rdiff-web&quot;, line 8, in ?
+     import rdiffWeb.rdw_spider_repos
+   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/rdw_spider_repos.py&quot;, 
+line 5, in ?
+     import rdw_helpers
+   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/rdw_helpers.py&quot;, line 
+11, in ?
+     import subprocess
+ImportError: No module named subprocess
+
+i'm on a centos 4 server
+python 2.3
+CherryPy 2.2
+
+any ideas why this is happening?
+
+-- 
+russell  uman
+    firebus
+((((d-_-b))))
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#225">[ date ]</a>
+              <a href="thread.html#225">[ thread ]</a>
+              <a href="subject.html#225">[ subject ]</a>
+              <a href="author.html#225">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

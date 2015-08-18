@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Install rdiffweb into Centos+Plesk
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2010-January/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Install%20rdiffweb%20into%20Centos%2BPlesk&In-Reply-To=%3CBAY118-DS7CB994CD2201C3A1A4C79B15F0%40phx.gbl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000347.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Install rdiffweb into Centos+Plesk</H1>
+    <B>David Flink</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Install%20rdiffweb%20into%20Centos%2BPlesk&In-Reply-To=%3CBAY118-DS7CB994CD2201C3A1A4C79B15F0%40phx.gbl%3E"
+       TITLE="[Rdiffweb-discuss] Install rdiffweb into Centos+Plesk">unixrulez at hotmail.com
+       </A><BR>
+    <I>Mon Jan 25 17:21:10 CET 2010</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000347.html">[Rdiffweb-discuss] Install rdiffweb into Centos+Plesk
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#348">[ date ]</a>
+              <a href="thread.html#348">[ thread ]</a>
+              <a href="subject.html#348">[ subject ]</a>
+              <a href="author.html#348">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello.
+
+ 
+
+Where did you get this copy of rdiffweb? The &quot;0.7.0b&quot; code is not officially
+added yet.
+
+ 
+
+If you want to get the latest &quot;Stable&quot; or &quot;testing&quot; version of rdiff-web,
+get it from <A HREF="http://www.rdiffweb.org/wiki/index.php?title=Main_Page#Download">http://www.rdiffweb.org/wiki/index.php?title=Main_Page#Download</A>
+
+ 
+
+If you want the latest &quot;official&quot; development version, you need to get it
+from SVN from <A HREF="http://developer.berlios.de/svn/?group_id=5939">http://developer.berlios.de/svn/?group_id=5939</A>
+
+ 
+
+If you want to stay with the &quot;unofficial&quot; 0.7.0b code (I must confess that I
+like the changes it includes), try this:
+
+ 
+
+If you run from a root command prompt:
+
+/usr/bin/rdiff-web
+
+You should get an error message that ends with the line:
+
+ImportError: No module named PAM
+
+If you do, there are 2 solutions:
+
+1)      Install PAM. This doesn't work on CentOS or other RedHat
+derivatives, so don't bother trying.
+
+2)      Make the following changes by hand:
+
+a.       Edit /usr/lib/python2.4/site-packages/rdiffWeb/page_prefs.py and
+remove line 9 &quot;import PAM&quot;
+
+b.      Edit /usr/lib/python2.4/site-packages/rdiffWeb/page_main.py and
+remove line 10 &quot;import PAM&quot;
+
+(It may not be &quot;python2.4&quot; on your system if you have upgraded python, but
+you should be able to find them)
+
+ 
+
+I will make better versions of those two changes in the 0.7.0b code (I
+suppose it will be 0.7.1b, then),
+
+But please be aware that the 0.7.x code base is _not_ official until the
+code is added to SVN by one of the official developers. 0.7.x is my
+modifications that I uploaded to the mailing list for feedback and comment.
+It may not even be called 0.7.x if/when it is included.
+
+ 
+
+Best of luck, and sorry for the bug.
+
+ 
+
+David.
+
+ 
+
+From: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss-bounces at lists.berlios.de</A>
+[mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss-bounces at lists.berlios.de</A>] On Behalf Of Lucas
+Burdick
+Sent: 25 January 2010 15:25
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>
+Subject: Re: [Rdiffweb-discuss] Install rdiffweb into Centos+Plesk
+
+ 
+
+Your file has &quot;version=0.7.0b&quot;.  I don't have that and mine runs fine. Is
+there a 0.7.0 beta version out there?  Maybe that's messing it up? What
+version of all the programs have you installed?
+
+ 
+
+From: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss-bounces at lists.berlios.de</A>
+[mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss-bounces at lists.berlios.de</A>] On Behalf Of Chencho
+Pc-cito
+Sent: Monday, January 25, 2010 6:53 AM
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>
+Subject: Re: [Rdiffweb-discuss] Install rdiffweb into Centos+Plesk
+
+ 
+
+Here is my rdw.conf:
+
+version=0.7.0b
+ServerHost=0.0.0.0
+ServerPort=8080
+usePAM=false
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20100125/69ce4774/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20100125/69ce4774/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000347.html">[Rdiffweb-discuss] Install rdiffweb into Centos+Plesk
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#348">[ date ]</a>
+              <a href="thread.html#348">[ thread ]</a>
+              <a href="subject.html#348">[ subject ]</a>
+              <a href="author.html#348">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

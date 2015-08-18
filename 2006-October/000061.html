@@ -1,0 +1,155 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] A small Patch to have file/folder images...
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-October/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20A%20small%20Patch%20to%20have%20file/folder%20images...&In-Reply-To=%3C20061013162853.8w932kd2qskg0cgg%40intranet.lpta.univ-montp2.fr%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000057.html">
+   <LINK REL="Next"  HREF="000064.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] A small Patch to have file/folder images...</H1>
+    <B>CARON Dominique</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20A%20small%20Patch%20to%20have%20file/folder%20images...&In-Reply-To=%3C20061013162853.8w932kd2qskg0cgg%40intranet.lpta.univ-montp2.fr%3E"
+       TITLE="[Rdiffweb-discuss] A small Patch to have file/folder images...">rdiff.20.dcaron at spamgourmet.com
+       </A><BR>
+    <I>Fri Oct 13 16:28:53 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000057.html">[Rdiffweb-discuss] Little testrepo.
+</A></li>
+        <LI>Next message: <A HREF="000064.html">[Rdiffweb-discuss] A small Patch to have file/folder images...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#61">[ date ]</a>
+              <a href="thread.html#61">[ thread ]</a>
+              <a href="subject.html#61">[ subject ]</a>
+              <a href="author.html#61">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>
+May this can be 'fun'.
+
+Here is a small patch to have images before folders/files:
+
+
+###########################################################################
+templates/dir_listing-img.html
+--- templates/dir_listing.html  2006-09-26 11:28:03.000000000 +0200
++++ templates/dir_listing-img.html      2006-10-13 16:20:29.000000000 +0200
+@@ -34,7 +34,7 @@
+  &lt;tbody&gt;
+     &lt;!--StartRepeat:files--&gt;
+      
+&lt;!--StartIncludeIf:exists--&gt;&lt;tr&gt;&lt;!--EndIncludeIf:exists--&gt;&lt;!--StartDeleteIf:exists--&gt;&lt;tr style=&quot;color: #999&quot;  
+ &gt;&lt;!--EndDeleteIf:exists--&gt;
+-      &lt;td&gt;&lt;a href=&quot;^fileRestoreUrl$&quot;&gt;^filename$&lt;/a&gt;&lt;/td&gt;
++      &lt;td&gt;&lt;img src=&quot;/static/images/^filetype$.png&quot; align=middle   
+height=25 border=0 alt=&quot;^filetype$&quot; &gt;&lt;a  
+href=&quot;^fileRestoreUrl$&quot;&gt;^filename$&lt;/a&gt;&lt;/td&gt;
+        &lt;td&gt;^size$&lt;/td&gt;
+        &lt;td&gt;^date$&lt;/td&gt;
+
+
+###########################################################################
+--- page_browse.py      2006-09-26 11:28:03.000000000 +0200
++++ page_browse-img.py  2006-10-13 16:16:58.000000000 +0200
+@@ -63,20 +63,25 @@
+              entryLink = &quot;&quot;
+              if libEntry.isDir:
+                 entryLink = self.buildBrowseUrl(repo, joinPaths(path,  
+libEntry.n
+ame), False)
++              fileType = &quot;folder&quot;
+                 changeDates = []
++              fileSize= &quot; &quot;
+              else:
+                 entryLink = self.buildRestoreUrl(repo,  
+joinPaths(path, libEntry.
+name), libEntry.changeDates[-1])
++              fileType = &quot;file&quot;
+                 entryChangeDates = libEntry.changeDates[:-1]
+                 entryChangeDates.reverse()
+                 changeDates = [ { &quot;changeDateUrl&quot; :  
+self.buildRestoreUrl(repo, j
+oinPaths(path, libEntry.name), x),
+                                   &quot;changeDateStr&quot; :  
+x.getDisplayString() } for x
+  in entryChangeDates]
++              fileSize=rdw_helpers.formatFileSizeStr(libEntry.fileSize)
+
+              showNoRevisionsText = (len(changeDates) == 0) and (not  
+libEntry.isD
+ir)
+              entries.append({ &quot;filename&quot; : libEntry.name,
+                             &quot;fileRestoreUrl&quot; : entryLink,
++                          &quot;filetype&quot; : fileType,
+                             &quot;exists&quot; : libEntry.exists,
+                             &quot;date&quot; :  
+libEntry.changeDates[-1].getDisplayString()
+,
+-                           &quot;size&quot; :  
+rdw_helpers.formatFileSizeStr(libEntry.file
+Size),
++                           &quot;size&quot; : fileSize,
+                             &quot;hasPrevRevisions&quot; : len(changeDates) &gt; 0,
+                             &quot;showNoRevisionsText&quot; : showNoRevisionsText,
+                             &quot;changeDates&quot; : changeDates })
+
+
+#######################################################################
+After applying this 2 patches copy the images (file.png and folder.png  
+attached) in a new created $PYTHON_HOME_RDIFFWEB/static/images directory
+
+
+
+
+----------------------------------------------------------------
+Ce message vous a &#233;t&#233; transmis gr&#226;ce &#224; IMP, le WebMail libre de HORDE
+(www.horde.org).
+
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: file.png
+Type: image/png
+Size: 2656 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20061013/8b9885cc/attachment.png">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20061013/8b9885cc/attachment.png</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: folder.png
+Type: image/png
+Size: 1673 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20061013/8b9885cc/attachment-0001.png">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20061013/8b9885cc/attachment-0001.png</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000057.html">[Rdiffweb-discuss] Little testrepo.
+</A></li>
+	<LI>Next message: <A HREF="000064.html">[Rdiffweb-discuss] A small Patch to have file/folder images...
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#61">[ date ]</a>
+              <a href="thread.html#61">[ thread ]</a>
+              <a href="subject.html#61">[ subject ]</a>
+              <a href="author.html#61">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

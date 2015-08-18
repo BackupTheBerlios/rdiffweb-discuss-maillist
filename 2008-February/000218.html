@@ -1,0 +1,86 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] rdiffWeb-0.6.2 can't start
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2008-February/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiffWeb-0.6.2%20can%27t%20start&In-Reply-To=%3C47C52EEF.7020606%40bppiac.hu%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000217.html">
+   <LINK REL="Next"  HREF="000219.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] rdiffWeb-0.6.2 can't start</H1>
+    <B>Farkas Levente</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiffWeb-0.6.2%20can%27t%20start&In-Reply-To=%3C47C52EEF.7020606%40bppiac.hu%3E"
+       TITLE="[Rdiffweb-discuss] rdiffWeb-0.6.2 can't start">lfarkas at bppiac.hu
+       </A><BR>
+    <I>Wed Feb 27 10:35:43 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000217.html">[Rdiffweb-discuss] rdw Spider
+</A></li>
+        <LI>Next message: <A HREF="000219.html">[Rdiffweb-discuss] rdiffWeb-0.6.2 can't start
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#218">[ date ]</a>
+              <a href="thread.html#218">[ thread ]</a>
+              <a href="subject.html#218">[ subject ]</a>
+              <a href="author.html#218">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>hi,
+i try to install rdiffWeb-0.6.2 on centos-5.1, but after i recompile the
+src.rpm and try to start it gives this error:
+-------------------------------------------
+# /etc/init.d/rdiff-web start
+Starting rdiffWeb...Traceback (most recent call last):
+  File &quot;/usr/bin/rdiff-web&quot;, line 10, in ?
+    import rdiffWeb.rdw_spider_repos
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/rdw_spider_repos.py&quot;,
+line 5, in ?
+    import rdw_helpers
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/rdw_helpers.py&quot;, line
+13, in ?
+    import rdw_templating
+  File &quot;/usr/lib/python2.4/site-packages/rdiffWeb/rdw_templating.py&quot;,
+line 6, in ?
+    class templateError(BaseException):
+NameError: name 'BaseException' is not defined
+                                                                       done
+-------------------------------------------
+what can be the problem?
+thanks.
+
+-- 
+  Levente                               &quot;Si vis pacem para bellum!&quot;
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000217.html">[Rdiffweb-discuss] rdw Spider
+</A></li>
+	<LI>Next message: <A HREF="000219.html">[Rdiffweb-discuss] rdiffWeb-0.6.2 can't start
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#218">[ date ]</a>
+              <a href="thread.html#218">[ thread ]</a>
+              <a href="subject.html#218">[ subject ]</a>
+              <a href="author.html#218">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

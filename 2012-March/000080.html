@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> No subject
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2012-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20No%20subject&In-Reply-To=%3Cmailman.1.1331737796.10673.rdiffweb-discuss%40lists.berlios.de%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000335.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>No subject</H1>
+    <B></B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20No%20subject&In-Reply-To=%3Cmailman.1.1331737796.10673.rdiffweb-discuss%40lists.berlios.de%3E"
+       TITLE="No subject">
+       </A><BR>
+    <I>Wed Mar 14 16:09:56 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000335.html">No subject
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#80">[ date ]</a>
+              <a href="thread.html#80">[ thread ]</a>
+              <a href="subject.html#80">[ subject ]</a>
+              <a href="author.html#80">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>and then drill down into a directory path to &quot;restore&quot; it, rdiffweb
+tries to create a .zip file of the archive by asking me to &quot;Choose a
+backup date to restore as of&quot;.  So e.g. visiting:
+
+<A HREF="http://localhost:8080/browse/?repo=%2Fotherbackeduphost&amp;path=%2Fwww">http://localhost:8080/browse/?repo=%2Fotherbackeduphost&amp;path=%2Fwww</A>
+
+I can restore &quot;www&quot;. But when I click to restore the folder rdiffweb
+builds a zip file for downloading that invariably calls &quot;\(root\).zip&quot;.
+
+Where is rdiffweb getting this \(root\) and \(root\).zip  name from?
+
+The UI and config files don't give me an option for naming repositories
+- which I guess is how the zip file should be named (either that or the
+name of the repository path by default which in the case above would be
+otherbackeduphost_www.zip).  Is there anyway to make sure the .zip
+download is named correctly?
+
+One possibly related issue is that if I limit a user's root to a
+directory the directory listing always appears as &quot;/&quot; on the user's
+&quot;Backup Locations&quot; page. It's hard to click on the hyperlink anchor for
+&quot;/&quot; because it has no associated name.
+
+Two other minor issues that are related:
+
+- rdiffweb isn't really &quot;restoring&quot; the backup (that's a job for
+rdiff-backup running on the machine where the restore takes place), it's
+providing a zip archive of the folder so maybe &quot;Choose a backup date to
+download as a ZIP archive&quot; might be a better string?.
+
+- &quot;folder&quot; should be &quot;directory&quot; :-)
+
+Cheers
+
+ps: I had to modify the temporary directory setting since /tmp/, which
+is where tempfile() ssems to create random temporary files by default,
+was not large enough to build the zip file for download - attached a
+small patch for that ... if I recall correctly the source suggests this
+should all be a config setting
+
+
+
+-- 
+Graham Todd - bellanet.org
+613.236.6163 #2443
+
+
+--------------070105060203060803000701
+Content-Type: text/x-patch;
+ name=&quot;rdiff.patch&quot;
+Content-Transfer-Encoding: 7bit
+Content-Disposition: inline;
+ filename=&quot;rdiff.patch&quot;
+
+--- rdiffWeb/librdiff.py.orig   Tue Oct 10 23:56:50 2006
++++ rdiffWeb/librdiff.py        Thu Feb 22 11:10:13 2007
+@@ -262,7 +262,7 @@
+ 
+    fileToRestore = joinPaths(repoRoot, dirPath, filename)
+    dateString = str(restoreDate.getSeconds())
+-   rdiffOutputFile = joinPaths(tempfile.mkdtemp(), restoredFilename) # TODO: make so this includes the username
++   rdiffOutputFile = joinPaths(tempfile.mkdtemp(&quot;.temp&quot;,&quot;rdiff-restore_&quot;,&quot;/usr/local/rdiffweb_temp&quot;), restoredFilename) 
+    args = [ &quot;rdiff-backup&quot;, &quot;--restore-as-of=&quot;+dateString, fileToRestore, rdiffOutputFile ]
+    os.spawnvp(os.P_WAIT, args[0], args)
+    if not os.access(rdiffOutputFile, os.F_OK):
+
+--------------070105060203060803000701--
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000335.html">No subject
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#80">[ date ]</a>
+              <a href="thread.html#80">[ thread ]</a>
+              <a href="subject.html#80">[ subject ]</a>
+              <a href="author.html#80">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

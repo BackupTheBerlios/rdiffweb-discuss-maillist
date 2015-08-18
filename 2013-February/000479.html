@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Error update repo
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2013-February/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Error%20update%20repo&In-Reply-To=%3C19ACDCAA-59CE-4937-A8B4-A64182A0AE60%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   <LINK REL="Next"  HREF="000480.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Error update repo</H1>
+    <B>Sergio Bellver Aliaga</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Error%20update%20repo&In-Reply-To=%3C19ACDCAA-59CE-4937-A8B4-A64182A0AE60%40gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] Error update repo">chencho.cs at gmail.com
+       </A><BR>
+    <I>Tue Feb 19 12:03:37 CET 2013</I>
+    <P><UL>
+        
+        <LI>Next message: <A HREF="000480.html">[Rdiffweb-discuss] Error update repo
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#479">[ date ]</a>
+              <a href="thread.html#479">[ thread ]</a>
+              <a href="subject.html#479">[ subject ]</a>
+              <a href="author.html#479">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi all.
+
+We do a fresh install of rdiffweb based into ikus060 code , but have a problem with &quot;update repo&quot; button in prefs.
+
+Here is the error:
+
+500 Internal Server Error
+
+The server encountered an unexpected condition which prevented it from fulfilling the request.
+
+Traceback (most recent call last):
+  File &quot;/usr/lib/python2.7/dist-packages/cherrypy/_cprequest.py&quot;, line 656, in respond
+    response.body = self.handler()
+  File &quot;/usr/lib/python2.7/dist-packages/cherrypy/lib/encoding.py&quot;, line 188, in __call__
+    self.body = self.oldhandler(*args, **kwargs)
+  File &quot;/usr/lib/python2.7/dist-packages/cherrypy/_cpdispatch.py&quot;, line 34, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File &quot;/usr/local/lib/python2.7/dist-packages/rdiffWeb/page_prefs.py&quot;, line 36, in index
+    return self._updateRepos()
+  File &quot;/usr/local/lib/python2.7/dist-packages/rdiffWeb/page_prefs.py&quot;, line 61, in _updateRepos
+    rdw_spider_repos.findReposForUser(self.getUsername(), self.getUserDB())
+  File &quot;/usr/local/lib/python2.7/dist-packages/rdiffWeb/rdw_spider_repos.py&quot;, line 62, in findReposForUser
+    _findRdiffRepos(userRoot, repoPaths)
+  File &quot;/usr/local/lib/python2.7/dist-packages/rdiffWeb/rdw_spider_repos.py&quot;, line 48, in _findRdiffRepos
+    dirEntries = os.listdir(dirToSearch)
+OSError: [Errno 2] No such file or directory: '/home/samori'
+
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20130219/db723ed5/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20130219/db723ed5/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	<LI>Next message: <A HREF="000480.html">[Rdiffweb-discuss] Error update repo
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#479">[ date ]</a>
+              <a href="thread.html#479">[ thread ]</a>
+              <a href="subject.html#479">[ subject ]</a>
+              <a href="author.html#479">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,111 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Add column sorting
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2012-December/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Add%20column%20sorting&In-Reply-To=%3CCAJ%3Dkj5yXxrZ4nH1khrOx%3Ds2RPpo1_dV7ePNXvUHk9pJPVihr3w%40mail.gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000476.html">
+   <LINK REL="Next"  HREF="000478.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Add column sorting</H1>
+    <B>Patrik Dufresne</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Add%20column%20sorting&In-Reply-To=%3CCAJ%3Dkj5yXxrZ4nH1khrOx%3Ds2RPpo1_dV7ePNXvUHk9pJPVihr3w%40mail.gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] Add column sorting">ikus060 at gmail.com
+       </A><BR>
+    <I>Tue Dec  4 14:34:45 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000476.html">[Rdiffweb-discuss] Add column sorting
+</A></li>
+        <LI>Next message: <A HREF="000478.html">[Rdiffweb-discuss] Add column sorting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#477">[ date ]</a>
+              <a href="thread.html#477">[ thread ]</a>
+              <a href="subject.html#477">[ subject ]</a>
+              <a href="author.html#477">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I'm currently working on a solution to improve the performance to sort the
+data. So far it take less then a second to sort 11000 items in Chrome
+browser vs 12 secs before the modification. The biggest modification is the
+use of TimSort algorithm instead of the default JavaScript sort. The
+modification is satisfying on the client side, but the server side is still
+slow.
+
+I'm in process to find where is the bottleneck on the server side.
+On Dec 4, 2012 5:44 AM, &quot;Dominic Raferd&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">dominic at timedicer.co.uk</A>&gt; wrote:
+
+&gt;<i>  Hi Patrik
+</I>&gt;<i>
+</I>&gt;<i> Yes I think your analysis of the problem is correct, I look forward to any
+</I>&gt;<i> improvements you can make! It would help if the first click of the 'Last
+</I>&gt;<i> Revision' column put it into descending (not ascending) date order.
+</I>&gt;<i>
+</I>&gt;<i> Thanks and regards
+</I>&gt;<i>
+</I>&gt;<i> Dominic
+</I>&gt;<i> *TimeDicer &lt;<A HREF="http://www.timedicer.co.uk">http://www.timedicer.co.uk</A>&gt;: Free File Recovery from Whenever
+</I>&gt;<i>
+</I>&gt;<i> *
+</I>&gt;<i> On 01/12/2012 23:12, Patrik Dufresne wrote:
+</I>&gt;<i>
+</I>&gt;<i> Hi Dominic,
+</I>&gt;<i>
+</I>&gt;<i>  As I understand, their is two problems:
+</I>&gt;<i> 1. A page with many items (over 8000) take too long to load.
+</I>&gt;<i> 2. The sorting with many items (over 8000) take too long.
+</I>&gt;<i>
+</I>&gt;<i>  Problem #1 is server related. I need to investigate the python code and
+</I>&gt;<i> figure where I may optimize to code to generate the page faster.
+</I>&gt;<i>
+</I>&gt;<i>  Problem #2 is client related. To sort the elements, I used a jquery
+</I>&gt;<i> plugin using the javascript native sort function. I've benchmark it against
+</I>&gt;<i> a simple merge sort of my own. Their is a huge difference. i.e.: to sort
+</I>&gt;<i> 11000 items by name, javascript sort take 12.8sec compare to 5.9sec with my
+</I>&gt;<i> merge sort. I will push it further by implementing a TimSort (a bit more
+</I>&gt;<i> complicated to implement but even faster then merge sort in many cases).
+</I>&gt;<i>
+</I>&gt;<i>  So far, I'm sorting 11000items in 5sec and there are rooms for
+</I>&gt;<i> improvement.
+</I>&gt;<i>
+</I>&gt;<i> Patrik Dufresne
+</I>&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20121204/a166a351/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20121204/a166a351/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000476.html">[Rdiffweb-discuss] Add column sorting
+</A></li>
+	<LI>Next message: <A HREF="000478.html">[Rdiffweb-discuss] Add column sorting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#477">[ date ]</a>
+              <a href="thread.html#477">[ thread ]</a>
+              <a href="subject.html#477">[ subject ]</a>
+              <a href="author.html#477">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

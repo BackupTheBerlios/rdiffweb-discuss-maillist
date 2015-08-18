@@ -1,0 +1,146 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Suggestions/changes
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Suggestions/changes&In-Reply-To=%3C200704041041.15111.jesus%40mxtelecom.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000112.html">
+   <LINK REL="Next"  HREF="000114.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Suggestions/changes</H1>
+    <B>Jesus Roncero</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Suggestions/changes&In-Reply-To=%3C200704041041.15111.jesus%40mxtelecom.com%3E"
+       TITLE="[Rdiffweb-discuss] Suggestions/changes">jesus at mxtelecom.com
+       </A><BR>
+    <I>Wed Apr  4 11:41:14 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000112.html">[Rdiffweb-discuss] Suggestions/changes
+</A></li>
+        <LI>Next message: <A HREF="000114.html">[Rdiffweb-discuss] handle new dirs, 500 internal error and UserRoot
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#113">[ date ]</a>
+              <a href="thread.html#113">[ thread ]</a>
+              <a href="subject.html#113">[ subject ]</a>
+              <a href="author.html#113">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Tuesday 03 April 2007 17:34, Josh Nisly wrote:
+&gt;<i> Not sure about logging at the source code level, but we need logging of
+</I>&gt;<i> page accesses, etc. CherryPy supports Apache-style logging, but we need
+</I>&gt;<i> a way to specify a log file and have accesses/errors go there. The most
+</I>&gt;<i> comment complaints are installation issues, and this would help with that.
+</I>
+Well, I was thinking of something that wrote extended logging to stdout or the 
+log file, that would simply be ignored when in production mode. That would 
+help when things are not runnning as expected.
+
+&gt;<i> &gt; - The admin user manages the users. So, I'd like to extend the user admin
+</I>&gt;<i> &gt; capabilities. For example, to add more parameters or others that might be
+</I>&gt;<i> &gt; included in the future.
+</I>&gt;<i>
+</I>&gt;<i> Here is an architecture that I've been considering: all each user to be
+</I>&gt;<i> an &quot;administrator&quot;, but only manage users within their root directory.
+</I>&gt;<i> That is, they could add/delete users, etc, but only within their directory.
+</I>&gt;<i>
+</I>&gt;<i> We also need a way to generically store information about users, such as
+</I>&gt;<i> preferences. (Sort order, for example.) Is this what you are referring
+</I>&gt;<i> to here?
+</I>
+Well, this is something I need to think about. In a way, make the preferences 
+related to the backup script. ie, imagine that a parent directory in a remote 
+computer is being backed up. It would be nice if the user could set, for 
+example, directories to ignore, so they are not backed up. Again, need to 
+think more about this.
+
+&gt;<i> &gt; other mysql dbs, or LDAP. This could help integration with existing
+</I>&gt;<i> &gt; environments.
+</I>&gt;<i>
+</I>&gt;<i> I had initially wanted to support native linux user authentication, but
+</I>&gt;<i> couldn't find a clean, widely distributed python module that integrates
+</I>&gt;<i> with pam. The biggest goal for me with rdiff-web is keeping it easy to
+</I>&gt;<i> install and set up. If a user can't install and set up rdiff-web in 5-10
+</I>&gt;<i> minutes, then something is wrong, IMHO.
+</I>&gt;<i>
+</I>&gt;<i> I'm all for separating the authentication and users list, though. I'll
+</I>&gt;<i> try to come up with a proposal for this sometime.
+</I>
+Sure, I was thinking of something like having a switch or a config flag that 
+would enable it to use a separate authentication method (say, another mysql 
+db/table), but only optional, so the standard method is the 5 minutes setup 
+procedure :)
+
+&gt;<i>
+</I>&gt;<i> &gt; - It would be possible that the user could choose their backup
+</I>&gt;<i> &gt; directories. This would work with the backup script I just talked about,
+</I>&gt;<i> &gt; so they can choose the directories (Need to think more about this)
+</I>&gt;<i>
+</I>&gt;<i> What I suggest is running &quot;rdiff-web-config spiderrepos&quot; via cron every
+</I>&gt;<i> 15 minutes or so. (That's what I do.) That way all the user's repos show
+</I>&gt;<i> up. Is that what you're talking about?
+</I>
+I'd be more inclined to let the admin set the repositories, or the user, 
+although an automatic discovery approach is not a bad idea. 
+
+&gt;<i> &gt; credentials) - anything?
+</I>&gt;<i>
+</I>&gt;<i> I'd welcome suggestions on any of these.
+</I>
+I'll drop them here as I get them :-)
+
+&gt;<i> &gt; something similar to what we want to have here :). Please,
+</I>&gt;<i> &gt; comments/objections/suggestions are very welcome.
+</I>&gt;<i>
+</I>&gt;<i> I'd like to avoid a fork, if possible, as well. Right now, the time I
+</I>&gt;<i> have available to work on rdiff-web is pretty limited, but I'll see what
+</I>&gt;<i> I can do.
+</I>
+Ok, I have some little time from work devoted to the project, as we need to 
+set it up and get it running to suit our needs. Maybe, I could have it in a 
+branch or a different repository and from it you (we) could work out what and 
+how to integrate it into trunk if you like it :-)
+Anyway, I'll let you know as I get some progress, as I've got many things 
+going on as well :)
+
+Thanks.
+
+-- 
+Jes&#250;s Roncero &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">jesus at mxtelecom.com</A>&gt;
+System Developer
+Tel: +44 (0) 845 666 7778
+<A HREF="http://www.mxtelecom.com">http://www.mxtelecom.com</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000112.html">[Rdiffweb-discuss] Suggestions/changes
+</A></li>
+	<LI>Next message: <A HREF="000114.html">[Rdiffweb-discuss] handle new dirs, 500 internal error and UserRoot
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#113">[ date ]</a>
+              <a href="thread.html#113">[ thread ]</a>
+              <a href="subject.html#113">[ subject ]</a>
+              <a href="author.html#113">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

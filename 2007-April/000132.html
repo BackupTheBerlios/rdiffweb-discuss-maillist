@@ -1,0 +1,79 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Sessions saved to hard disk
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Sessions%20saved%20to%20hard%20disk&In-Reply-To=%3C46285487.3000502%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000127.html">
+   <LINK REL="Next"  HREF="000128.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Sessions saved to hard disk</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Sessions%20saved%20to%20hard%20disk&In-Reply-To=%3C46285487.3000502%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] Sessions saved to hard disk">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Fri Apr 20 07:49:59 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000127.html">[Rdiffweb-discuss] Sessions saved to hard disk
+</A></li>
+        <LI>Next message: <A HREF="000128.html">[Rdiffweb-discuss] small patch for having error messages in a div
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#132">[ date ]</a>
+              <a href="thread.html#132">[ thread ]</a>
+              <a href="subject.html#132">[ subject ]</a>
+              <a href="author.html#132">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I've committed a version of this, with some changes:
+* Check the validity of the storage dir using os.access functions, 
+instead of randomly creating files
+* Changed the SessionPath key to SessionDir, since it points to a 
+directory, not a file
+
+Thanks for you work!
+JoshN
+
+Jesus Roncero wrote:
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> I was tired of testing rdiff-web and having to log in every time I restarted 
+</I>&gt;<i> the server that I implemented the sessions to be saved to disk. Could you 
+</I>&gt;<i> consider this patch?
+</I>&gt;<i>
+</I>&gt;<i> Thanks.
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000127.html">[Rdiffweb-discuss] Sessions saved to hard disk
+</A></li>
+	<LI>Next message: <A HREF="000128.html">[Rdiffweb-discuss] small patch for having error messages in a div
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#132">[ date ]</a>
+              <a href="thread.html#132">[ thread ]</a>
+              <a href="subject.html#132">[ subject ]</a>
+              <a href="author.html#132">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

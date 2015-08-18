@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Move more than 5 GB in rdiff-backup
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2012-June/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Move%20more%20than%205%20GB%20in%20rdiff-backup&In-Reply-To=%3C540946AD-79B6-43DF-BD7C-6C3B9FD4F593%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000457.html">
+   <LINK REL="Next"  HREF="000459.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Move more than 5 GB in rdiff-backup</H1>
+    <B>Chencho Pc-cito</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Move%20more%20than%205%20GB%20in%20rdiff-backup&In-Reply-To=%3C540946AD-79B6-43DF-BD7C-6C3B9FD4F593%40gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] Move more than 5 GB in rdiff-backup">chencho.cs at gmail.com
+       </A><BR>
+    <I>Wed Jun  6 16:32:38 CEST 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000457.html">[Rdiffweb-discuss] Move more than 5 GB in rdiff-backup
+</A></li>
+        <LI>Next message: <A HREF="000459.html">[Rdiffweb-discuss] Check over console if all is ok
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#458">[ date ]</a>
+              <a href="thread.html#458">[ thread ]</a>
+              <a href="subject.html#458">[ subject ]</a>
+              <a href="author.html#458">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>It uses transport.exe to connect, i think
+
+I think it's a problem with long time connection.
+
+Whatever, i'm going search info about rdiff-backup an plink
+
+Thanks.
+
+El 06/06/2012, a las 16:25, Dominic Raferd escribi&#243;:
+
+&gt;<i> I fear your problems are something to do with this non-standard front-end. rdiff-backup.exe connects over ssh using plink.exe, and doesn't need any separate python code.
+</I>&gt;<i> 
+</I>&gt;<i> On 06/06/2012 15:18, Chencho Pc-cito wrote:
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> I use 1.3.3
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> &quot;client for windows&quot; is a frontend which can connect over ssh
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;<i> El 06/06/2012, a las 16:10, Dominic Raferd escribi&#243;:
+</I>&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> I'm not sure what 'client for windows' you are referring to? Normally for windows we use rdiff-backup.exe 1.2.8, available from <A HREF="http://www.nongnu.org/rdiff-backup/,">http://www.nongnu.org/rdiff-backup/,</A> or 1.3.3 if you prefer)?
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> On 06/06/2012 14:53, Chencho Pc-cito wrote:
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> I'm into 10.04 (server) and use Windows as client.
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> Josh send me in 2009 a python code to do a client for windows, and i use 
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> python2.6
+</I>&gt;&gt;&gt;&gt;<i> pycrypto-2.0.1
+</I>&gt;&gt;&gt;&gt;<i> paramiko-1.7.3
+</I>&gt;&gt;&gt;&gt;<i> pywin32-2.13
+</I>&gt;&gt;&gt;&gt;<i> py2exe-0.6.9
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> Not sure which version of librync is used.
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> Whatever, is not only with files biggest than 4 GB, it's happens with location more than 5 GB (with many files, stay for more than 2 hours and give an error)
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;<i> El 06/06/2012, a las 15:01, Dominic Raferd escribi&#243;:
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> What filesystem? Fat32 has 4GB file limit.
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> Or if you are using rdiff-backup to copy then maybe you have old librsync library which also had problem with files over 4GB. If you install rdiff-backup using apt-get with Ubuntu 10.04 or later - or Debian squeeze - you should get the bug-fixed version of librsync. 
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> Dominic
+</I>&gt;&gt;&gt;&gt;&gt;<i> -- 
+</I>&gt;&gt;&gt;&gt;&gt;<i> TimeDicer: Free File Recovery from Whenever
+</I>&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;<i> On 06/06/2012 09:56, Chencho Pc-cito wrote:
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> Hi all.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> It's not a error of rdiff-web at all, but it's related
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> I cannot made a copy with more than 5/6 GB and i have folders with 11 GB to copy :(
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> Not sure why, if i copy subfolders works fine (with max 5 GB) but i cannot copy more than it.
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> I want to copy some pst's with 6 GB or 12 GB an i cannot split it :(
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;&gt;&gt;&gt;<i> I'm using windows, but happens the same from linux to linux
+</I>&gt;&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> 
+</I>&gt;&gt;&gt;<i> -- 
+</I>&gt;&gt;&gt;<i> TimeDicer: Free File Recovery from Whenever
+</I>&gt;&gt;<i> 
+</I>&gt;<i> 
+</I>&gt;<i> -- 
+</I>&gt;<i> TimeDicer: Free File Recovery from Whenever
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20120606/84ec4890/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20120606/84ec4890/attachment.html</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000457.html">[Rdiffweb-discuss] Move more than 5 GB in rdiff-backup
+</A></li>
+	<LI>Next message: <A HREF="000459.html">[Rdiffweb-discuss] Check over console if all is ok
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#458">[ date ]</a>
+              <a href="thread.html#458">[ thread ]</a>
+              <a href="subject.html#458">[ subject ]</a>
+              <a href="author.html#458">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

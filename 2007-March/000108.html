@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] New features and changes to rdiffweb
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-March/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20New%20features%20and%20changes%20to%20rdiffweb&In-Reply-To=%3C200703301053.17364.jesus%40mxtelecom.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000106.html">
+   <LINK REL="Next"  HREF="000109.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] New features and changes to rdiffweb</H1>
+    <B>Jesus Roncero</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20New%20features%20and%20changes%20to%20rdiffweb&In-Reply-To=%3C200703301053.17364.jesus%40mxtelecom.com%3E"
+       TITLE="[Rdiffweb-discuss] New features and changes to rdiffweb">jesus at mxtelecom.com
+       </A><BR>
+    <I>Fri Mar 30 11:53:17 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000106.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+        <LI>Next message: <A HREF="000109.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#108">[ date ]</a>
+              <a href="thread.html#108">[ thread ]</a>
+              <a href="subject.html#108">[ subject ]</a>
+              <a href="author.html#108">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>On Thursday 29 March 2007 20:33, Josh Nisly wrote:
+&gt;<i> Oh. My. Goodness. Wow. Fixed in r78:
+</I>&gt;<i> <A HREF="http://svn.berlios.de/viewcvs/rdiffweb/trunk/rdiffWeb/rdw_helpers.py?rev=78">http://svn.berlios.de/viewcvs/rdiffweb/trunk/rdiffWeb/rdw_helpers.py?rev=78</A>
+</I>&gt;<i>&amp;view=diff&amp;r1=78&amp;r2=77&amp;p1=trunk/rdiffWeb/rdw_helpers.py&amp;p2=/trunk/rdiffWeb/r
+</I>&gt;<i>dw_helpers.py
+</I>&gt;<i>
+</I>&gt;<i> I'll release this as 3.5.1 and 3.2.1 as soon as possible. Thanks for
+</I>&gt;<i> catching!
+</I>
+Hi,
+
+It seems to me that that patch break the application. As the call to to 
+ensurePathValid is:
+   def index(self, repo=&quot;&quot;, path=&quot;&quot;, restore=&quot;&quot;):
+      try:
+         rdw_helpers.ensurePathValid(repo)
+         rdw_helpers.ensurePathValid(path)
+
+it won't work as it will try to validate the path of the repository and the 
+path itself, wich will create wrong paths. Please, see my patch from 
+yesterday in which I validate that the path (rootDir + repo + path) sent by 
+page_browse.py is actually a subdirectory of rootDir.
+
+Also, I stored the rootDir in a session variable for easy access as it seems 
+to me that a sql query is overkill everytime we hit a browsing page.
+
+So, what about the change to 4 spaces and the rest of the stuff? :-)
+
+Anyway, I'll keep reading the source code and will be back with more stuff as 
+soon as I have some more time to devote to it.
+Thanks.
+
+-- 
+Jes&#250;s Roncero &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">jesus at mxtelecom.com</A>&gt;
+System Developer
+Tel: +44 (0) 845 666 7778
+<A HREF="http://www.mxtelecom.com">http://www.mxtelecom.com</A>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000106.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+	<LI>Next message: <A HREF="000109.html">[Rdiffweb-discuss] New features and changes to rdiffweb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#108">[ date ]</a>
+              <a href="thread.html#108">[ thread ]</a>
+              <a href="subject.html#108">[ subject ]</a>
+              <a href="author.html#108">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

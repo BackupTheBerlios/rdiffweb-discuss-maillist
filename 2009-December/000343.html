@@ -1,0 +1,147 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Backup Size showing always at 0 bytes
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-December/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Backup%20Size%20showing%20always%20at%200%20bytes&In-Reply-To=%3C20542359.92651260740238584.JavaMail.root%40zimbra%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Backup Size showing always at 0 bytes</H1>
+    <B>Marc Morocutti</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Backup%20Size%20showing%20always%20at%200%20bytes&In-Reply-To=%3C20542359.92651260740238584.JavaMail.root%40zimbra%3E"
+       TITLE="[Rdiffweb-discuss] Backup Size showing always at 0 bytes">marc at ion.lu
+       </A><BR>
+    <I>Sun Dec 13 22:37:18 CET 2009</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#343">[ date ]</a>
+              <a href="thread.html#343">[ thread ]</a>
+              <a href="subject.html#343">[ subject ]</a>
+              <a href="author.html#343">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Josh,
+
+Did you figure out this issue?
+My Backup Status Page says:
+The following backups have completed successfully:
+
+    * 2009-12-13 22:26:34 - / - 0 bytes
+    * 2009-12-13 22:21:36 - / - 0 bytes
+
+Here are my statistics files:
+<A HREF="http://files.ion.lu/file_statistics.tar.gz">http://files.ion.lu/file_statistics.tar.gz</A>
+
+MM
+
+-- 
+Marc Morocutti
+Managing Director
+
+D&#233;couvrez notre nouveau site internet <A HREF="http://www.ion.lu">http://www.ion.lu</A>
+ 
+ION Group
+209, rue des Romains
+L-8041 Bertrange
+Tel: +352 26 12 76-1
+Fax: +352 26 12 76-9
+mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">marc at ion.lu</A>
+<A HREF="http://www.ion.lu">http://www.ion.lu</A>
+
+----- Original Message -----
+From: &quot;Josh Nisly&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt;
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>
+Sent: Monday, 24 August, 2009 15:27:39 GMT +01:00 Amsterdam / Berlin / Bern / Rome / Stockholm / Vienna
+Subject: Re: [Rdiffweb-discuss] Backup Size showing always at 0 bytes
+
+
+rdiffWeb uses the file_statistics* files in the destination repository's rdiff-backup-data folder. If you send me one of these files, that would be helpful. 
+
+Thanks, 
+JoshN 
+
+Gabriel Hahmann wrote: 
+
+Hi Dominic,
+
+The only column that is showed up ok is the one when I browse the
+backup, each file size is showed ok, but when I look at the resume,
+the backup size or acumulate size is showed at 0 bytes.
+
+When I run rdiff-backup-statistics in the backup folder the
+information is showed ok, but I cant this information in the web
+interface.
+
+The web interface uses the rdiff-backup-statistics to get the total backup size?
+
+Are there anything that I can do to test the web interface in any other way?
+
+What tool are used by the web interface to get the total size of the backup?
+
+Thanks in advance,
+Gabriel.
+
+On Mon, Aug 24, 2009 at 10:25 AM, Dominic Raferd &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">dominic at timedicer.info</A>&gt; wrote: 
+
+Sorry, I do not know why you are seeing this, but in my case the 'Last
+Backup Size' column shows correctly. Perhaps it is something in your
+rdiff-backup settings?
+
+Dominic
+
+Gabriel Hahmann wrote: 
+
+I'm start using rdiffweb recently and now I've found what I think is a
+problem. In the first screen, in the backup locations, it's not
+reporting the size of the backup, the size is always at 0 bytes. If I
+browse trough the backup I can see each file size but at backup
+locations or any other screen that is supposed to show a resume, like
+the backup history, the backup size and accumulate size are also 0
+bytes.
+
+Anybody knows why this is happening?
+
+Thanks in advance,
+Gabriel. _______________________________________________
+Rdiffweb-discuss mailing list <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A> _______________________________________________
+Rdiffweb-discuss mailing list <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A> 
+
+_______________________________________________
+Rdiffweb-discuss mailing list
+<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#343">[ date ]</a>
+              <a href="thread.html#343">[ thread ]</a>
+              <a href="subject.html#343">[ subject ]</a>
+              <a href="author.html#343">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

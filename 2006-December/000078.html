@@ -1,0 +1,89 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] skinning
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-December/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20skinning&In-Reply-To=%3C45836D46.8000107%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] skinning</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20skinning&In-Reply-To=%3C45836D46.8000107%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] skinning">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Sat Dec 16 04:51:34 CET 2006</I>
+    <P><UL>
+        
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#78">[ date ]</a>
+              <a href="thread.html#78">[ thread ]</a>
+              <a href="subject.html#78">[ subject ]</a>
+              <a href="author.html#78">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Matthias Schuh wrote:
+&gt;<i> Hi all,
+</I>&gt;<i>
+</I>&gt;<i> thanks for this great frontend to rdiff-backup!
+</I>&gt;<i> My knowledge of python is rather limited, and so I've been messing around with 
+</I>&gt;<i> the templates and css a bit, and now rdiffWeb looks so much nicer (to my 
+</I>&gt;<i> eyes, at least...) - if anyone is interested, I can put up the diffs 
+</I>&gt;<i> somewhere...
+</I>&gt;<i> <A HREF="http://img472.imageshack.us/img472/6364/rdiffwebcb8.png">http://img472.imageshack.us/img472/6364/rdiffwebcb8.png</A>
+</I>&gt;<i>
+</I>&gt;<i> Have a nice day,
+</I>&gt;<i>
+</I>&gt;<i> Mats
+</I>&gt;<i>   
+</I>(Sorry for the slow response.)
+
+I'd have a strong preference for only tweaking the css, for several reasons:
+* The templating system is very strict about keyword replacement -- a 
+keyword specified in the template that does not exist in the parameters 
+passed will result in a server exception 500. Having many different 
+themes would put a big burden on maintainers, since every time they 
+change a template, they need to change all the other &quot;themed&quot; templates.
+* Conceptually, that is what css is for -- altering the display of the 
+data. I realize that it doesn't always work out that way in the real 
+world, but it's a goal to shoot for.
+* It makes theming easier to add. If we would ever make it a user 
+preference, it would be trivial to support, because we would simply need 
+to change the path of the css file.
+
+Of all these reasons, the first is the most important, IMO. Thoughts?
+
+JoshN
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#78">[ date ]</a>
+              <a href="thread.html#78">[ thread ]</a>
+              <a href="subject.html#78">[ subject ]</a>
+              <a href="author.html#78">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

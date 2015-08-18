@@ -1,0 +1,95 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] rdiff-web-config fail
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-April/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiff-web-config%20fail&In-Reply-To=%3C4613DC69.9030202%40gmail.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000116.html">
+   <LINK REL="Next"  HREF="000117.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] rdiff-web-config fail</H1>
+    <B>Chuming Chen</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rdiff-web-config%20fail&In-Reply-To=%3C4613DC69.9030202%40gmail.com%3E"
+       TITLE="[Rdiffweb-discuss] rdiff-web-config fail">chumingchen at gmail.com
+       </A><BR>
+    <I>Wed Apr  4 19:12:09 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000116.html">[Rdiffweb-discuss] rdiff-web-config fail
+</A></li>
+        <LI>Next message: <A HREF="000117.html">[Rdiffweb-discuss] rdiff-web-config fail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#115">[ date ]</a>
+              <a href="thread.html#115">[ thread ]</a>
+              <a href="subject.html#115">[ subject ]</a>
+              <a href="author.html#115">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Dear List,
+
+I am pretty close to setting up rdiffWeb. I am using the SVN checkout of
+rdiffWeb. When I run &quot;rdiff-web-config&quot; I got the following error message.
+
+
+Do you want me to automatically search the user's root directory for
+backup repositories? [yes]:
+   Found repo at /backup/mybackup1
+   Found repo at /backup/mybackup2
+   Found repo at /backup/mybackup3
+Traceback (most recent call last):
+  File &quot;./rdiff-web-config&quot;, line 232, in ?
+    doMainSetup()
+  File &quot;./rdiff-web-config&quot;, line 206, in doMainSetup
+    mysqlSetup()
+  File &quot;./rdiff-web-config&quot;, line 180, in mysqlSetup
+    repos = rdiffWeb.rdw_spider_repos.findReposForUser(username,
+mysqlUserDb)
+  File &quot;/rdiffWebSVN/trunk/rdiffWeb/rdw_spider_repos.py&quot;, line 29, in
+findReposForUser
+    userDBModule.setUserRepos(user, repoPaths)
+  File &quot;/rdiffWebSVN/trunk/rdiffWeb/db_mysql.py&quot;, line 64, in setUserRepos
+    cursor.executemany(query, repoPaths)
+  File &quot;build/bdist.linux-i686/egg/MySQLdb/cursors.py&quot;, line 217, in
+executemany
+  File &quot;build/bdist.linux-i686/egg/MySQLdb/connections.py&quot;, line 35, in
+defaulterrorhandler
+ValueError: incomplete format
+
+Any suggestions will be appreciated.
+
+Chuming Chen
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000116.html">[Rdiffweb-discuss] rdiff-web-config fail
+</A></li>
+	<LI>Next message: <A HREF="000117.html">[Rdiffweb-discuss] rdiff-web-config fail
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#115">[ date ]</a>
+              <a href="thread.html#115">[ thread ]</a>
+              <a href="subject.html#115">[ subject ]</a>
+              <a href="author.html#115">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

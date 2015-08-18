@@ -1,0 +1,160 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Updates
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-November/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Updates&In-Reply-To=%3CBAY118-DS8F65CD36EC22069A28C64B1A80%40phx.gbl%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000333.html">
+   <LINK REL="Next"  HREF="000336.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Updates</H1>
+    <B>David Flink</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Updates&In-Reply-To=%3CBAY118-DS8F65CD36EC22069A28C64B1A80%40phx.gbl%3E"
+       TITLE="[Rdiffweb-discuss] Updates">unixrulez at hotmail.com
+       </A><BR>
+    <I>Fri Nov 13 18:52:43 CET 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000333.html">[Rdiffweb-discuss] HTTPS and Intermediate Certificates
+</A></li>
+        <LI>Next message: <A HREF="000336.html">[Rdiffweb-discuss] HTTPS and Intermediate Certificates
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#334">[ date ]</a>
+              <a href="thread.html#334">[ thread ]</a>
+              <a href="subject.html#334">[ subject ]</a>
+              <a href="author.html#334">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Greetings.
+
+ 
+
+More updates from me. 
+
+I still can&#8217;t check in to subversion (I have tried), so instructions on
+how to try my fixes will follow later.
+
+ 
+
+All the work I have done is based on the TODO list on the roadmap
+
+<A HREF="http://www.rdiffweb.org/wiki/index.php?title=Roadmap">http://www.rdiffweb.org/wiki/index.php?title=Roadmap</A>
+
+ 
+
+First; What I have changed:
+
+The init script  (as in &#8220;service rdiff-web start&#8221;)
+
+Now honours stop, start and status. 
+
+Stop and start check whether they have succeeded and report an appropriate
+message and exit code
+
+ 
+
+rdiff-web-config is now a little more sane.
+
+If an old rdw.conf file exists, its values are taken as the default.
+
+You also have a nice list of what you can do with users existing.
+
+ 
+
+Authentication
+
+You now have the option of using PAM (the Unix users/passwords). This is
+currently not working on Centos5.2, but works fine on Ubuntu.
+
+(You can still use the internal RDW users on any system).
+
+When PAM is enabled the administrators can&#8217;t change other user&#8217;s password
+(this would violate unix security), but every user can change their own
+password.
+
+ 
+
+Directory listing
+
+You can now sort the display by Name, size, date or number of old versions.
+
+Just click on the appropriate heading to sort, click again to reverse the
+sort.
+
+ 
+
+Previous versions
+
+The number of previous versions is now a link to a page that brings up only
+the old versions of that file.
+
+Basically, if the popup/flyout is not working on your browser, or is too
+long to be useful, just click on &#8220;947 Previous Revisions&#8221; 
+
+for a page where you can see revision 1 and 948.
+
+ 
+
+Annoying change:
+
+I have had to disable SSL; I don&#8217;t quite know why, perhaps I have the
+wrong version of cherrypy.
+
+ 
+
+Technical change:
+
+I have altered the template engine to honour &#8220;\&amp;&#8221;.
+
+Basically, if a page tries to render &#8220;this &amp; that&#8221;, the rdw template
+engine changes it to &#8220;this &amp; that&#8221;.
+
+Now, if you try to render &#8220;this &amp; that \&hearts;&#8221; the template engine
+will produce &#8220;this &amp; that &hearts;&#8221; 
+
+(hopefully the browser will then correctly show &#8220;this &amp; that &#9829;&#8221;)
+
+ 
+
+ 
+
+ 
+
+Secondly; To install:
+
+ 
+
+Extract the attached archive.
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000333.html">[Rdiffweb-discuss] HTTPS and Intermediate Certificates
+</A></li>
+	<LI>Next message: <A HREF="000336.html">[Rdiffweb-discuss] HTTPS and Intermediate Certificates
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#334">[ date ]</a>
+              <a href="thread.html#334">[ thread ]</a>
+              <a href="subject.html#334">[ subject ]</a>
+              <a href="author.html#334">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

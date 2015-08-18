@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Update web interface for rdiffweb
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2012-November/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Update%20web%20interface%20for%20rdiffweb&In-Reply-To=%3C70c20329-872c-4379-a0eb-9e9da63c61f4%40progressive-sealing.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000466.html">
+   <LINK REL="Next"  HREF="000468.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Update web interface for rdiffweb</H1>
+    <B>Lucas Burdick</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Update%20web%20interface%20for%20rdiffweb&In-Reply-To=%3C70c20329-872c-4379-a0eb-9e9da63c61f4%40progressive-sealing.com%3E"
+       TITLE="[Rdiffweb-discuss] Update web interface for rdiffweb">lucas at progressive-sealing.com
+       </A><BR>
+    <I>Wed Nov  7 17:02:18 CET 2012</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000466.html">[Rdiffweb-discuss] Update web interface for rdiffweb
+</A></li>
+        <LI>Next message: <A HREF="000468.html">[Rdiffweb-discuss] Add column sorting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#467">[ date ]</a>
+              <a href="thread.html#467">[ thread ]</a>
+              <a href="subject.html#467">[ subject ]</a>
+              <a href="author.html#467">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hi Patrik,
+ 
+See the following link for the email thread in which I discuss this with Josh.&#160; See attached for the two patches in question.&#160; 
+<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/2009-November/000339.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/2009-November/000339.html</A>
+ 
+This may have already been addressed in CherryPy but I&#8217;m not sure if it has been in rdiff-web.
+ 
+Cheers,
+Lucas
+ 
+From: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss-bounces at lists.berlios.de</A> [mailto:<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss-bounces at lists.berlios.de</A>] On Behalf Of Patrik Dufresne
+Sent: Monday, November 05, 2012 10:47 AM
+To: <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>
+Subject: Re: [Rdiffweb-discuss] Update web interface for rdiffweb
+ 
+@Dominic Raferd
+I had a look to rdiffweb-install.sh. I thing I have fix every issue, but their is too many thing to be sure of it. In the master branch, I have fix the following:
+* fix known error in rdw.conf default settings (Change the ServerName to ServerHost)
+* fix incompatibility with CherryPy 3.1 [patch by Patrick Nagel]
+If I miss something, please reply to this mailing list.
+ 
+I didn't implement sorting on column, but it shouldn't be very difficult to do. I've create an issue to keep track of it. <A HREF="https://github.com/ikus060/rdiffweb/issues/1">https://github.com/ikus060/rdiffweb/issues/1</A>
+ 
+@Lucas Burdick
+May you give more detail about the problem you have with SSL?
+ 
+@David
+Trought the mailling list I didn't receive your zip file with patches. May you please send it to my personal email directly ? Also can you give me more detail about what the patches does fix?
+ 
+Patrik Dufresne
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20121107/cdcedeb8/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20121107/cdcedeb8/attachment.html</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: ssl.patch.patch
+Type: application/octet-stream
+Size: 681 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20121107/cdcedeb8/attachment.obj">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20121107/cdcedeb8/attachment.obj</A>&gt;
+-------------- next part --------------
+A non-text attachment was scrubbed...
+Name: cherrypy_ssl.patch.patch
+Type: application/octet-stream
+Size: 2377 bytes
+Desc: not available
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20121107/cdcedeb8/attachment-0001.obj">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20121107/cdcedeb8/attachment-0001.obj</A>&gt;
+</PRE>
+
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000466.html">[Rdiffweb-discuss] Update web interface for rdiffweb
+</A></li>
+	<LI>Next message: <A HREF="000468.html">[Rdiffweb-discuss] Add column sorting
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#467">[ date ]</a>
+              <a href="thread.html#467">[ thread ]</a>
+              <a href="subject.html#467">[ subject ]</a>
+              <a href="author.html#467">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

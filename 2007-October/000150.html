@@ -1,0 +1,127 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Help a newb with rdiffweb
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Help%20a%20newb%20with%20rdiffweb&In-Reply-To=%3C47053126.4050403%40nrl.navy.mil%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000149.html">
+   <LINK REL="Next"  HREF="000151.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Help a newb with rdiffweb</H1>
+    <B>Matt Thompson</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Help%20a%20newb%20with%20rdiffweb&In-Reply-To=%3C47053126.4050403%40nrl.navy.mil%3E"
+       TITLE="[Rdiffweb-discuss] Help a newb with rdiffweb">matthew.thompson at nrl.navy.mil
+       </A><BR>
+    <I>Thu Oct  4 20:29:58 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000149.html">[Rdiffweb-discuss] 0.4 TODO?
+</A></li>
+        <LI>Next message: <A HREF="000151.html">[Rdiffweb-discuss] Help a newb with rdiffweb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#150">[ date ]</a>
+              <a href="thread.html#150">[ thread ]</a>
+              <a href="subject.html#150">[ subject ]</a>
+              <a href="author.html#150">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Folks, I hope you can help me with this problem.  I recently got into 
+rdiff-backup and happened upon your app.  Since the box I'm running 
+rdiff-backup on is rather locked down (no mail or anything), I figured 
+rdiffweb would be a good way to monitor the backup locally.
+
+However, I can't seem to get it to work (I tried both the stable and 
+devel versions, this involves 0.4).  My configuration is as such:
+
+# cat rdw.conf
+UserDB=File
+Username=rdiffweb
+Password=backup
+UserRoot=/
+UserRepoPaths=/media/LaCie/LinuxBack/oxygen-home-rdiff-backup
+
+where the backup is on an external drive (NTFS-formatted, if that 
+matters).  I then run rdiff-web -d and go to localhost:8080.  If I try 
+to login with anything but the above, no go.  When I use the above 
+user-pass, I see:
+
+500 Internal error
+
+The server encountered an unexpected condition which prevented it from 
+fulfilling the request.
+
+Page handler: &lt;bound method rdiffLocationsPage.index of 
+&lt;rdiffWeb.page_locations.rdiffLocationsPage instance at 0x2aaab13db320&gt;&gt;
+Traceback (most recent call last):
+   File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cphttptools.py&quot;, 
+line 105, in _run
+     self.main()
+   File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cphttptools.py&quot;, 
+line 254, in main
+     body = page_handler(*virtual_path, **self.params)
+   File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_locations.py&quot;, 
+line 11, in index
+     page = page + self.compileTemplate(&quot;repo_listing.html&quot;, 
+**self.getParmsForPage(self.userDB.getUserRoot(self.getUsername()), 
+self.userDB.getUserRepoPaths(self.getUsername())))
+   File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_locations.py&quot;, 
+line 34, in getParmsForPage
+     repoDate = repoHistory.date.getDisplayString()
+AttributeError: 'NoneType' object has no attribute 'getDisplayString'
+
+Also, in case it's important, I get this sort of error in the terminal 
+where rdiff-web is running:
+
+Warning: unintelligible date string! Filename: 
+error_log.2007-10-04T13;05847;05858-04;05800.data.gz  Filetitle: 
+error_log.2007-10-04T13;05847;05858-04;05800  Date String: 
+2007-10-04T13;05847;05858-04;05800
+
+And now I'm stumped.
+
+Also, beyond this problem, I'd like to eventually use the RSS feed, but 
+do I need to use MySQL for that?  I really don't know MySQL and I'd 
+rather not install any new servers I don't need on this box (trying to 
+keep it as secure as I can).
+
+Thanks for all the help,
+Matt
+
+-- 
+Matt Thompson, PhD
+Naval Research Laboratory
+202-767-2160
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000149.html">[Rdiffweb-discuss] 0.4 TODO?
+</A></li>
+	<LI>Next message: <A HREF="000151.html">[Rdiffweb-discuss] Help a newb with rdiffweb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#150">[ date ]</a>
+              <a href="thread.html#150">[ thread ]</a>
+              <a href="subject.html#150">[ subject ]</a>
+              <a href="author.html#150">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,103 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] error 500
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2008-January/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20error%20500&In-Reply-To=%3C1201535248.20980.5.camel%40carnivour.artus.own%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000200.html">
+   <LINK REL="Next"  HREF="000202.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] error 500</H1>
+    <B>Christoph Langbein</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20error%20500&In-Reply-To=%3C1201535248.20980.5.camel%40carnivour.artus.own%3E"
+       TITLE="[Rdiffweb-discuss] error 500">christoph at greatescape.de
+       </A><BR>
+    <I>Mon Jan 28 16:47:28 CET 2008</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000200.html">[Rdiffweb-discuss] New version 0.6.1
+</A></li>
+        <LI>Next message: <A HREF="000202.html">[Rdiffweb-discuss] error 500
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#201">[ date ]</a>
+              <a href="thread.html#201">[ thread ]</a>
+              <a href="subject.html#201">[ subject ]</a>
+              <a href="author.html#201">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Hello,
+I've setup rdiffWeb-0.6.1 last week using cherryPy 3.0.3 on debian etch,
+python2.5. two &quot;old&quot; backups used with rdiffWeb-0.3.5.1 working as
+expected.
+Now I've created a new backup and get following error when selecting it:
+500 Internal Server Error
+The server encountered an unexpected condition which prevented it from
+fulfilling the request.
+
+Traceback (most recent call last):
+  File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cprequest.py&quot;, line 551, in respond
+    cherrypy.response.body = self.handler()
+  File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cpdispatch.py&quot;, line 24, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_browse.py&quot;, line 23, in index
+    parms = self.getParmsForPage(self.getUserDB().getUserRoot(self.getUsername()), repo, path, restore)
+  File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_browse.py&quot;, line 75, in getParmsForPage
+    entryLink = self.buildBrowseUrl(repo, joinPaths(path, libEntry.name), False)
+  File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_main.py&quot;, line 15, in buildBrowseUrl
+    url = &quot;/browse/?repo=&quot;+rdw_helpers.encodeUrl(repo, &quot;/&quot;)+&quot;&amp;path=&quot;+rdw_helpers.encodeUrl(path, &quot;/&quot;)
+  File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/rdw_helpers.py&quot;, line 28, in encodeUrl
+    return urllib.quote_plus(url, safeChars)
+  File &quot;urllib.py&quot;, line 1205, in quote_plus
+    return quote(s, safe)
+  File &quot;urllib.py&quot;, line 1197, in quote
+    res = map(safe_map.__getitem__, s)
+KeyError: u'\xdf'
+
+and in the admin panel, when using &quot;save changes&quot;:
+Traceback (most recent call last):
+  File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cprequest.py&quot;, line 551, in respond
+    cherrypy.response.body = self.handler()
+  File &quot;/usr/lib/python2.5/site-packages/cherrypy/_cpdispatch.py&quot;, line 24, in __call__
+    return self.callable(*self.args, **self.kwargs)
+  File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/page_admin.py&quot;, line 21, in index
+    password = cherrypy.request.params[&quot;password&quot;]
+KeyError: 'password'
+
+Maybe some has an idea what to do?
+Thanks in advance
+Christoph
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000200.html">[Rdiffweb-discuss] New version 0.6.1
+</A></li>
+	<LI>Next message: <A HREF="000202.html">[Rdiffweb-discuss] error 500
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#201">[ date ]</a>
+              <a href="thread.html#201">[ thread ]</a>
+              <a href="subject.html#201">[ subject ]</a>
+              <a href="author.html#201">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

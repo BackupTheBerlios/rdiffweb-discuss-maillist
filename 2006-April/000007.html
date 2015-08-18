@@ -1,0 +1,145 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] RSS feeds for multiple accounts
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-April/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20RSS%20feeds%20for%20multiple%20accounts&In-Reply-To=%3C44439BF0.1010208%40outofhanwell.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000006.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] RSS feeds for multiple accounts</H1>
+    <B>Matthias Miller</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20RSS%20feeds%20for%20multiple%20accounts&In-Reply-To=%3C44439BF0.1010208%40outofhanwell.com%3E"
+       TITLE="[Rdiffweb-discuss] RSS feeds for multiple accounts">rdiffweb at outofhanwell.com
+       </A><BR>
+    <I>Mon Apr 17 15:45:20 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000006.html">[Rdiffweb-discuss] RSS feeds for multiple accounts
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7">[ date ]</a>
+              <a href="thread.html#7">[ thread ]</a>
+              <a href="subject.html#7">[ subject ]</a>
+              <a href="author.html#7">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The query string parameter might work--certainly Thunderbird would 
+recognize it as a different URL and allow the feed to be added. We may 
+also need to specify a different authentication realm so that 
+Thunderbird saves different username/password sets for the pages.
+
+Web proxies, etc. are only a concern over an unencrypted web connection. 
+Using simple HTTP authentication over an unencrypted connection should 
+probably be a greater concern, anyway, since your credentials are sent 
+in the clear at fixed intervals. (Digest authentication would offer some 
+benefit, but it certainly doesn't beat SSL.)
+
+There's another situation where this might be helpful. A network 
+administrator may want to monitor the results of all backups running at 
+an organization, to better provide support when backups fail. Although 
+it would be reasonable to restrict his access to the data, his ability 
+to monitor to backup jobs could be very important. (Admittedly, I have 
+no actual scenario where this is happening, but it seems quite possible.)
+
+I dislike adding the complexity of multiple roots to solve this 
+problem--it seems like a high cost with marginal benefit. Another 
+solution that I think would offer greater advantage is a hierarchical 
+user list. Certain users could be sub-users of another account. 
+Entrypoints that currently receive a repository path (browse, restore, 
+etc.) would also receive the username. The usernames could be interfaced 
+as tabs or could simply be included in another column in the table, but 
+it should only be displayed if the user has sub-accounts that he or she 
+oversees. RSS feeds would be available for all sub-users (combined) or 
+for any single user (individually).
+
+I don't think my needs merit all this framework, but if rdiffWeb does 
+implement user permissions or user management, designing it to support 
+this use case may be of minimal additional cost.
+
+-Matthias Miller
+
+Josh Nisly wrote:
+&gt;<i> One option would be to have a query string param with the username.  
+</I>&gt;<i> Would this work for Thunderbird?  Not sure I really like that though, 
+</I>&gt;<i> bc that exposes the username for whoever happens to be listening on 
+</I>&gt;<i> the connection (web proxies, etc).
+</I>&gt;<i>
+</I>&gt;<i> Allowing the user to have multiple roots would break a lot of the 
+</I>&gt;<i> assumptions we have in rdiffWeb, but that doesn't mean we couldn't do 
+</I>&gt;<i> it.  I am having a little trouble coming up with a scenario where many 
+</I>&gt;<i> people would want to have multiple roots, though.  I think it could 
+</I>&gt;<i> get confusing pretty quickly.  What happens if you have a backup with 
+</I>&gt;<i> the same name in two different roots?
+</I>&gt;<i>
+</I>&gt;<i> Josh Nisly
+</I>&gt;<i>
+</I>&gt;<i> Matthias Miller wrote:
+</I>&gt;&gt;<i> I am using rdiff-backup and rdiffWeb not only to back up my private 
+</I>&gt;&gt;<i> files but also to securely share files over the Internet. That means 
+</I>&gt;&gt;<i> I have two accounts. For one, I use the RSS feed to check whether my 
+</I>&gt;&gt;<i> private files were backed up correctly. For the other, I use the RSS 
+</I>&gt;&gt;<i> feed to tell me when new shared files might be available. (The 
+</I>&gt;&gt;<i> repository listings are currently being maintained by the automatic 
+</I>&gt;&gt;<i> spidering script, as described in 
+</I>&gt;&gt;<i> <A HREF="http://www.rdiffweb.org/wiki/index.php?title=Automatic_Repository_Spidering.">http://www.rdiffweb.org/wiki/index.php?title=Automatic_Repository_Spidering.</A>) 
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> The problem, however, is that I am using Thunderbird as my 
+</I>&gt;&gt;<i> aggregator, but it does not allow me to subscribe to multiple feeds 
+</I>&gt;&gt;<i> at the same URL. I see several possibilities:
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>    * Use a different aggregator for the second feed (which is
+</I>&gt;&gt;<i>      inconvenient, but would work)
+</I>&gt;&gt;<i>    * Allow rdiffWeb users to have multiple &quot;root&quot; paths
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Are there any other ways to solve this problem?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> If this is an unusual setup, I'll live with the inconvenience of 
+</I>&gt;&gt;<i> another aggregator. Otherwise, we should see if we can better favor 
+</I>&gt;&gt;<i> these setups.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> -Matthias Miller
+</I>&gt;&gt;<i>
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="http://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">http://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>&gt;<i>
+</I>
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000006.html">[Rdiffweb-discuss] RSS feeds for multiple accounts
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#7">[ date ]</a>
+              <a href="thread.html#7">[ thread ]</a>
+              <a href="subject.html#7">[ subject ]</a>
+              <a href="author.html#7">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

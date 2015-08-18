@@ -1,0 +1,82 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Small bug when handling non-text from the database
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-June/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Small%20bug%20when%20handling%20non-text%20from%20the%0A%20database&In-Reply-To=%3C46719CA8.7040408%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000140.html">
+   <LINK REL="Next"  HREF="000142.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Small bug when handling non-text from the database</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Small%20bug%20when%20handling%20non-text%20from%20the%0A%20database&In-Reply-To=%3C46719CA8.7040408%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] Small bug when handling non-text from the database">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Thu Jun 14 21:53:12 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000140.html">[Rdiffweb-discuss] Small bug when handling non-text from the	database
+</A></li>
+        <LI>Next message: <A HREF="000142.html">[Rdiffweb-discuss] WG: unicode filename problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#141">[ date ]</a>
+              <a href="thread.html#141">[ thread ]</a>
+              <a href="subject.html#141">[ subject ]</a>
+              <a href="author.html#141">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I just ran into this myself when I was working with some templates. I 
+think I might have originally coded the templating engine that way to be 
+more strict, but now it just seems like a pain that you have to have 
+every parameter to templates be a string. I've changed the templating 
+engine itself to convert to strings. Thanks for the bug report!
+
+JoshN
+
+
+Jesus Roncero wrote:
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> I was modifying rdiff and needed to display the RepoID in one on my pages and 
+</I>&gt;<i> got an exception on the templating system, when trying to run 
+</I>&gt;<i> text.replace(...) as it only works if variable text is a string. 
+</I>&gt;<i> I added a text = str(text) just to force it to be a string (patch attached), 
+</I>&gt;<i> but you might prefer a different approach. Just to let you know.
+</I>&gt;<i>
+</I>&gt;<i> Thanks.
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000140.html">[Rdiffweb-discuss] Small bug when handling non-text from the	database
+</A></li>
+	<LI>Next message: <A HREF="000142.html">[Rdiffweb-discuss] WG: unicode filename problem
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#141">[ date ]</a>
+              <a href="thread.html#141">[ thread ]</a>
+              <a href="subject.html#141">[ subject ]</a>
+              <a href="author.html#141">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

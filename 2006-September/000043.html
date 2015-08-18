@@ -1,0 +1,112 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] disabling login
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-September/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20disabling%20login&In-Reply-To=%3C4508439C.6010207%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000042.html">
+   <LINK REL="Next"  HREF="000044.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] disabling login</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20disabling%20login&In-Reply-To=%3C4508439C.6010207%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] disabling login">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Wed Sep 13 19:45:00 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000042.html">[Rdiffweb-discuss] disabling login
+</A></li>
+        <LI>Next message: <A HREF="000044.html">[Rdiffweb-discuss] emailing the status page to myself every day	using Lynx instead of wget
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#43">[ date ]</a>
+              <a href="thread.html#43">[ thread ]</a>
+              <a href="subject.html#43">[ subject ]</a>
+              <a href="author.html#43">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Couple of things:
+* First, we wanted to do exactly the same thing, so we used an RSS feed. 
+You can click on the &quot;Feed&quot; icon on the bottom of the status page for 
+the link. I use this in Thunderbird (both 1.5 and 2.0 support 
+authenticated RSS feeds pretty well.) I like this better than a daily 
+email, since it checks every 30 minutes, so I find out about failed 
+backups sooner.
+* rdiffWeb supports HTTP authentication, but only for the RSS feed.  
+(This is because it has a minor security hole: using HTTP authentication 
+leaves the session open for an hour.) To enable it for everything, 
+you'll need to change the main rdiff-web script. It's in the config 
+section close to the bottom; I think it should be fairly self-explanatory.
+* If you really do want to script pulling down the status page, you 
+should be able to do it with curl. I would recommend googling for (perl) 
+scripts to download stuff from allofmp3.com, since the technique is 
+similar. You'll want to set up curl to store cookies, then request the 
+status page, use post-data, then use those cookies to do a second 
+request to actually get the status page.
+
+Josh Nisly
+
+Victor Moran wrote:
+&gt;<i> Hi,
+</I>&gt;<i>
+</I>&gt;<i> I now have rdiffweb working beautifully but I've hit a snag.
+</I>&gt;<i>
+</I>&gt;<i> I need to send a copy of the status page via email to myself every
+</I>&gt;<i> morning so that I don't have to remember to check the page manually
+</I>&gt;<i> everyday.
+</I>&gt;<i>
+</I>&gt;<i> I've tried using curl and wget to retrieve the status page but I can't
+</I>&gt;<i> get past the login page.  I've tried sending post data but I can't get
+</I>&gt;<i> it right.
+</I>&gt;<i>
+</I>&gt;<i> Since I don't need a password for this server, is there a way of
+</I>&gt;<i> disabling the need for a password?  I tried setting it to blank and
+</I>&gt;<i> rdiffweb said that it had disabled my admin account, so I changed that
+</I>&gt;<i> back without logging out.
+</I>&gt;<i>
+</I>&gt;<i> Can anyone offer any other ideas on how to email myself the status
+</I>&gt;<i> page once a day via cron?
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i> Victor.
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000042.html">[Rdiffweb-discuss] disabling login
+</A></li>
+	<LI>Next message: <A HREF="000044.html">[Rdiffweb-discuss] emailing the status page to myself every day	using Lynx instead of wget
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#43">[ date ]</a>
+              <a href="thread.html#43">[ thread ]</a>
+              <a href="subject.html#43">[ subject ]</a>
+              <a href="author.html#43">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

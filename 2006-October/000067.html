@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] A small Patch to have file/folder	images...	(rdiff: message 6 of 20)
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-October/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20A%20small%20Patch%20to%20have%20file/folder%0A%09images...%09%28rdiff%3A%20message%206%20of%2020%29&In-Reply-To=%3C20061026153429.3hek3r652gowcow8%40intranet.lpta.univ-montp2.fr%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000066.html">
+   <LINK REL="Next"  HREF="000068.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] A small Patch to have file/folder	images...	(rdiff: message 6 of 20)</H1>
+    <B>Dominique CARON</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20A%20small%20Patch%20to%20have%20file/folder%0A%09images...%09%28rdiff%3A%20message%206%20of%2020%29&In-Reply-To=%3C20061026153429.3hek3r652gowcow8%40intranet.lpta.univ-montp2.fr%3E"
+       TITLE="[Rdiffweb-discuss] A small Patch to have file/folder	images...	(rdiff: message 6 of 20)">dominique at caron-giauffret.fr
+       </A><BR>
+    <I>Thu Oct 26 15:34:29 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000066.html">[Rdiffweb-discuss] A small Patch to have file/folder images...
+</A></li>
+        <LI>Next message: <A HREF="000068.html">[Rdiffweb-discuss] A small Patch to have file/folder	images... (rdiff: message 6 of 20)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#67">[ date ]</a>
+              <a href="thread.html#67">[ thread ]</a>
+              <a href="subject.html#67">[ subject ]</a>
+              <a href="author.html#67">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Le 26.10.2006, Josh Nisly - <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A> a &#233;crit:
+
+&gt;<i> Ok, I've committed a version of this patch. If you want to try it out
+</I>&gt;<i> and let me know what you think, I'd appreciate it.
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i> Josh Nisly
+</I>
+I've just tried the new cvs release .. nice for me ...
+
+Il also remove the hours from date and changeDateStr (cause I don't  
+care of this, cause I don not make more than one backup per day )
+May be you can propose this in the conf file or better ( but more  
+difficult ;-) : check if there is 2 or more backups during the same  
+day and only show hours if there is 2 or more backups a day ?
+
+
+#### patch In the 'page_browse.py' file to not show the backup hours  
+##########
+
+- &quot;changeDateStr&quot; : x.getDisplayString() } for x in entryChangeDates]
++ &quot;changeDateStr&quot; : x.getDisplayString().split(' ')[0] } for x in  
+entryChangeDates]
+
+
+  - &quot;date&quot; : libEntry.changeDates[-1].getDisplayString(),
+  + &quot;date&quot; : libEntry.changeDates[-1].getDisplayString().split(' ')[0],
+
+######################################
+
+
+Thank's
+
+-- 
+CARON Dominique         UNIVERSITE DE MONTPELLIER II
+<A HREF="http://www.lpta.univ-montp2.fr/caron/">http://www.lpta.univ-montp2.fr/caron/</A>
+  ---- PLEASE NO WORD ATTACHMENTS:
+<A HREF="http://www.gnu.org/philosophy/no-word-attachments.fr.html">http://www.gnu.org/philosophy/no-word-attachments.fr.html</A>
+
+----------------------------------------------------------------
+Ce message vous a &#233;t&#233; transmis gr&#226;ce &#224; IMP, le WebMail libre de HORDE
+(www.horde.org).
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000066.html">[Rdiffweb-discuss] A small Patch to have file/folder images...
+</A></li>
+	<LI>Next message: <A HREF="000068.html">[Rdiffweb-discuss] A small Patch to have file/folder	images... (rdiff: message 6 of 20)
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#67">[ date ]</a>
+              <a href="thread.html#67">[ thread ]</a>
+              <a href="subject.html#67">[ subject ]</a>
+              <a href="author.html#67">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,184 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Re: rdiffweb problems
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-May/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Re%3A%20rdiffweb%20problems&In-Reply-To=%3C090801c67eae%2424e478c0%240200000a%40aldipc%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000008.html">
+   <LINK REL="Next"  HREF="000010.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Re: rdiffweb problems</H1>
+    <B>roland</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Re%3A%20rdiffweb%20problems&In-Reply-To=%3C090801c67eae%2424e478c0%240200000a%40aldipc%3E"
+       TITLE="[Rdiffweb-discuss] Re: rdiffweb problems">devzero at web.de
+       </A><BR>
+    <I>Tue May 23 23:16:22 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000008.html">[Rdiffweb-discuss] Re: rdiffweb problems
+</A></li>
+        <LI>Next message: <A HREF="000010.html">[Rdiffweb-discuss] Re: rdiffweb problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9">[ date ]</a>
+              <a href="thread.html#9">[ thread ]</a>
+              <a href="subject.html#9">[ subject ]</a>
+              <a href="author.html#9">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>hello josh,
+
+thank you - i downgraded from latest cherrpy version to version 2.1
+that helped!
+
+&gt;<i>If it does, we can look at ways of making rdiffweb work with both versions.
+</I>that would make it easier for beginners.
+
+btw - is this application single-threaded?
+when i restore a large amount of data, then it seems that i cannot use the 
+web-interface in another browser-window anymore.
+
+regards
+roland
+
+----- Original Message ----- 
+From: &quot;Josh Nisly&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at rdiffweb.org</A>&gt;
+To: &quot;roland&quot; &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">devzero at web.de</A>&gt;
+Cc: &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb-discuss at lists.berlios.de</A>&gt;
+Sent: Monday, May 22, 2006 8:53 AM
+Subject: Re: rdiffweb problems
+
+
+&gt;<i>I would guess that this is caused by running a different version of 
+</I>&gt;<i>cherrypy (the only supported version is 2.1).  What version are you 
+</I>&gt;<i>running?  If you're not running 2.1, could you please try installing that 
+</I>&gt;<i>to see if that fixes the problem?  If it does, we can look at ways of 
+</I>&gt;<i>making rdiffweb work with both versions.
+</I>&gt;<i>
+</I>&gt;<i> Thanks,
+</I>&gt;<i> Josh Nisly
+</I>&gt;<i>
+</I>&gt;<i> roland wrote:
+</I>&gt;&gt;<i> hello !
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> I`m having problems with running rdiffweb.
+</I>&gt;&gt;<i> i tried 0.3 and also the latest svn, but i get &gt;KeyError: 'username'&lt; and 
+</I>&gt;&gt;<i> even the very first browser-request fails.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> i really like to use a web-based frontend to rdiff-backup and rdiffweb 
+</I>&gt;&gt;<i> looks promising and i would like to try it out
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> can you probably help ?
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> regards
+</I>&gt;&gt;<i> roland
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> # rdiff-web
+</I>&gt;&gt;<i> /usr/lib/python2.3/site-packages/rdiffWeb/filter_https.py:2: 
+</I>&gt;&gt;<i> DeprecationWarning:
+</I>&gt;&gt;<i>  cherrypy.lib.filter has been superseded by cherrypy.filters and will be 
+</I>&gt;&gt;<i> removed
+</I>&gt;&gt;<i>  in CP 2.3
+</I>&gt;&gt;<i>   from cherrypy.lib.filter.basefilter import BaseFilter
+</I>&gt;&gt;<i> 21/May/2006:02:44:33 CONFIG INFO Server parameters:
+</I>&gt;&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.environment: production
+</I>&gt;&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.log_to_screen: True
+</I>&gt;&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.log_file:
+</I>&gt;&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.log_tracebacks: True
+</I>&gt;&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.log_request_headers: False
+</I>&gt;&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.protocol_version: HTTP/1.0
+</I>&gt;&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.socket_host:
+</I>&gt;&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.socket_port: 8080
+</I>&gt;&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.socket_file:
+</I>&gt;&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.reverse_dns: False
+</I>&gt;&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.socket_queue_size: 5
+</I>&gt;&gt;<i> 21/May/2006:02:44:33 CONFIG INFO   server.thread_pool: 10
+</I>&gt;&gt;<i> 21/May/2006:02:44:33 HTTP INFO Serving HTTP on <A HREF="http://localhost:8080/">http://localhost:8080/</A>
+</I>&gt;&gt;<i> 21/May/2006:02:44:38 HTTP INFO Page handler: &lt;bound method 
+</I>&gt;&gt;<i> rdiffLocationsPage.in
+</I>&gt;&gt;<i> dex of &lt;rdiffWeb.page_locations.rdiffLocationsPage instance at 
+</I>&gt;&gt;<i> 0x4074cdec&gt;&gt;
+</I>&gt;&gt;<i> Traceback (most recent call last):
+</I>&gt;&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;, line 
+</I>&gt;&gt;<i> 105, in
+</I>&gt;&gt;<i>  _run
+</I>&gt;&gt;<i>     self.main()
+</I>&gt;&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;, line 
+</I>&gt;&gt;<i> 254, in
+</I>&gt;&gt;<i>  main
+</I>&gt;&gt;<i>     body = page_handler(*virtual_path, **self.params)
+</I>&gt;&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_locations.py&quot;, 
+</I>&gt;&gt;<i> line 9, in
+</I>&gt;&gt;<i>  index
+</I>&gt;&gt;<i>     page = page + self.writeTopLinks()
+</I>&gt;&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_main.py&quot;, line 65, 
+</I>&gt;&gt;<i> in wri
+</I>&gt;&gt;<i> teTopLinks
+</I>&gt;&gt;<i>     if self.userDB.userIsAdmin(self.getUsername()):
+</I>&gt;&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_main.py&quot;, line 96, 
+</I>&gt;&gt;<i> in get
+</I>&gt;&gt;<i> Username
+</I>&gt;&gt;<i>     username = cherrypy.session['username']
+</I>&gt;&gt;<i> KeyError: 'username'
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> 123.222.212.12 - - [21/May/2006:02:44:38] &quot;GET / HTTP/1.1&quot; 500 791 &quot;&quot; 
+</I>&gt;&gt;<i> &quot;Mozilla/4.
+</I>&gt;&gt;<i> 0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3705)&quot;
+</I>&gt;&gt;<i> 21/May/2006:02:45:14 HTTP INFO Page handler: &lt;bound method 
+</I>&gt;&gt;<i> rdiffLocationsPage.index of &lt;rdiffWeb.page_locations.rdiffLocationsPage 
+</I>&gt;&gt;<i> instance at 0x4074cdec&gt;&gt;
+</I>&gt;&gt;<i> Traceback (most recent call last):
+</I>&gt;&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;, line 
+</I>&gt;&gt;<i> 105, in _run
+</I>&gt;&gt;<i>     self.main()
+</I>&gt;&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/cherrypy/_cphttptools.py&quot;, line 
+</I>&gt;&gt;<i> 254, in main
+</I>&gt;&gt;<i>     body = page_handler(*virtual_path, **self.params)
+</I>&gt;&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_locations.py&quot;, 
+</I>&gt;&gt;<i> line 9, in index
+</I>&gt;&gt;<i>     page = page + self.writeTopLinks()
+</I>&gt;&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_main.py&quot;, line 65, 
+</I>&gt;&gt;<i> in writeTopLinks
+</I>&gt;&gt;<i>     if self.userDB.userIsAdmin(self.getUsername()):
+</I>&gt;&gt;<i>   File &quot;/usr/lib/python2.3/site-packages/rdiffWeb/page_main.py&quot;, line 96, 
+</I>&gt;&gt;<i> in getUsername
+</I>&gt;&gt;<i>     username = cherrypy.session['username']
+</I>&gt;&gt;<i> KeyError: 'username'
+</I>&gt;&gt;<i>
+</I>&gt;<i> 
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000008.html">[Rdiffweb-discuss] Re: rdiffweb problems
+</A></li>
+	<LI>Next message: <A HREF="000010.html">[Rdiffweb-discuss] Re: rdiffweb problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#9">[ date ]</a>
+              <a href="thread.html#9">[ thread ]</a>
+              <a href="subject.html#9">[ subject ]</a>
+              <a href="author.html#9">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

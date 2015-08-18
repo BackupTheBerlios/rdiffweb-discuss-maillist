@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] rewriting URLs for Stunnel
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2006-May/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rewriting%20URLs%20for%20Stunnel&In-Reply-To=%3C44788C93.1000906%40outofhanwell.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000012.html">
+   <LINK REL="Next"  HREF="000014.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] rewriting URLs for Stunnel</H1>
+    <B>Matthias Miller</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20rewriting%20URLs%20for%20Stunnel&In-Reply-To=%3C44788C93.1000906%40outofhanwell.com%3E"
+       TITLE="[Rdiffweb-discuss] rewriting URLs for Stunnel">rdiffweb at outofhanwell.com
+       </A><BR>
+    <I>Sat May 27 19:29:55 CEST 2006</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000012.html">[Rdiffweb-discuss] flyout menus
+</A></li>
+        <LI>Next message: <A HREF="000014.html">[Rdiffweb-discuss] Re: [rdiff-backup-users] rdiffweb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13">[ date ]</a>
+              <a href="thread.html#13">[ thread ]</a>
+              <a href="subject.html#13">[ subject ]</a>
+              <a href="author.html#13">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>The documentation on the wiki states that the UseHttps configuration 
+setting is required so that rdiffWeb writes URLs with the correct scheme 
+(see <A HREF="http://www.rdiffweb.org/wiki/index.php?title=UsingHttps">http://www.rdiffweb.org/wiki/index.php?title=UsingHttps</A>). First of 
+all, now that rdiffWeb uses its own authentication filter, is this URL 
+rewriting still necessary?
+
+If it is, it may still be possible to eliminate configuration setting 
+while keeping the filter. I recently noticed that the URI specification 
+(<A HREF="http://www.gbiv.com/protocols/uri/rfc/rfc3986.html#reference-examples">http://www.gbiv.com/protocols/uri/rfc/rfc3986.html#reference-examples</A>) 
+describes a syntax that allows URIs to be described relative to the 
+scheme. If you have a link to //www.rdiffweb.org/wiki/, it will resolve 
+to <A HREF="https://www.rdiffweb.org/wiki/">https://www.rdiffweb.org/wiki/</A> on a secure site and to 
+<A HREF="http://www.rdiffweb.org/wiki/">http://www.rdiffweb.org/wiki/</A> on a non-secure site. Rather than 
+rewriting URLs to use the https scheme, the filter could rewrite all 
+URLs to use no scheme (assuming that CherryPy handles it okay).
+
+These changes would make integration with Stunnel seamless.
+
+-Matthias
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000012.html">[Rdiffweb-discuss] flyout menus
+</A></li>
+	<LI>Next message: <A HREF="000014.html">[Rdiffweb-discuss] Re: [rdiff-backup-users] rdiffweb
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#13">[ date ]</a>
+              <a href="thread.html#13">[ thread ]</a>
+              <a href="subject.html#13">[ subject ]</a>
+              <a href="author.html#13">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

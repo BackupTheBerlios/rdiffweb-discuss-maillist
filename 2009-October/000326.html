@@ -1,0 +1,165 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] Some aditions; PAM and improved init
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2009-October/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Some%20aditions%3B%20PAM%20and%20improved%20init&In-Reply-To=%3C4ADBCB68.5080005%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000325.html">
+   
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] Some aditions; PAM and improved init</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20Some%20aditions%3B%20PAM%20and%20improved%20init&In-Reply-To=%3C4ADBCB68.5080005%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] Some aditions; PAM and improved init">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Mon Oct 19 04:14:00 CEST 2009</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000325.html">[Rdiffweb-discuss] Some aditions; PAM and improved init
+</A></li>
+        
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#326">[ date ]</a>
+              <a href="thread.html#326">[ thread ]</a>
+              <a href="subject.html#326">[ subject ]</a>
+              <a href="author.html#326">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I haven't had a chance to take a look at the code, but from a functional 
+perspective:
+* The PAM authentication setting should be site-wide, rather than 
+user-specific.
+* I would strongly prefer that if PAM is enabled, changing the user 
+password changes the system password. (If PAM doesn't allow this, you 
+could use a script that sets the user password, like samba does.)
+
+Thanks for working on this! This stuff will be really nice.
+
+JoshN
+
+David Flink wrote:
+&gt;<i>
+</I>&gt;<i> Greetings, all.
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> I see in the TODO list at
+</I>&gt;<i>
+</I>&gt;<i> <A HREF="http://www.rdiffweb.org/wiki/index.php?title=Roadmap">http://www.rdiffweb.org/wiki/index.php?title=Roadmap</A>
+</I>&gt;<i>
+</I>&gt;<i> that init script improvements , shadow passwords (PAM) and logging are 
+</I>&gt;<i> High priority improvements.
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> I have improved teh init script and added PAM support.
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> I have not done Logging because I'd like to find out what people want 
+</I>&gt;<i> logged before I do anything about it. I'll watch this list.
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> I can't/don't know how/won't commit to svn so to get my changes, do this:
+</I>&gt;<i>
+</I>&gt;<i> Check out the latest version from &quot;trunk&quot; in svn.
+</I>&gt;<i>
+</I>&gt;<i> Then extract the attached archive over the top of that _/before/_ 
+</I>&gt;<i> installing it.
+</I>&gt;<i>
+</I>&gt;<i> (or if you already have it installed and know what you are doing, copy 
+</I>&gt;<i> the init script  from the archive to /etc/init.d and the others to 
+</I>&gt;<i> /usr/local/lib/python2.6/dist-packages/rdiffWeb as appropriate)
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> PAM adds the requirement for python-pam 0.4.2 (sudo apt-get install 
+</I>&gt;<i> python-pam)
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> Changes:
+</I>&gt;<i>
+</I>&gt;<i> when using the init script (or service rdiff-web &lt;command&gt;),
+</I>&gt;<i>
+</I>&gt;<i> &quot;start&quot; - confirms that the start worked, and reports the PID
+</I>&gt;<i>
+</I>&gt;<i> &quot;stop&quot; - confirms the stop succeeds.
+</I>&gt;<i>
+</I>&gt;<i> &quot;status&quot; - returns the pid if running.
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> Admin page:
+</I>&gt;<i>
+</I>&gt;<i> Creating or editing users offers a &quot;Authenticate with PAM?&quot; checkbox.
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> Preferences page:
+</I>&gt;<i>
+</I>&gt;<i> If current user is set to use PAM, a message notes that changing the 
+</I>&gt;<i> password on this page has no effect
+</I>&gt;<i>
+</I>&gt;<i> In fact, it changes the user's password in rdiff-web's DB, but since 
+</I>&gt;<i> the shadow password is used, this won't have any effect until an 
+</I>&gt;<i> administrator switches the user to non-PAM.
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> If you have an rdiff-web user who does not have a unix system account, 
+</I>&gt;<i> setting them to use PM effectively locks the account.
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> I hope the attachment makes it to the mailing list.
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> Wish me luck!
+</I>&gt;<i>
+</I>&gt;<i>  
+</I>&gt;<i>
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>   
+</I>
+-------------- next part --------------
+An HTML attachment was scrubbed...
+URL: &lt;<A HREF="https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20091018/31120b7c/attachment.html">https://lists.berlios.de/pipermail/rdiffweb-discuss/attachments/20091018/31120b7c/attachment.html</A>&gt;
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000325.html">[Rdiffweb-discuss] Some aditions; PAM and improved init
+</A></li>
+	
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#326">[ date ]</a>
+              <a href="thread.html#326">[ thread ]</a>
+              <a href="subject.html#326">[ subject ]</a>
+              <a href="author.html#326">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

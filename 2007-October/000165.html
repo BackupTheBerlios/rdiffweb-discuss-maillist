@@ -1,0 +1,134 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] installing rdiffweb-0.4.0 on cygwin
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-October/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20installing%20rdiffweb-0.4.0%20on%20cygwin&In-Reply-To=%3C471BB4DD.4060200%40joshnisly.com%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000164.html">
+   <LINK REL="Next"  HREF="000166.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] installing rdiffweb-0.4.0 on cygwin</H1>
+    <B>Josh Nisly</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%20installing%20rdiffweb-0.4.0%20on%20cygwin&In-Reply-To=%3C471BB4DD.4060200%40joshnisly.com%3E"
+       TITLE="[Rdiffweb-discuss] installing rdiffweb-0.4.0 on cygwin">rdiffweb at joshnisly.com
+       </A><BR>
+    <I>Sun Oct 21 22:21:49 CEST 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000164.html">[Rdiffweb-discuss] installing rdiffweb-0.4.0 on cygwin
+</A></li>
+        <LI>Next message: <A HREF="000166.html">[Rdiffweb-discuss] Little problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#165">[ date ]</a>
+              <a href="thread.html#165">[ thread ]</a>
+              <a href="subject.html#165">[ subject ]</a>
+              <a href="author.html#165">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>I've committed a fix that should prevent this problem. There may be 
+plenty of other issues that come up - let us know!
+
+JoshN
+
+Scott Degenhardt wrote:
+&gt;<i> No problem and thanks for helping. If you are able to change that, please
+</I>&gt;<i> let me know....I'm very interested in getting this up and running. So is my
+</I>&gt;<i> boss :). Thanks again.
+</I>&gt;<i>
+</I>&gt;<i> On 10/19/07, Josh Nisly &lt;<A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">rdiffweb at joshnisly.com</A>&gt; wrote:
+</I>&gt;<i>   
+</I>&gt;&gt;<i> Hmm. I'll see what I can do to fix that. We need checks right up front
+</I>&gt;&gt;<i> to see whether we can write to the configuration directory, so we should
+</I>&gt;&gt;<i> just do it in a more generic way.
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Thanks for the bug report!
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> JoshN
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i> Scott Degenhardt wrote:
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> Hi. I'm trying to install rdiffweb on cygwin. My only snag seems to be
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> that
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> when running the setup script it requires that the user &quot;root&quot; must run
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> it.
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> Cygwin doesn't have a root user. It just gives the administrator
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> accounts on
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> Windows full access to everything, but when logged in it has the $ sign
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> on
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> the console instead of a #. I tried creating a user called &quot;root&quot; on the
+</I>&gt;&gt;&gt;<i> Windows server, but it didn't help when I tried installing with that
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> &quot;root&quot;
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> user. It still had the $ on the console and not the #. rdiff-backup and
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> and
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> CherryPy installed fine so I'm pretty confident rdiffweb would work too
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> if I
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> could get past this restriction. Any suggestions or help would be
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> greatly
+</I>&gt;&gt;<i>     
+</I>&gt;&gt;&gt;<i> appreciated. Thanks.
+</I>&gt;&gt;&gt;<i>       
+</I>&gt;&gt;<i> _______________________________________________
+</I>&gt;&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;&gt;<i>
+</I>&gt;&gt;<i>     
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>&gt;<i> ------------------------------------------------------------------------
+</I>&gt;<i>
+</I>&gt;<i> _______________________________________________
+</I>&gt;<i> Rdiffweb-discuss mailing list
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">Rdiffweb-discuss at lists.berlios.de</A>
+</I>&gt;<i> <A HREF="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss</A>
+</I>&gt;<i>   
+</I>
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000164.html">[Rdiffweb-discuss] installing rdiffweb-0.4.0 on cygwin
+</A></li>
+	<LI>Next message: <A HREF="000166.html">[Rdiffweb-discuss] Little problems
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#165">[ date ]</a>
+              <a href="thread.html#165">[ thread ]</a>
+              <a href="subject.html#165">[ subject ]</a>
+              <a href="author.html#165">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>

@@ -1,0 +1,121 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<HTML>
+ <HEAD>
+   <TITLE> [Rdiffweb-discuss] 0.4 TODO?
+   </TITLE>
+   <LINK REL="Index" HREF="http://lists.berlios.de/pipermail/rdiffweb-discuss/2007-November/index.html" >
+   <LINK REL="made" HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%200.4%20TODO%3F&In-Reply-To=%3C47362C73.3090601%40jhprins.org%3E">
+   <META NAME="robots" CONTENT="index,nofollow">
+   <style type="text/css">
+       pre {
+           white-space: pre-wrap;       /* css-2.1, curent FF, Opera, Safari */
+           }
+   </style>
+   <META http-equiv="Content-Type" content="text/html; charset=us-ascii">
+   <LINK REL="Previous"  HREF="000168.html">
+   <LINK REL="Next"  HREF="000170.html">
+ </HEAD>
+ <BODY BGCOLOR="#ffffff">
+   <H1>[Rdiffweb-discuss] 0.4 TODO?</H1>
+    <B>Jan Hugo Prins</B> 
+    <A HREF="mailto:rdiffweb-discuss%40lists.berlios.de?Subject=Re%3A%20%5BRdiffweb-discuss%5D%200.4%20TODO%3F&In-Reply-To=%3C47362C73.3090601%40jhprins.org%3E"
+       TITLE="[Rdiffweb-discuss] 0.4 TODO?">jhp at jhprins.org
+       </A><BR>
+    <I>Sat Nov 10 23:10:59 CET 2007</I>
+    <P><UL>
+        <LI>Previous message: <A HREF="000168.html">[Rdiffweb-discuss] Little problems
+</A></li>
+        <LI>Next message: <A HREF="000170.html">[Rdiffweb-discuss] 0.4 TODO?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#169">[ date ]</a>
+              <a href="thread.html#169">[ thread ]</a>
+              <a href="subject.html#169">[ subject ]</a>
+              <a href="author.html#169">[ author ]</a>
+         </LI>
+       </UL>
+    <HR>  
+<!--beginarticle-->
+<PRE>Josh Nisly wrote:
+&gt;<i> I think that there have been enough changes to rdiffWeb to call for 
+</I>&gt;<i> another release. As I'm wrapping up to release, I'm wondering if there 
+</I>&gt;<i> are any features that someone really wants to get into the next release. 
+</I>&gt;<i> If there are, I would consider trying to get them finished before 0.4 
+</I>&gt;<i> goes out the door, probably sometime next week.
+</I>&gt;<i>
+</I>&gt;<i>   
+</I>Hi Josh,
+
+I sometimes forget to read through all of my mailinglist connections, 
+but this one touched my radar today, so I noticed this message.
+Offcourse it is too late for the 0.4 release, but there are some things 
+that I want to let you know.
+
+- Recently I tried to get rdiff web running on a server that does not 
+have a local MySQL database, so I setup a database on a remote server.
+Al was fine until I ran the spider program to fill the database with all 
+the repositories. Spidering was OK, but when it tried to write to the 
+database, the spider borked with the following message:
+
+Traceback (most recent call last):
+  File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/rdw_spider_repos.py&quot;, 
+line 41, in &lt;module&gt;
+    findReposForAllUsers()
+  File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/rdw_spider_repos.py&quot;, 
+line 37, in findReposForAllUsers
+    findReposForUser(user, userDBModule)
+  File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/rdw_spider_repos.py&quot;, 
+line 29, in findReposForUser
+    userDBModule.setUserRepos(user, repoPaths)
+  File &quot;/usr/lib/python2.5/site-packages/rdiffWeb/db_mysql.py&quot;, line 64, 
+in setUserRepos
+    cursor.executemany(query, repoPaths)
+  File &quot;/usr/lib/python2.5/site-packages/MySQLdb/cursors.py&quot;, line 217, 
+in executemany
+    self.errorhandler(self, exc, value)
+  File &quot;/usr/lib/python2.5/site-packages/MySQLdb/connections.py&quot;, line 
+35, in defaulterrorhandler
+    raise errorclass, errorvalue
+ValueError: incomplete format
+
+I don't know what causes this error but the only thing different between 
+this spider and a different spider on a different server is that the 
+database is remote. The rights on the database etc are the same.
+
+- A while back we had to do a big restore of a directory that hadn't 
+changed for a few months, but 2 days before that restore a lot of data 
+got lost and we keep a history of about 16 days for that area. When the 
+user tried to do the restore from rdiffweb he only got about half of his 
+data. I then did the same restore from the commandline with rdiff-backup 
+and I got all the data. This offcourse proofed to us that rdiff-backup 
+is doing what it should do, but it also shows us that we can't trust 
+rdiff-web to give full restores.
+
+I hope you can do something with this information.
+
+Greetings,
+Jan Hugo Prins
+
+
+</PRE>
+
+<!--endarticle-->
+    <HR>
+    <P><UL>
+        <!--threads-->
+	<LI>Previous message: <A HREF="000168.html">[Rdiffweb-discuss] Little problems
+</A></li>
+	<LI>Next message: <A HREF="000170.html">[Rdiffweb-discuss] 0.4 TODO?
+</A></li>
+         <LI> <B>Messages sorted by:</B> 
+              <a href="date.html#169">[ date ]</a>
+              <a href="thread.html#169">[ thread ]</a>
+              <a href="subject.html#169">[ subject ]</a>
+              <a href="author.html#169">[ author ]</a>
+         </LI>
+       </UL>
+
+<hr>
+<a href="https://lists.berlios.de/mailman/listinfo/rdiffweb-discuss">More information about the Rdiffweb-discuss
+mailing list</a><br>
+</body></html>
